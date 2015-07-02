@@ -289,7 +289,7 @@
 			<key>collisionType</key>
 			<string></string>
 			<key>cornerRadius</key>
-			<real>175.71484375</real>
+			<real>171.93359375</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
@@ -464,7 +464,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
