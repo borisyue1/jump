@@ -287,7 +287,7 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string></string>
+			<string>monster</string>
 			<key>cornerRadius</key>
 			<real>171.93359375</real>
 			<key>density</key>
