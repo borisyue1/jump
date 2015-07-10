@@ -289,15 +289,15 @@
 			<key>collisionType</key>
 			<string>monster</string>
 			<key>cornerRadius</key>
-			<real>171.93359375</real>
+			<real>175.71875</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
 			<true/>
 			<key>elasticity</key>
-			<real>0.30000001192092896</real>
+			<real>1</real>
 			<key>friction</key>
-			<real>0.30000001192092896</real>
+			<real>0.0</real>
 			<key>points</key>
 			<array>
 				<array>
@@ -500,7 +500,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.30000001192092896</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

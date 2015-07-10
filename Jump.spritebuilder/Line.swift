@@ -10,7 +10,15 @@ import UIKit
 
 class Line: CCNode {
    
+    var time = 0
+    
     func draw(){
         self.animationManager.runAnimationsForSequenceNamed("scale")
+    }
+    func getTime() -> Int {
+        return time
+    }
+    func increaseTime(amount: Int){
+        time += amount
     }
 }

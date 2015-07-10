@@ -62,9 +62,12 @@
 		927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
+		B425B4701B4EE27E00A67EEA /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B425B46F1B4EE27E00A67EEA /* Asteroid.swift */; };
 		B42ADE371B45B9C8003F3078 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE361B45B9C8003F3078 /* Line.swift */; };
 		B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE461B45CF1D003F3078 /* Gameplay.swift */; };
+		B42C2B0B1B4DE4EF0095FDD2 /* MonsterAlien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42C2B0A1B4DE4EF0095FDD2 /* MonsterAlien.swift */; };
 		B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D1EA21B4495F8005B3024 /* Hero.swift */; };
+		B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4810D341B502E5100CF0DF6 /* GameOver.swift */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -176,9 +179,12 @@
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* Jump Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B425B46F1B4EE27E00A67EEA /* Asteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
 		B42ADE361B45B9C8003F3078 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		B42ADE461B45CF1D003F3078 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
+		B42C2B0A1B4DE4EF0095FDD2 /* MonsterAlien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterAlien.swift; sourceTree = "<group>"; };
 		B47D1EA21B4495F8005B3024 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Source/Hero.swift; sourceTree = "<group>"; };
+		B4810D341B502E5100CF0DF6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -443,6 +449,9 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				B42ADE461B45CF1D003F3078 /* Gameplay.swift */,
+				B4810D341B502E5100CF0DF6 /* GameOver.swift */,
+				B425B46F1B4EE27E00A67EEA /* Asteroid.swift */,
+				B42C2B0A1B4DE4EF0095FDD2 /* MonsterAlien.swift */,
 				B47D1EA21B4495F8005B3024 /* Hero.swift */,
 				B42ADE361B45B9C8003F3078 /* Line.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -823,7 +832,10 @@
 			files = (
 				B73789871807631A0076A88C /* main.m in Sources */,
 				B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */,
+				B42C2B0B1B4DE4EF0095FDD2 /* MonsterAlien.swift in Sources */,
+				B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
+				B425B4701B4EE27E00A67EEA /* Asteroid.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */,
 				B42ADE371B45B9C8003F3078 /* Line.swift in Sources */,
