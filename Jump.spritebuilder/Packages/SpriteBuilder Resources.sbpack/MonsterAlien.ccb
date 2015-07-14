@@ -86,7 +86,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>10</real>
+										<real>20</real>
 										<real>0.0</real>
 									</array>
 								</dict>
@@ -282,40 +282,6 @@
 				<string>monsteralien</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
-				<key>physicsBody</key>
-				<dict>
-					<key>affectedByGravity</key>
-					<true/>
-					<key>allowsRotation</key>
-					<true/>
-					<key>bodyShape</key>
-					<integer>1</integer>
-					<key>collisionCategories</key>
-					<array/>
-					<key>collisionMask</key>
-					<array/>
-					<key>collisionType</key>
-					<string>alien</string>
-					<key>cornerRadius</key>
-					<real>16.26171875</real>
-					<key>density</key>
-					<real>1</real>
-					<key>dynamic</key>
-					<false/>
-					<key>elasticity</key>
-					<real>0.30000001192092896</real>
-					<key>friction</key>
-					<real>0.30000001192092896</real>
-					<key>points</key>
-					<array>
-						<array>
-							<real>16</real>
-							<real>16</real>
-						</array>
-					</array>
-					<key>polygons</key>
-					<array/>
-				</dict>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -338,7 +304,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>10</real>
+							<real>3.6734695434570312</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -363,10 +329,10 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>2</real>
+							<real>2</real>
 							<false/>
-							<integer>0</integer>
+							<integer>1</integer>
 						</array>
 					</dict>
 					<dict>
@@ -418,8 +384,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -432,6 +396,40 @@
 		<string></string>
 		<key>memberVarAssignmentType</key>
 		<integer>1</integer>
+		<key>physicsBody</key>
+		<dict>
+			<key>affectedByGravity</key>
+			<true/>
+			<key>allowsRotation</key>
+			<true/>
+			<key>bodyShape</key>
+			<integer>1</integer>
+			<key>collisionCategories</key>
+			<array/>
+			<key>collisionMask</key>
+			<array/>
+			<key>collisionType</key>
+			<string>alien</string>
+			<key>cornerRadius</key>
+			<real>30.265625</real>
+			<key>density</key>
+			<real>1</real>
+			<key>dynamic</key>
+			<false/>
+			<key>elasticity</key>
+			<real>0.30000001192092896</real>
+			<key>friction</key>
+			<real>0.30000001192092896</real>
+			<key>points</key>
+			<array>
+				<array>
+					<real>3.1328125</real>
+					<real>-0.296875</real>
+				</array>
+			</array>
+			<key>polygons</key>
+			<array/>
+		</dict>
 		<key>properties</key>
 		<array>
 			<dict>
@@ -494,6 +492,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -549,7 +549,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.23333333432674408</real>
+			<real>0.10000000149011612</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

@@ -10,6 +10,12 @@ import UIKit
 
 class GameOver: CCNode {
     
+    weak var scoreLabel : CCLabelTTF!
+    var score: Int = 0 {
+        didSet {
+           scoreLabel.string = "\(score)"
+        }
+    }
     weak var restartButton : CCButton!
     
 //    func didLoadFromCCB() {
