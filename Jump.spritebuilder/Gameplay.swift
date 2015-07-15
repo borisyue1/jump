@@ -35,28 +35,31 @@ class Gameplay: CCNode {
     var stuff = [CCNode]()
     var addToY : CGFloat = 0
     var canDrawNext = false
-    var trackerAlien: Int = 0
-    var trackerAsteroid: Int = 0
-    var trackerBird: Int = 0
-    var trackerUfoAlien = 0
-    var spawnControlTimeBird = 180
-    var spawnControlTime = 400
-    var addToRandUfo : Float = 1500
     var tooLarge = false
     var tooLargeOther = false
     var wayTooLarge = false
+    var jumped = false
     var wayTooLargeOther = false
     var xVel: CGFloat = 0
     var jumps = 0
+    var asteroidProb: Float = 0.2
+    var birdProb: Float = 1.0
+    var alienProb: Float = 0
+    var ufoProb: Float = 0.0
+    var randThresh = CCRANDOM_0_1() * 400 + 900
+
     
- 
     func didLoadFromCCB(){
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
 //        gamePhysicsNode.debugDraw = true
         backgrounds.append(sky1)
         backgrounds.append(sky2)
-    
+//        var bird = CCBReader.load("Bird") as! Bird
+//        gamePhysicsNode.addChild(bird)
+//        stuff.append(bird)
+//        bird.position = ccp(CGFloat(0), hero.position.y + CGFloat(200))
+
     }
 
     override func update(delta: CCTime) {
@@ -75,92 +78,68 @@ class Gameplay: CCNode {
         }
         checkOffScreen()
         if startedJumping {
-            contentNode.position = ccpAdd(contentNode.position, ccp(0, -6.25))//6
-            addToY += 6.25
+            contentNode.position = ccpAdd(contentNode.position, ccp(0, -7))//6
+            addToY += 7
             score += 16
 
         }
         if firstJump {
-            trackerAlien++
-            trackerAsteroid++
-            trackerBird++
-            trackerUfoAlien++
-            spawnRandomStuff()
+            if hero.position.y > CGFloat(randThresh) && jumped && hero.physicsBody.velocity.y < 0{
+                spawnRandomStuff()
+                jumped = false
+            }
+
         }
         checkWallsOffScreen()
-//        spawnBirds()
-//        spawnAsteroids()
-//        spawnAliens()
-//        spawnUfoAliens()
+
         
     }
     func spawnRandomStuff(){
-        if hero.position.y > 1000 {
-            var jumpNum = Int(CCRANDOM_0_1() * 2 + 2)
-            if jumps == jumpNum {
-                
+        checkAliensandObstaclesOffScreen()
+        var randX = CCRANDOM_0_1() * 260 + 20
+        var jumpNum = CCRANDOM_0_1()
+        if jumpNum < 0.7 {
+            var rand = CCRANDOM_0_1()
+            if rand < asteroidProb {
+                var asteroid = CCBReader.load("Asteroid") as! Asteroid
+                gamePhysicsNode.addChild(asteroid)
+                stuff.append(asteroid)
+                asteroid.position = ccp(CGFloat(randX), hero.position.y + CGFloat(650))
             }
-        }
-    }
-    func spawnBirds(){
-        var addToTime = CCRANDOM_0_1() * 200 - 50
-        if hero.position.y < 3400 {
-            if trackerBird > spawnControlTimeBird  + Int(addToTime) {
-                var randY = CCRANDOM_0_1() * 200 + 300
+            else if rand > asteroidProb  &&  rand < birdProb {
                 var bird = CCBReader.load("Bird") as! Bird
                 gamePhysicsNode.addChild(bird)
                 stuff.append(bird)
-                bird.position = CGPoint(x: CGFloat(-50), y: hero.position.y + CGFloat(randY))
-                trackerBird = 0
-                spawnControlTimeBird+=250
+                bird.position = ccp(CGFloat(randX), hero.position.y + CGFloat(312))
+            }
+            else if rand > birdProb  &&  rand < alienProb {
+                var alien = CCBReader.load("MonsterAlien") as! MonsterAlien
+                gamePhysicsNode.addChild(alien)
+                stuff.append(alien)
+                alien.position = ccp(CGFloat(randX), hero.position.y + CGFloat(312))
+            }
+            else if rand > alienProb  &&  rand < ufoProb {
+                var randUfoX = CCRANDOM_0_1() * 180 + 30
+                var ufo = CCBReader.load("UfoAlien") as! UfoAlien
+                gamePhysicsNode.addChild(ufo)
+                stuff.append(ufo)
+                ufo.position = ccp(CGFloat(randUfoX), hero.position.y + CGFloat(312))
+            }
+            asteroidProb += 0.02
+            birdProb -= 0.15
+            alienProb += 0.08
+            ufoProb += 0.06
+            if asteroidProb > 0.3 {
+                asteroidProb = 0.3
+            }
+            if alienProb > 0.75 {
+                alienProb = 0.75
+            }
+            if ufoProb > 1.0 {
+                ufoProb = 1.0
             }
         }
-       
     }
-    func spawnAsteroids(){
-        if trackerAsteroid > spawnControlTime {
-            var randX = CCRANDOM_0_1() * 270 + 10
-            var randY = CCRANDOM_0_1() * 150 + 400
-            var asteroid = CCBReader.load("Asteroid") as! Asteroid
-            gamePhysicsNode.addChild(asteroid)
-            stuff.append(asteroid)
-            asteroid.position = CGPoint(x: CGFloat(randX), y: hero.position.y + CGFloat(randY))
-            checkAliensandObstaclesOffScreen()
-            spawnControlTime--
-            trackerAsteroid = 0
-        }
-        if spawnControlTime <= 80 {
-            spawnControlTime = 80
-        }
-    }
-    func spawnAliens(){
-        var addToTime = CCRANDOM_0_1() * 50 + 140
-        if trackerAlien > spawnControlTime + Int(addToTime) {
-            var randX = CCRANDOM_0_1() * 270 + 10
-            var randY = CCRANDOM_0_1() * 150 + 700
-            var alien = CCBReader.load("MonsterAlien") as! MonsterAlien
-            gamePhysicsNode.addChild(alien)
-            stuff.append(alien)
-            alien.position = CGPoint(x: CGFloat(randX), y: hero.position.y + CGFloat(randY))
-            trackerAlien = 0
-        }
-        
-        
-    }
-    func spawnUfoAliens(){
-        var addToTime = CCRANDOM_0_1() * Float(400) + addToRandUfo
-        if trackerUfoAlien > spawnControlTime + Int(addToTime) {
-            var randX = CCRANDOM_0_1() * 210 + 10
-//            var randY = CCRANDOM_0_1() * 150 + 700
-            var ufoalien = CCBReader.load("UfoAlien") as! UfoAlien
-            gamePhysicsNode.addChild(ufoalien)
-            stuff.append(ufoalien)
-            ufoalien.position = CGPoint(x: CGFloat(randX), y: hero.position.y + CGFloat(375))
-            trackerUfoAlien = 0
-            addToRandUfo -= 50
-        }
-    }
-
     func checkAliensandObstaclesOffScreen(){
         for var s = stuff.count - 1; s>=0; s-- {
             var a = stuff[s]
@@ -198,13 +177,13 @@ class Gameplay: CCNode {
         var heroScreenPosition = convertToNodeSpace(heroWorldPosition)
         if heroScreenPosition.x < (-hero.boundingBox().width / 2) {
             hero.position = ccp( self.boundingBox().width + hero.boundingBox().width / 2, hero.position.y)
-            hero.physicsBody.velocity.x -= 40
-            hero.physicsBody.velocity.y += 40
+            hero.physicsBody.velocity.x -= 70
+            hero.physicsBody.velocity.y += 70
         }
         else if heroScreenPosition.x - hero.boundingBox().width / 2 > (self.boundingBox().width ) {
             hero.position = ccp(-hero.boundingBox().width / 2, hero.position.y)
-            hero.physicsBody.velocity.x += 40
-            hero.physicsBody.velocity.y += 40
+            hero.physicsBody.velocity.x += 70
+            hero.physicsBody.velocity.y += 70
 
         }
 //        while heroScreenPosition.x - hero.boundingBox().width / 2 <= 0 {
@@ -233,12 +212,13 @@ class Gameplay: CCNode {
         var constantY: CGFloat = -1000
         println(xVel)
         hero.physicsBody.velocity = ccp(xVel, constantY )
-        jumps++
         startedJumping = true
         firstJump = true
+        jumped = true
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, bird: CCNode!) -> Bool {
+        println("adfadf")
         triggerGameOver()
         return true
     }

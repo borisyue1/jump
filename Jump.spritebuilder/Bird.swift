@@ -11,7 +11,5 @@ import UIKit
 class Bird: CCNode {
    
   
-    override func update(delta: CCTime) {
-        self.position.x+=2
-    }
+  
 }

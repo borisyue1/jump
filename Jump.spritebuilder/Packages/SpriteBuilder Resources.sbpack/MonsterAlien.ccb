@@ -86,7 +86,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>20</real>
+										<real>40</real>
 										<real>0.0</real>
 									</array>
 								</dict>
@@ -304,7 +304,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>3.6734695434570312</real>
+							<real>3.2653064727783203</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -329,8 +329,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>2</real>
-							<real>2</real>
+							<real>1.8999999761581421</real>
+							<real>1.8999999761581421</real>
 							<false/>
 							<integer>1</integer>
 						</array>
@@ -492,8 +492,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -549,7 +547,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.10000000149011612</real>
+			<real>0.066666670143604279</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
