@@ -11,6 +11,7 @@ import UIKit
 class GameOver: CCNode {
     
     weak var scoreLabel : CCLabelTTF!
+    weak var highScore : CCLabelTTF!
     var score: Int = 0 {
         didSet {
            scoreLabel.string = "\(score)"
@@ -18,6 +19,19 @@ class GameOver: CCNode {
     }
     weak var restartButton : CCButton!
     
+//    func didLoadFromCCB(){
+//        NSUserDefaults.standardUserDefaults().addObserver(self, forKeyPath: "highscore", options: .allZeros, context: nil)
+//        updateHighscore()
+//    }
+//    func updateHighscore() {
+//        var newHighscore = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
+//        highScore.string = "\(newHighscore)"
+//    }
+//    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+//        if keyPath == "highscore" {
+//            updateHighscore()
+//        }
+//    }
 //    func didLoadFromCCB() {
 //        restartButton.cascadeOpacityEnabled = true
 //        restartButton.runAction(CCActionFadeIn(duration: 0.3))

@@ -41,12 +41,15 @@ class Gameplay: CCNode {
     var trackerUfoAlien = 0
     var spawnControlTimeBird = 180
     var spawnControlTime = 400
+    var addToRandUfo : Float = 1500
     var tooLarge = false
     var tooLargeOther = false
     var wayTooLarge = false
     var wayTooLargeOther = false
     var xVel: CGFloat = 0
-
+    var jumps = 0
+    
+ 
     func didLoadFromCCB(){
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
@@ -72,8 +75,8 @@ class Gameplay: CCNode {
         }
         checkOffScreen()
         if startedJumping {
-            contentNode.position = ccpAdd(contentNode.position, ccp(0, -6))//6
-            addToY += 6
+            contentNode.position = ccpAdd(contentNode.position, ccp(0, -6.25))//6
+            addToY += 6.25
             score += 16
 
         }
@@ -82,13 +85,22 @@ class Gameplay: CCNode {
             trackerAsteroid++
             trackerBird++
             trackerUfoAlien++
+            spawnRandomStuff()
         }
         checkWallsOffScreen()
-        spawnBirds()
-        spawnAsteroids()
-        spawnAliens()
-        spawnUfoAliens()
+//        spawnBirds()
+//        spawnAsteroids()
+//        spawnAliens()
+//        spawnUfoAliens()
         
+    }
+    func spawnRandomStuff(){
+        if hero.position.y > 1000 {
+            var jumpNum = Int(CCRANDOM_0_1() * 2 + 2)
+            if jumps == jumpNum {
+                
+            }
+        }
     }
     func spawnBirds(){
         var addToTime = CCRANDOM_0_1() * 200 - 50
@@ -113,7 +125,6 @@ class Gameplay: CCNode {
             gamePhysicsNode.addChild(asteroid)
             stuff.append(asteroid)
             asteroid.position = CGPoint(x: CGFloat(randX), y: hero.position.y + CGFloat(randY))
-            //            println(asteroid.position)
             checkAliensandObstaclesOffScreen()
             spawnControlTime--
             trackerAsteroid = 0
@@ -123,7 +134,7 @@ class Gameplay: CCNode {
         }
     }
     func spawnAliens(){
-        var addToTime = CCRANDOM_0_1() * 50 + 80
+        var addToTime = CCRANDOM_0_1() * 50 + 140
         if trackerAlien > spawnControlTime + Int(addToTime) {
             var randX = CCRANDOM_0_1() * 270 + 10
             var randY = CCRANDOM_0_1() * 150 + 700
@@ -131,22 +142,22 @@ class Gameplay: CCNode {
             gamePhysicsNode.addChild(alien)
             stuff.append(alien)
             alien.position = CGPoint(x: CGFloat(randX), y: hero.position.y + CGFloat(randY))
-            
             trackerAlien = 0
         }
         
         
     }
     func spawnUfoAliens(){
-        var addToTime = CCRANDOM_0_1() * 400 + 500
+        var addToTime = CCRANDOM_0_1() * Float(400) + addToRandUfo
         if trackerUfoAlien > spawnControlTime + Int(addToTime) {
             var randX = CCRANDOM_0_1() * 210 + 10
-            var randY = CCRANDOM_0_1() * 150 + 700
+//            var randY = CCRANDOM_0_1() * 150 + 700
             var ufoalien = CCBReader.load("UfoAlien") as! UfoAlien
             gamePhysicsNode.addChild(ufoalien)
             stuff.append(ufoalien)
             ufoalien.position = CGPoint(x: CGFloat(randX), y: hero.position.y + CGFloat(375))
             trackerUfoAlien = 0
+            addToRandUfo -= 50
         }
     }
 
@@ -187,18 +198,20 @@ class Gameplay: CCNode {
         var heroScreenPosition = convertToNodeSpace(heroWorldPosition)
         if heroScreenPosition.x < (-hero.boundingBox().width / 2) {
             hero.position = ccp( self.boundingBox().width + hero.boundingBox().width / 2, hero.position.y)
-            hero.physicsBody.velocity.x -= 25
+            hero.physicsBody.velocity.x -= 40
+            hero.physicsBody.velocity.y += 40
         }
         else if heroScreenPosition.x - hero.boundingBox().width / 2 > (self.boundingBox().width ) {
             hero.position = ccp(-hero.boundingBox().width / 2, hero.position.y)
-            hero.physicsBody.velocity.x += 25
+            hero.physicsBody.velocity.x += 40
+            hero.physicsBody.velocity.y += 40
 
         }
 //        while heroScreenPosition.x - hero.boundingBox().width / 2 <= 0 {
 //            heroScreenPosition = ccpAdd(heroScreenPosition, ccp(5, 0))
 //            println(heroScreenPosition)
 //        }
-        if heroScreenPosition.y < -20 {
+        if heroScreenPosition.y < -hero.boundingBox().height / 2 {
             triggerGameOver()
         }
     }
@@ -217,46 +230,10 @@ class Gameplay: CCNode {
         hero.jumpUpAnimation()
         hero.physicsBody.angularVelocity = 1
         var yVel = hero.physicsBody.velocity.y * 2.5
-//        var xVel = hero.physicsBody.velocity.x
-//        println(yVel)
-//        if yVel < -900 {
-//            yVel = CGFloat(clampf(Float(yVel), Float(yVel  * 0.9), Float(yVel * 0.8)))
-//            println(yVel)
-//
-//        }
-//         if yVel < -1000 {
-//            yVel = CGFloat(clampf(Float(yVel), Float(yVel  * 0.85), Float(yVel * 0.8)))
-//            println(yVel)
-//
-//        }
-//        else if yVel < -1300 {
-//            yVel = CGFloat(clampf(Float(yVel), Float(yVel  * 0.6), Float(yVel * 0.5)))
-//            println(yVel)
-//            
-//        }
         var constantY: CGFloat = -1000
-//        if tooLarge {
-//            xVel = 350
-//            constantY = -950
-//            tooLarge = false
-//        }
-//        else if tooLargeOther {
-//            xVel = -350
-//            constantY = -950
-//            wayTooLarge = false
-//        }
-//        else if wayTooLarge {
-//            xVel = 700
-//            constantY = -775
-//            tooLarge = false
-//        }
-//        else if wayTooLargeOther {
-//            xVel = -700
-//            constantY = -770
-//            wayTooLarge = false
-//        }
         println(xVel)
         hero.physicsBody.velocity = ccp(xVel, constantY )
+        jumps++
         startedJumping = true
         firstJump = true
         return true
@@ -279,11 +256,27 @@ class Gameplay: CCNode {
         triggerGameOver()
         return true
     }
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, lightning: CCNode!) -> Bool {
+        gamePhysicsNode.removeChild(lightning)
+        return true
+    }
+//    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, bird: CCSprite!, drawline: CCNode!) -> Bool {
+//        
+//        gamePhysicsNode.removeChild(bird)
+//        stuff = stuff.filter() { $0 != bird }
+//        return true
+//    }
+
     func triggerGameOver() {
         gameOver = true
         var gameOverScreen = CCBReader.load("GameOver", owner: self) as! GameOver
         self.addChild(gameOverScreen)
         gameOverScreen.score = self.score
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        var highscore = defaults.integerForKey("highscore")
+//        if self.score > highscore {
+//            defaults.setInteger(self.score, forKey: "highscore")
+//        }
     }
     func restart() {
         var mainScene = CCBReader.load("Gameplay") as! Gameplay
@@ -320,43 +313,19 @@ class Gameplay: CCNode {
                 var radian: Float = acos(product)
                 var angle: Float = radian * 180 / Float(M_PI)
                 println(angle)
-//                if angle > 25 && endPoint!.y > startPoint!.y && endPoint!.x > startPoint!.x {
-//                    wayTooLarge = true
-//                }
-//                else if angle > 25 && endPoint!.y < startPoint!.y && endPoint!.x < startPoint!.x {
-//                    wayTooLarge = true
-//                }
-//                else if angle > 25 && endPoint!.y < startPoint!.y && endPoint!.x > startPoint!.x {
-//                    wayTooLargeOther = true
-//                }
-//                else if angle > 25 && endPoint!.y > startPoint!.y && endPoint!.x < startPoint!.x {
-//                    wayTooLargeOther = true
-//                }
-//                else if angle > 10 && endPoint!.y > startPoint!.y && endPoint!.x > startPoint!.x {
-//                    tooLarge = true
-//                }
-//                else if angle > 10 && endPoint!.y < startPoint!.y && endPoint!.x < startPoint!.x {
-//                    tooLarge = true
-//                }
-//                else if angle > 10 && endPoint!.y < startPoint!.y && endPoint!.x > startPoint!.x {
-//                    tooLargeOther = true
-//                }
-//                else if angle > 10 && endPoint!.y > startPoint!.y && endPoint!.x < startPoint!.x {
-//                    tooLargeOther = true
-//                }
-                            if endPoint!.y > startPoint!.y && endPoint!.x > startPoint!.x {
-                                    xVel = CGFloat(angle * 20)
-                                }
-                                else if endPoint!.y < startPoint!.y && endPoint!.x < startPoint!.x {
-                                xVel = CGFloat(angle * 20)
-                                }
-                                else if endPoint!.y < startPoint!.y && endPoint!.x > startPoint!.x {
-                                xVel = CGFloat(-angle * 20)
+                if endPoint!.y > startPoint!.y && endPoint!.x > startPoint!.x {
+                    xVel = CGFloat(angle * 22)
+                }
+                else if endPoint!.y < startPoint!.y && endPoint!.x < startPoint!.x {
+                    xVel = CGFloat(angle * 22)
+                }
+                else if endPoint!.y < startPoint!.y && endPoint!.x > startPoint!.x {
+                    xVel = CGFloat(-angle * 22)
 
-                                }
-                                else if endPoint!.y > startPoint!.y && endPoint!.x < startPoint!.x {
-                                xVel = CGFloat(-angle * 20)
-                                }
+                }
+                else if endPoint!.y > startPoint!.y && endPoint!.x < startPoint!.x {
+                    xVel = CGFloat(-angle * 22)
+                }
                 if(startPoint!.y < endPoint!.y && startPoint!.x < endPoint!.y){
                     angle = 360 - radian * 180 / Float(M_PI)
                 }

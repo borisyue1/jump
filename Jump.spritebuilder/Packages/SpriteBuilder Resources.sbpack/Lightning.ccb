@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,203 +41,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>2</integer>
-				<key>animatedProperties</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>spriteFrame</key>
-						<dict>
-							<key>keyframes</key>
-							<array>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.0</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroid.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.066666670143604279</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidone.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.13333334028720856</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidtwo.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.20000000298023224</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidthree.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.26666668057441711</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidfour.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.3333333432674408</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidfive.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.40000000596046448</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidsix.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.46666666865348816</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidseven.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.53333336114883423</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroideight.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-								<dict>
-									<key>easing</key>
-									<dict>
-										<key>type</key>
-										<integer>0</integer>
-									</dict>
-									<key>name</key>
-									<string>spriteFrame</string>
-									<key>time</key>
-									<real>0.60000002384185791</real>
-									<key>type</key>
-									<integer>7</integer>
-									<key>value</key>
-									<array>
-										<string>makeschoolpics/asteroidnine.png</string>
-										<string>Use regular file</string>
-									</array>
-								</dict>
-							</array>
-							<key>name</key>
-							<string>spriteFrame</string>
-							<key>type</key>
-							<integer>7</integer>
-						</dict>
-					</dict>
-				</dict>
+				<integer>1</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -245,7 +49,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>asteroid</string>
+				<string>lightning</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -292,18 +96,13 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.69999998807907104</real>
-							<real>0.69999998807907104</real>
+							<real>0.30000001192092896</real>
+							<real>0.30000001192092896</real>
 							<false/>
 							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
-						<key>baseValue</key>
-						<array>
-							<string>makeschoolpics/asteroid.png</string>
-							<string>Use regular file</string>
-						</array>
 						<key>name</key>
 						<string>spriteFrame</string>
 						<key>type</key>
@@ -311,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/asteroidnine.png</string>
+							<string>makeschoolpics/lightning.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -347,12 +146,10 @@
 						<array/>
 					</dict>
 				</array>
-				<key>seqExpanded</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Asteroid</string>
+		<string>Lightning</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -372,17 +169,17 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string></string>
+			<string>lightning</string>
 			<key>cornerRadius</key>
-			<real>22.17578125</real>
+			<real>17.6953125</real>
 			<key>density</key>
-			<real>27</real>
+			<real>0.0</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
-			<real>0.20000000298023224</real>
+			<real>0.0</real>
 			<key>friction</key>
-			<real>0.30000001192092896</real>
+			<real>0.0</real>
 			<key>points</key>
 			<array>
 				<array>
@@ -504,15 +301,15 @@
 				<integer>12</integer>
 			</dict>
 			<key>chainedSequenceId</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>length</key>
-			<real>0.66666668653488159</real>
+			<real>10</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.26666668057441711</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

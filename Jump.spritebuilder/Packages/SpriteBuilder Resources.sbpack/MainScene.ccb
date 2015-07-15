@@ -71,11 +71,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>132.21511840820312</real>
-							<real>341.70706176757812</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
