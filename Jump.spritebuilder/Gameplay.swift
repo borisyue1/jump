@@ -75,12 +75,13 @@ class Gameplay: CCNode {
                 checkTimeForLines()
             }
             checkOffScreen()
+//            println(hero.physicsBody.velocity.y)
             if startedJumping {
                 var scrollRate = jumpPos!.y * 0.0063 + 6.5
                 contentNode.position = ccpAdd(contentNode.position, ccp(0, -scrollRate))
                 addToY += scrollRate
                 score += 16
-                if hero.position.y > CGFloat(randThresh) && jumped {
+                if hero.position.y > CGFloat(randThresh) && hero.physicsBody.velocity.y < 120 && hero.physicsBody.velocity.y > 110 {
                     spawnRandomStuff()
                     if hero.position.y > CGFloat(randThresh) + 800 {
                         spawnPowerUps()
@@ -124,12 +125,12 @@ class Gameplay: CCNode {
             if prob < 0.35 {
                 var lightning = CCBReader.load("Lightning") as! Lightning
                 gamePhysicsNode.addChild(lightning)
-                lightning.position = ccp(CGFloat(randX), hero.position.y + CGFloat(900))
+                lightning.position = ccp(CGFloat(randX), hero.position.y + CGFloat(320))
             }
             else {
                 var shield = CCBReader.load("Shield") as! Shield
                 gamePhysicsNode.addChild(shield)
-                shield.position = ccp(CGFloat(randX), hero.position.y + CGFloat(900))
+                shield.position = ccp(CGFloat(randX), hero.position.y + CGFloat(320))
             }
             canSpawn -= 0.08
             if canSpawn <= 0.08 {
@@ -147,31 +148,32 @@ class Gameplay: CCNode {
                 var asteroid = CCBReader.load("Asteroid") as! Asteroid
                 gamePhysicsNode.addChild(asteroid)
                 stuff.append(asteroid)
-                asteroid.position = ccp(CGFloat(randX), hero.position.y + CGFloat(900))
+                asteroid.position = ccp(CGFloat(randX), hero.position.y + CGFloat(1000))
             }
             else if rand > asteroidProb  &&  rand < birdProb {
                 var bird = CCBReader.load("Bird") as! Bird
                 gamePhysicsNode.addChild(bird)
                 stuff.append(bird)
-                bird.position = ccp(CGFloat(randX), hero.position.y + CGFloat(900))
+                bird.position = ccp(CGFloat(randX), hero.position.y + CGFloat(320))
                 
             }
             else if rand > birdProb  &&  rand < alienProb {
                 var alien = CCBReader.load("MonsterAlien") as! MonsterAlien
                 gamePhysicsNode.addChild(alien)
                 stuff.append(alien)
-                alien.position = ccp(CGFloat(randX), hero.position.y + CGFloat(900))
+                alien.position = ccp(CGFloat(randX), hero.position.y + CGFloat(320))
             }
             else if rand > alienProb  &&  rand < ufoProb {
+                println("ufo spawned")
                 var randUfoX = CCRANDOM_0_1() * 180 + 30
                 var ufo = CCBReader.load("UfoAlien") as! UfoAlien
                 gamePhysicsNode.addChild(ufo)
                 stuff.append(ufo)
-                ufo.position = ccp(CGFloat(randUfoX), hero.position.y + CGFloat(900))
+                ufo.position = ccp(CGFloat(randUfoX), hero.position.y + CGFloat(320))
             }
             asteroidProb += 0.04
             birdProb -= 0.1
-            alienProb += 0.15
+            alienProb += 0.18
             ufoProb += 0.08
             if asteroidProb > 0.4 {
                 asteroidProb = 0.4
@@ -187,7 +189,7 @@ class Gameplay: CCNode {
             var a = stuff[s]
             let alienWorldPosition = gamePhysicsNode.convertToWorldSpace(a.position)
             let alienScreenPosition = convertToNodeSpace(alienWorldPosition)
-            if alienScreenPosition.y < 0 || alienScreenPosition.x > 350{
+            if alienScreenPosition.y < 0 {
                 stuff.removeAtIndex(s)
                 gamePhysicsNode.removeChild(a)
             }
@@ -217,40 +219,36 @@ class Gameplay: CCNode {
     func checkOffScreen() {
         var heroWorldPosition = gamePhysicsNode.convertToWorldSpace(hero.position)
         var heroScreenPosition = convertToNodeSpace(heroWorldPosition)
-        if heroScreenPosition.x < (-hero.boundingBox().width / 2) {
-            hero.position = ccp( self.boundingBox().width + hero.boundingBox().width / 2, hero.position.y)
-            hero.physicsBody.velocity.x -= 100
-            hero.physicsBody.velocity.y += 100
-            jump!.jumps++
-            if jump!.jumps == 2{
-                hero.physicsBody.velocity.x += 250
-                hero.physicsBody.velocity.y -= 175
-            }
-            if jump!.jumps >= 3 {
-                hero.physicsBody.velocity.x += 350
-            }
-        }
-        else if heroScreenPosition.x - hero.boundingBox().width / 2 > (self.boundingBox().width ) {
-            hero.position = ccp(-hero.boundingBox().width / 2, hero.position.y)
-            hero.physicsBody.velocity.x += 250
-            hero.physicsBody.velocity.y += 100
-            jump!.jumps++
-            if jump!.jumps >= 2 {
-                hero.physicsBody.velocity.x -= 200
-                hero.physicsBody.velocity.y -= 175
-            }
-            if jump!.jumps >= 3 {
-                hero.physicsBody.velocity.x -= 350
-            }
-        }
-//        if heroScreenPosition.x - hero.boundingBox().width / 2 + 5 <= 0 {
-//            hero.physicsBody.velocity.x = 250
-//            hero.physicsBody.velocity.y = 50
+//        if heroScreenPosition.x < (-hero.boundingBox().width / 2) {
+//            hero.position = ccp( self.boundingBox().width + hero.boundingBox().width / 2, hero.position.y)
+//            hero.physicsBody.velocity.x -= 100
+//            hero.physicsBody.velocity.y += 100
+//            jump!.jumps++
+//            if jump!.jumps >= 2{
+//                hero.physicsBody.velocity.x += 350
+//                hero.physicsBody.velocity.y -= 175
+//            }
+//
 //        }
-//        else if heroScreenPosition.x + hero.boundingBox().width / 2  - 5 >= self.boundingBox().width {
-//            hero.physicsBody.velocity.x = -250
-//            hero.physicsBody.velocity.y = 50
+//        else if heroScreenPosition.x - hero.boundingBox().width / 2 > (self.boundingBox().width ) {
+//            hero.position = ccp(-hero.boundingBox().width / 2, hero.position.y)
+//            hero.physicsBody.velocity.x += 100
+//            hero.physicsBody.velocity.y += 100
+//            jump!.jumps++
+//            if jump!.jumps >= 2{
+//                hero.physicsBody.velocity.x -= 350
+//                hero.physicsBody.velocity.y -= 175
+//            }
+//
 //        }
+        if heroScreenPosition.x - hero.boundingBox().width / 2 + 5 <= 0 {
+            hero.physicsBody.velocity.x = 200
+//            hero.physicsBody.velocity.y = 50
+        }
+        else if heroScreenPosition.x + hero.boundingBox().width / 2  - 5 >= self.boundingBox().width {
+            hero.physicsBody.velocity.x = -200
+//            hero.physicsBody.velocity.y = 50
+        }
         if heroScreenPosition.y < -hero.boundingBox().height / 2 {
             triggerGameOver()
         }
@@ -265,6 +263,9 @@ class Gameplay: CCNode {
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: CCNode!) -> Bool {
         var worldPos = gamePhysicsNode.convertToWorldSpace(monster.position)
         var screenPos = convertToNodeSpace(worldPos)
+        if hero.position.y - hero.boundingBox().width / 2 == endPoint?.y {
+            println("adfdsf")
+        }
         if gameOver || hero.physicsBody.velocity.y > 0 {
             hero.physicsBody.velocity.y = 10
             return false
@@ -392,7 +393,8 @@ class Gameplay: CCNode {
     }
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         if !firstJump {
-            if touch.locationInWorld().x < CGFloat(50) || touch.locationInWorld().x > CGFloat(250) || touch.locationInWorld().y < CGFloat(60) || touch.locationInWorld().y > CGFloat(200) || touch.locationInWorld().y > hero.position.y {
+//            if touch.locationInWorld().x < CGFloat(50) || touch.locationInWorld().x > CGFloat(250) || touch.locationInWorld().y < CGFloat(60) || touch.locationInWorld().y > CGFloat(200) || touch.locationInWorld().y > hero.position.y {
+            if touch.locationInWorld().y < 50 {
                 cantDraw = true
                 return
             }
@@ -415,7 +417,7 @@ class Gameplay: CCNode {
         yVel = -1000
         if(touchMoved){
             endPoint = ccpAdd(touch.locationInWorld(), ccp(0, addToY))
-//            if endPoint!.x > 300 || endPoint!.x < 20 && cantDraw {
+//            if !firstJump && (endPoint!.x > 300 || endPoint!.x < 20 || endPoint!.y > hero.position.y)  {
 //                return
 //            }
             var distanceOne = hypotf(Float(startPoint!.x - endPoint!.x), Float(startPoint!.y - endPoint!.y))
