@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>1</integer>
+	<integer>5</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -289,7 +289,7 @@
 			<key>collisionType</key>
 			<string>monster</string>
 			<key>cornerRadius</key>
-			<real>169.15234375</real>
+			<real>161.5390625</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
@@ -301,8 +301,8 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>177.73046875</real>
-					<real>166.11328125</real>
+					<real>180.84375</real>
+					<real>171.96484375</real>
 				</array>
 			</array>
 			<key>polygons</key>
@@ -500,7 +500,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

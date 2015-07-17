@@ -46,6 +46,70 @@
 				<dict>
 					<key>0</key>
 					<dict>
+						<key>position</key>
+						<dict>
+							<key>keyframes</key>
+							<array>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
+									<real>0.0</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>0.0</real>
+										<real>0.0</real>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
+									<real>0.066666670143604279</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>0.0</real>
+										<real>-3</real>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
+									<real>0.13333334028720856</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>0.0</real>
+										<real>0.0</real>
+									</array>
+								</dict>
+							</array>
+							<key>name</key>
+							<string>position</string>
+							<key>type</key>
+							<integer>3</integer>
+						</dict>
 						<key>spriteFrame</key>
 						<dict>
 							<key>keyframes</key>
@@ -169,12 +233,12 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>27.557294845581055</real>
-							<real>54.875003814697266</real>
+							<real>39.875003814697266</real>
+							<real>69.744796752929688</real>
 						</array>
 						<array>
-							<real>27.557294845581055</real>
-							<real>255.23957824707031</real>
+							<real>10.578129768371582</real>
+							<real>188.9375</real>
 						</array>
 						<array>
 							<real>236.046875</real>
@@ -185,16 +249,16 @@
 							<real>221.59375</real>
 						</array>
 						<array>
-							<real>365.65625</real>
-							<real>49.953128814697266</real>
+							<real>354.19790649414062</real>
+							<real>52.661460876464844</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>365.65625</real>
-								<real>49.953128814697266</real>
+								<real>354.19790649414062</real>
+								<real>52.661460876464844</real>
 							</array>
 							<array>
 								<real>356.38540649414062</real>
@@ -205,12 +269,12 @@
 								<real>287.140625</real>
 							</array>
 							<array>
-								<real>27.557294845581055</real>
-								<real>255.23957824707031</real>
+								<real>10.578129768371582</real>
+								<real>188.9375</real>
 							</array>
 							<array>
-								<real>27.557294845581055</real>
-								<real>54.875003814697266</real>
+								<real>39.875003814697266</real>
+								<real>69.744796752929688</real>
 							</array>
 						</array>
 					</array>
@@ -226,6 +290,11 @@
 						<string></string>
 					</dict>
 					<dict>
+						<key>baseValue</key>
+						<array>
+							<real>0.0</real>
+							<real>0.0</real>
+						</array>
 						<key>name</key>
 						<string>position</string>
 						<key>type</key>
@@ -233,7 +302,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>-1.5</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -312,6 +381,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -441,7 +512,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.066666670143604279</real>
+			<real>0.033333335071802139</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

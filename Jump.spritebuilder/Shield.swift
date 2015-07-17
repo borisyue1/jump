@@ -10,4 +10,7 @@ import UIKit
 
 class Shield: CCNode {
    
+    func didLoadFromCCB() {
+        self.physicsBody.sensor = true
+    }
 }

@@ -9,5 +9,8 @@
 import UIKit
 
 class Lightning: CCNode {
-   
+ 
+    func didLoadFromCCB() {
+        self.physicsBody.sensor = true
+    }
 }

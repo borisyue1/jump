@@ -10,7 +10,6 @@ import UIKit
 
 class MonsterAlien: CCNode {
    
-    weak var monsteralien: CCNode!
     
 //    override func update(delta: CCTime) {
 //        if monsteralien.position.x > 200 {

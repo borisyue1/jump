@@ -19,14 +19,19 @@ class GameOver: CCNode {
     }
     weak var restartButton : CCButton!
     
-//    func didLoadFromCCB(){
-//        NSUserDefaults.standardUserDefaults().addObserver(self, forKeyPath: "highscore", options: .allZeros, context: nil)
-//        updateHighscore()
-//    }
-//    func updateHighscore() {
-//        var newHighscore = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
-//        highScore.string = "\(newHighscore)"
-//    }
+    func didLoadFromCCB(){
+        //NSUserDefaults.standardUserDefaults().addObserver(self, forKeyPath: "highscore", options: .allZeros, context: nil)
+        updateHighscore()
+    }
+    func updateHighscore() {
+        var newHighscore = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
+        highScore.string = "\(newHighscore)"
+    }
+    override func update(delta: CCTime) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var currentHighscore = defaults.integerForKey("highscore")
+        highScore.string = "\(currentHighscore)"
+    }
 //    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
 //        if keyPath == "highscore" {
 //            updateHighscore()
