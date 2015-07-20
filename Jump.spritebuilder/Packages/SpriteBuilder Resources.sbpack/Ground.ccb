@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -218,7 +218,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -326,7 +326,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -434,7 +434,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -542,7 +542,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -650,7 +650,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -758,7 +758,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -866,7 +866,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/Platform Tiles 2/grass_96x96.png</string>
+							<string>makeschoolpics/grass_96x96.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -902,6 +902,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -1039,8 +1041,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

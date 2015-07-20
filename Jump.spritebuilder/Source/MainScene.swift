@@ -3,8 +3,8 @@ import Foundation
 class MainScene: CCNode {
 
     func play() {
-        let gameplayScene = CCBReader.loadAsScene("Gameplay")
-        CCDirector.sharedDirector().presentScene(gameplayScene)
+        let mode = CCBReader.load("Mode") as! Mode
+        self.addChild(mode)
     }
 
     

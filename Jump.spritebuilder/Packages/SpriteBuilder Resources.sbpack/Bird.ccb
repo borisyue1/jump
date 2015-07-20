@@ -128,7 +128,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/birdone.png</string>
+										<string>enemies/birdone.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -146,7 +146,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/birdtwo.png</string>
+										<string>enemies/birdtwo.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -164,7 +164,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/birdthree.png</string>
+										<string>enemies/birdthree.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -182,7 +182,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/birdfour.png</string>
+										<string>enemies/birdfour.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -302,7 +302,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-1.5</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -326,8 +326,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.15000000596046448</real>
-							<real>0.15000000596046448</real>
+							<real>0.14000000059604645</real>
+							<real>0.14000000059604645</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -345,7 +345,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/birdfour.png</string>
+							<string>enemies/birdfour.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -512,7 +512,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.033333335071802139</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

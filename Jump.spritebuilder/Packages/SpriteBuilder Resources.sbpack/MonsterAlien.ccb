@@ -132,7 +132,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien1.png</string>
+										<string>enemies/monsteralien1.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -150,7 +150,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien2.png</string>
+										<string>enemies/monsteralien2.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -168,7 +168,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien3.png</string>
+										<string>enemies/monsteralien3.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -186,7 +186,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien4.png</string>
+										<string>enemies/monsteralien4.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -204,7 +204,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien5.png</string>
+										<string>enemies/monsteralien5.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -222,7 +222,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien6.png</string>
+										<string>enemies/monsteralien6.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -240,7 +240,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien7.png</string>
+										<string>enemies/monsteralien7.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -258,7 +258,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>makeschoolpics/monsteralien8.png</string>
+										<string>enemies/monsteralien8.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -338,7 +338,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>3.2653064727783203</real>
+							<real>8.377223014831543</real>
 							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -382,7 +382,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/monsteralien8.png</string>
+							<string>enemies/monsteralien8.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -418,8 +418,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -549,7 +547,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.066666670143604279</real>
+			<real>0.40000000596046448</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

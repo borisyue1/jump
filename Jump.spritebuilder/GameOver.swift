@@ -17,10 +17,8 @@ class GameOver: CCNode {
            scoreLabel.string = "\(score)"
         }
     }
-    weak var restartButton : CCButton!
     
     func didLoadFromCCB(){
-        //NSUserDefaults.standardUserDefaults().addObserver(self, forKeyPath: "highscore", options: .allZeros, context: nil)
         updateHighscore()
     }
     func updateHighscore() {
@@ -32,11 +30,7 @@ class GameOver: CCNode {
         var currentHighscore = defaults.integerForKey("highscore")
         highScore.string = "\(currentHighscore)"
     }
-//    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-//        if keyPath == "highscore" {
-//            updateHighscore()
-//        }
-//    }
+
 //    func didLoadFromCCB() {
 //        restartButton.cascadeOpacityEnabled = true
 //        restartButton.runAction(CCActionFadeIn(duration: 0.3))

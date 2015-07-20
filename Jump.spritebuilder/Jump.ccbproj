@@ -162,6 +162,13 @@
 			<key>tabletScale</key>
 			<integer>1</integer>
 		</dict>
+		<key>enemies</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>makeschoolpics</key>
+		<dict/>
 	</dict>
 	<key>versionStr</key>
 	<string>revision : eea568a5c7
