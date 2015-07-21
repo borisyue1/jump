@@ -206,79 +206,6 @@
 				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
-				<key>physicsBody</key>
-				<dict>
-					<key>affectedByGravity</key>
-					<true/>
-					<key>allowsRotation</key>
-					<true/>
-					<key>bodyShape</key>
-					<integer>0</integer>
-					<key>collisionCategories</key>
-					<array/>
-					<key>collisionMask</key>
-					<array/>
-					<key>collisionType</key>
-					<string>bird</string>
-					<key>cornerRadius</key>
-					<real>0.0</real>
-					<key>density</key>
-					<real>1</real>
-					<key>dynamic</key>
-					<false/>
-					<key>elasticity</key>
-					<real>0.30000001192092896</real>
-					<key>friction</key>
-					<real>0.30000001192092896</real>
-					<key>points</key>
-					<array>
-						<array>
-							<real>39.875003814697266</real>
-							<real>69.744796752929688</real>
-						</array>
-						<array>
-							<real>10.578129768371582</real>
-							<real>188.9375</real>
-						</array>
-						<array>
-							<real>236.046875</real>
-							<real>287.140625</real>
-						</array>
-						<array>
-							<real>356.38540649414062</real>
-							<real>221.59375</real>
-						</array>
-						<array>
-							<real>354.19790649414062</real>
-							<real>52.661460876464844</real>
-						</array>
-					</array>
-					<key>polygons</key>
-					<array>
-						<array>
-							<array>
-								<real>354.19790649414062</real>
-								<real>52.661460876464844</real>
-							</array>
-							<array>
-								<real>356.38540649414062</real>
-								<real>221.59375</real>
-							</array>
-							<array>
-								<real>236.046875</real>
-								<real>287.140625</real>
-							</array>
-							<array>
-								<real>10.578129768371582</real>
-								<real>188.9375</real>
-							</array>
-							<array>
-								<real>39.875003814697266</real>
-								<real>69.744796752929688</real>
-							</array>
-						</array>
-					</array>
-				</dict>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -302,7 +229,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-1.5000002384185791</real>
+							<real>0.0</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -335,7 +262,7 @@
 					<dict>
 						<key>baseValue</key>
 						<array>
-							<string>makeschoolpics/birdone.png</string>
+							<string>enemies/birdone.png</string>
 							<string>Use regular file</string>
 						</array>
 						<key>name</key>
@@ -374,6 +301,17 @@
 					</dict>
 					<dict>
 						<key>name</key>
+						<string>flip</string>
+						<key>type</key>
+						<string>Flip</string>
+						<key>value</key>
+						<array>
+							<true/>
+							<false/>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>effects</string>
 						<key>type</key>
 						<string>EffectControl</string>
@@ -388,7 +326,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Bird</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -439,8 +377,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.5</real>
-					<real>0.5</real>
+					<real>0.0</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 			<dict>
@@ -512,7 +450,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.10000000149011612</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

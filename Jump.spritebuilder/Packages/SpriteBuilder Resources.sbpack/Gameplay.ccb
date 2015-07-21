@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>99</integer>
+	<integer>101</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -80,8 +80,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>48</real>
+									<real>0.50039994716644287</real>
+									<real>329.20001220703125</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>0</integer>
@@ -142,10 +142,10 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>610.4000244140625</real>
+									<real>0.50039994716644287</real>
+									<real>891.60003662109375</real>
 									<integer>0</integer>
-									<integer>0</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -171,6 +171,8 @@
 								<string>Background.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -820,8 +822,6 @@
 								<array/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1618,11 +1618,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>160.12799072265625</real>
-									<real>36</real>
+									<real>0.50039994716644287</real>
+									<real>0.063380278646945953</real>
 									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
+									<integer>2</integer>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1666,7 +1666,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>ccbResources/GoodDog.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -1675,7 +1675,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>22</real>
+									<real>35</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1696,7 +1696,7 @@
 								<array>
 									<real>0.0</real>
 									<real>0.0</real>
-									<real>1</real>
+									<real>0.0</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -1910,11 +1910,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>10.272228240966797</real>
+							<real>0.0099999997764825821</real>
 							<real>0.0</real>
 							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -1967,7 +1967,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
+							<real>35</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1986,8 +1986,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>36</real>
-							<real>64</real>
+							<real>60</real>
+							<real>40</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1998,7 +1998,7 @@
 						<key>type</key>
 						<string>IntegerLabeled</string>
 						<key>value</key>
-						<integer>1</integer>
+						<integer>0</integer>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2087,7 +2087,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>84</integer>
+				<integer>100</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -2095,7 +2095,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>restart</string>
+				<string>pause</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -2117,11 +2117,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>277.29470825195312</real>
-							<real>545.1907958984375</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<real>0.019999999552965164</real>
+							<real>0.004999999888241291</real>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -2131,8 +2131,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>1</real>
+							<real>1</real>
 						</array>
 					</dict>
 					<dict>
@@ -2142,8 +2142,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.0260162353515625</real>
-							<real>1.0326330661773682</real>
+							<real>1</real>
+							<real>0.89999997615814209</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -2155,7 +2155,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>restartDuringPlay</string>
+							<string>pausey</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -2166,8 +2166,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
-							<real>40</real>
+							<real>38</real>
+							<real>38</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -2200,7 +2200,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Restart</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -2212,20 +2212,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>labelColor|Normal</string>
-						<key>type</key>
-						<string>Color3</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>0.0</real>
-							<real>1</real>
+							<string>makeschoolpics/pause.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2236,7 +2223,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string>makeschoolpics/pause.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2380,7 +2367,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>8</real>
+							<real>1</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -2727,7 +2714,7 @@
 		</dict>
 	</array>
 	<key>stageBorder</key>
-	<integer>3</integer>
+	<integer>1</integer>
 	<key>stageColor</key>
 	<integer>0</integer>
 </dict>

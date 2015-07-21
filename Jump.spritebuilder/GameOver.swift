@@ -22,13 +22,27 @@ class GameOver: CCNode {
         updateHighscore()
     }
     func updateHighscore() {
-        var newHighscore = NSUserDefaults.standardUserDefaults().integerForKey("highscore")
-        highScore.string = "\(newHighscore)"
+        if Gameplay.boundary {
+            var newHighscore = NSUserDefaults.standardUserDefaults().integerForKey("highscoreeasy")
+            highScore.string = "\(newHighscore)"
+        }
+        else {
+            var newHighscore = NSUserDefaults.standardUserDefaults().integerForKey("highscorehard")
+            highScore.string = "\(newHighscore)"
+        
+        }
     }
     override func update(delta: CCTime) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        var currentHighscore = defaults.integerForKey("highscore")
-        highScore.string = "\(currentHighscore)"
+        if Gameplay.boundary {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var currentHighscore = defaults.integerForKey("highscoreeasy")
+            highScore.string = "\(currentHighscore)"
+        }
+        else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var currentHighscore = defaults.integerForKey("highscorehard")
+            highScore.string = "\(currentHighscore)"
+        }
     }
 
 //    func didLoadFromCCB() {

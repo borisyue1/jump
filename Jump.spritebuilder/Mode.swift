@@ -16,6 +16,7 @@ class Mode: CCNode {
         CCDirector.sharedDirector().presentScene(gameplayScene)
     }
     func noboundary() {
+        Gameplay.boundary = false
         let gameplayScene = CCBReader.loadAsScene("Gameplay")
         CCDirector.sharedDirector().presentScene(gameplayScene)
     }

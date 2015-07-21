@@ -133,7 +133,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.72475647926330566</real>
+									<real>0.76348888874053955</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -170,7 +170,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Game Over</string>
+									<string>Game Over!</string>
 									<false/>
 								</array>
 							</dict>
@@ -180,7 +180,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>ccbResources/GoodDog.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -189,7 +189,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>50</real>
+									<real>75</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -251,9 +251,9 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>0.0</real>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
 								</array>
 							</dict>
 							<dict>
@@ -263,7 +263,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
+									<real>0.40000000596046448</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -388,7 +388,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>ccbResources/GoodDog.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -397,7 +397,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>30</real>
+									<real>40</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -596,7 +596,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>ccbResources/GoodDog.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -605,7 +605,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>50</real>
+									<real>70</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -804,7 +804,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>ccbResources/GoodDog.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -813,7 +813,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>30</real>
+									<real>40</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1012,7 +1012,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>ccbResources/GoodDog.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -1021,7 +1021,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>50</real>
+									<real>70</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1178,7 +1178,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>40</real>
+											<real>50</real>
 											<real>20</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1227,7 +1227,7 @@
 										<string>Size</string>
 										<key>value</key>
 										<array>
-											<real>40</real>
+											<real>100</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1273,7 +1273,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>ccbResources/ccbButtonNormal.png</string>
+											<string>makeschoolpics/buttons1.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1284,7 +1284,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>ccbResources/ccbButtonHighlighted.png</string>
+											<string>makeschoolpics/button2.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1344,7 +1344,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>Helvetica</string>
+										<string>ccbResources/GoodDog.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1353,7 +1353,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>17</real>
+											<real>20</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1504,7 +1504,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>135</real>
+											<real>158</real>
 											<real>20</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1553,7 +1553,7 @@
 										<string>Size</string>
 										<key>value</key>
 										<array>
-											<real>40</real>
+											<real>100</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1599,7 +1599,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>ccbResources/ccbButtonNormal.png</string>
+											<string>makeschoolpics/buttons1.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1610,7 +1610,7 @@
 										<key>value</key>
 										<array>
 											<string></string>
-											<string>ccbResources/ccbButtonHighlighted.png</string>
+											<string>makeschoolpics/button2.png</string>
 										</array>
 									</dict>
 									<dict>
@@ -1670,7 +1670,7 @@
 										<key>type</key>
 										<string>FontTTF</string>
 										<key>value</key>
-										<string>Helvetica</string>
+										<string>ccbResources/GoodDog.ttf</string>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1679,7 +1679,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>17</real>
+											<real>20</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1870,11 +1870,13 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
+									<real>8</real>
 									<integer>0</integer>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>

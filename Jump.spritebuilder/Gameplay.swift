@@ -54,7 +54,9 @@ class Gameplay: CCNode {
     var skyOff = 0
     static var boundary = false
     var crashed = false
-
+    var pause: CCNode!
+    var pausedOnce = false
+    
     func didLoadFromCCB(){
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
@@ -183,7 +185,7 @@ class Gameplay: CCNode {
             }
             asteroidProb += 0.04
             birdProb -= 0.1//0.1
-            alienProb += 0.2
+            alienProb += 0.2//.2
             ufoProb += 0.08//.08
             if asteroidProb > 0.4 {
                 asteroidProb = 0.4
@@ -235,12 +237,12 @@ class Gameplay: CCNode {
     }
     func checkTimeForLines() {
         for var s = linesList.count - 1; s>=0; --s {
-            linesList[s].increaseTime(1)
-            if linesList[s].getTime() > 40 {
-//                var transition = CCActionFadeOut(duration: CCTime(10))
-//                linesList[s].runAction(transition)
-                gamePhysicsNode.removeChild(linesList[s])
-                linesList.removeAtIndex(s)
+            if linesList[s].didJump() {
+                linesList[s].increaseTime(1)
+                if linesList[s].getTime() > 15 {
+                    gamePhysicsNode.removeChild(linesList[s])
+                    linesList.removeAtIndex(s)
+                }
             }
         }
     }
@@ -279,7 +281,8 @@ class Gameplay: CCNode {
                 hero.physicsBody.velocity.x = -200
             }
         }
-        if heroScreenPosition.y < -hero.boundingBox().height / 2 {
+        if heroScreenPosition.y < 5 {
+            crashed = true
             triggerGameOver()
         }
     }
@@ -296,13 +299,14 @@ class Gameplay: CCNode {
         hero.jumpUpAnimation()
         return true
     }
-    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: CCNode!) -> ObjCBool {
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: Line!) -> ObjCBool {
         var worldPos = gamePhysicsNode.convertToWorldSpace(monster.position)
         var screenPos = convertToNodeSpace(worldPos)
 //        if hero.position.y - hero.boundingBox().width / 2 == endPoint?.y {
 //            println("adfdsf")
 //        }
-        if hero.physicsBody.velocity.y > 0{
+        drawline.setJump(true)
+        if hero.physicsBody.velocity.y >= 0{
             return true
         }
         jump = Jump()
@@ -327,7 +331,7 @@ class Gameplay: CCNode {
         }
         crashed = true
         shake()
-        hero.physicsBody.applyImpulse(ccp(0,-1500))
+        hero.physicsBody.velocity.y = -750
         hero.physicsBody.angularVelocity = 10
 //        triggerGameOver()
         return true
@@ -353,7 +357,7 @@ class Gameplay: CCNode {
         }
         crashed = true
         shake()
-        hero.physicsBody.applyImpulse(ccp(0,-1500))
+        hero.physicsBody.velocity.y = -750
         hero.physicsBody.angularVelocity = 10
         triggerGameOver()
         return true
@@ -370,7 +374,7 @@ class Gameplay: CCNode {
         }
         crashed = true
         shake()
-        hero.physicsBody.applyImpulse(ccp(0,-1500))
+        hero.physicsBody.velocity.y = -750
         hero.physicsBody.angularVelocity = 10
         triggerGameOver()
         return true
@@ -386,7 +390,7 @@ class Gameplay: CCNode {
         }
         crashed = true
         shake()
-        hero.physicsBody.applyImpulse(ccp(0,-1500))
+        hero.physicsBody.velocity.y = -750
         hero.physicsBody.angularVelocity = 10
         triggerGameOver()
         return true
@@ -404,22 +408,45 @@ class Gameplay: CCNode {
         shieldTouched = true
         return true
     }
-//    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, bird: CCNode!, drawline: CCNode!) -> ObjCBool {
-//        bird.removeFromParent()
-//        drawline.removeFromParent()
-//        stuff = stuff.filter() { $0 != bird }
-//        return true
-//    }
+    func pausey() {
+        if pausedOnce {
+            return
+        }
+        self.paused = true
+        pause = CCBReader.load("Pause", owner: self) as CCNode
+        self.addChild(pause)
+        pausedOnce = true
+    }
+    func resume(){
+        self.paused = false
+        self.removeChild(pause)
+        pausedOnce = false
+    }
 
+    func quit(){
+        let main = CCBReader.loadAsScene("MainScene")
+        var transition = CCTransition(fadeWithDuration: 0.2)
+        CCDirector.sharedDirector().presentScene(main, withTransition: transition)
+    }
     func triggerGameOver() {
         gameOver = true
+        pausedOnce = true
         var gameOverScreen = CCBReader.load("GameOver", owner: self) as! GameOver
         self.addChild(gameOverScreen)
         gameOverScreen.score = self.score
-        let defaults = NSUserDefaults.standardUserDefaults()
-        var highscore = defaults.integerForKey("highscore")
-        if self.score > highscore {
-            defaults.setInteger(Int(self.score), forKey: "highscore")
+        if Gameplay.boundary {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var highscore = defaults.integerForKey("highscoreeasy")
+            if self.score > highscore {
+                defaults.setInteger(Int(self.score), forKey: "highscoreeasy")
+            }
+        }
+        else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            var highscore = defaults.integerForKey("highscorehard")
+            if self.score > highscore {
+                defaults.setInteger(Int(self.score), forKey: "highscorehard")
+            }
         }
     }
     func restart() {
@@ -483,7 +510,7 @@ class Gameplay: CCNode {
             var product  = (distanceTwo) / distanceOne
             var radian: Float = acos(product)
             var angle: Float = radian * 180 / Float(M_PI)
-            println(angle)
+//            println(angle)
             yVel = yVel + CGFloat(angle * 2.5)
             if endPoint!.y > startPoint!.y && endPoint!.x > startPoint!.x {
                 xVel = CGFloat(angle * constant)

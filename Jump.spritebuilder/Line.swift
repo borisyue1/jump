@@ -10,15 +10,22 @@ import UIKit
 
 class Line: CCNode {
    
+    var jumped = false
     var time = 0
     
-    func draw(){
-        self.animationManager.runAnimationsForSequenceNamed("scale")
-    }
+//    func draw(){
+//        self.animationManager.runAnimationsForSequenceNamed("scale")
+//    }
     func getTime() -> Int {
         return time
     }
     func increaseTime(amount: Int){
         time += amount
+    }
+    func didJump() -> Bool {
+        return jumped
+    }
+    func setJump(status: Bool) {
+        jumped = status
     }
 }
