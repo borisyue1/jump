@@ -40,6 +40,7 @@ class Gameplay: CCNode {
     var birdProb: Float = 1.0
     var alienProb: Float = 0
     var ufoProb: Float = 0.0
+    var spawnProb: Float = 0.6
     var randThresh = CCRANDOM_0_1() * 300 + 900
     var jumpPos : CGPoint?
     let constant = 0.006
@@ -133,26 +134,22 @@ class Gameplay: CCNode {
 
     func spawnPowerUps(){
 //        if hero.position.y > CGFloat(randThresh) + 800 {
-        var powerup
+        var powerup: Powerup
         var randX = CCRANDOM_0_1() * 270 + 20
         var rand = CCRANDOM_0_1()
         if rand < canSpawn {
             var prob = CCRANDOM_0_1()
             if prob < 0.35 {
-                var lightning = CCBReader.load("Lightning") as! Lightning
-                gamePhysicsNode.addChild(lightning)
-                lightning.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                powerup = CCBReader.load("Lightning") as! Powerup
             }
             else if prob < 0.85 {
-                var shield = CCBReader.load("Shield") as! Shield
-                gamePhysicsNode.addChild(shield)
-                shield.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                powerup = CCBReader.load("Shield") as! Powerup
             }
             else {
-                var shield = CCBReader.load("Shield") as! Shield
-                gamePhysicsNode.addChild(shield)
-                shield.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                powerup = CCBReader.load("Shield") as! Powerup
             }
+            gamePhysicsNode.addChild(powerup)
+            powerup.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
             canSpawn -= 0.08
             if canSpawn <= 0.08 {
                 canSpawn = 0.08
@@ -163,7 +160,7 @@ class Gameplay: CCNode {
     func spawnRandomStuff(){
         var randX = CCRANDOM_0_1() * 260 + 20
         var jumpNum = CCRANDOM_0_1()
-        if jumpNum < 0.6 {
+        if jumpNum < spawnProb {
             var rand = CCRANDOM_0_1()
             if rand < asteroidProb {
                 var asteroid = CCBReader.load("Asteroid") as! Asteroid
@@ -195,6 +192,10 @@ class Gameplay: CCNode {
             birdProb -= 0.1//0.1
             alienProb += 0.2//.2
             ufoProb += 0.08//.08
+            spawnProb += 0.4
+            if spawnProb > 0.75 {
+                spawnProb = 0.75
+            }
             if asteroidProb > 0.4 {
                 asteroidProb = 0.4
             }
@@ -289,7 +290,7 @@ class Gameplay: CCNode {
                 hero.physicsBody.velocity.x = -200
             }
         }
-        if heroScreenPosition.y < 5 {
+        if heroScreenPosition.y < 0 {
             crashed = true
             triggerGameOver()
         }

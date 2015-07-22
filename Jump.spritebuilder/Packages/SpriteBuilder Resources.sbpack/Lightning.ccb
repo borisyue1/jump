@@ -149,7 +149,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Lightning</string>
+		<string>Powerup</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>

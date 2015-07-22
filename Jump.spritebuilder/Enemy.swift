@@ -1,5 +1,5 @@
 //
-//  Powerup.swift
+//  Enemy.swift
 //  Jump
 //
 //  Created by Boris Yue on 7/22/15.
@@ -8,9 +8,6 @@
 
 import UIKit
 
-class Powerup: CCNode {
-    
-    func didLoadFromCCB() {
-        self.physicsBody.sensor = true
-    }
+class Enemy: CCNode {
+   
 }

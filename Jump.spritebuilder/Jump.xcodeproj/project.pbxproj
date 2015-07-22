@@ -63,16 +63,14 @@
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B41284A71B55717D001527C1 /* UfoAlien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41284A61B55717D001527C1 /* UfoAlien.swift */; };
-		B41284B91B55CF94001527C1 /* Lightning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41284B81B55CF94001527C1 /* Lightning.swift */; };
-		B41284BB1B55CFA1001527C1 /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41284BA1B55CFA1001527C1 /* Shield.swift */; };
 		B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41CF7131B584235004BA17F /* ShieldCircle.swift */; };
 		B425B4701B4EE27E00A67EEA /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B425B46F1B4EE27E00A67EEA /* Asteroid.swift */; };
 		B42ADE371B45B9C8003F3078 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE361B45B9C8003F3078 /* Line.swift */; };
 		B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE461B45CF1D003F3078 /* Gameplay.swift */; };
 		B42B233A1B60081100FCDF17 /* CCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B23391B60081100FCDF17 /* CCColor.swift */; };
 		B42B233E1B60198900FCDF17 /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233D1B60198900FCDF17 /* Powerup.swift */; };
+		B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233F1B601C5300FCDF17 /* Enemy.swift */; };
 		B42C2B0B1B4DE4EF0095FDD2 /* MonsterAlien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42C2B0A1B4DE4EF0095FDD2 /* MonsterAlien.swift */; };
-		B460174A1B5F0C4C006A6B09 /* Purple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46017491B5F0C4C006A6B09 /* Purple.swift */; };
 		B470BD781B5811D0004A0849 /* Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = B470BD771B5811D0004A0849 /* Jump.swift */; };
 		B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D1EA21B4495F8005B3024 /* Hero.swift */; };
 		B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4810D341B502E5100CF0DF6 /* GameOver.swift */; };
@@ -190,16 +188,14 @@
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* Jump Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41284A61B55717D001527C1 /* UfoAlien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UfoAlien.swift; sourceTree = "<group>"; };
-		B41284B81B55CF94001527C1 /* Lightning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lightning.swift; sourceTree = "<group>"; };
-		B41284BA1B55CFA1001527C1 /* Shield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
 		B41CF7131B584235004BA17F /* ShieldCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShieldCircle.swift; sourceTree = "<group>"; };
 		B425B46F1B4EE27E00A67EEA /* Asteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asteroid.swift; sourceTree = "<group>"; };
 		B42ADE361B45B9C8003F3078 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		B42ADE461B45CF1D003F3078 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		B42B23391B60081100FCDF17 /* CCColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCColor.swift; sourceTree = "<group>"; };
 		B42B233D1B60198900FCDF17 /* Powerup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerup.swift; sourceTree = "<group>"; };
+		B42B233F1B601C5300FCDF17 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		B42C2B0A1B4DE4EF0095FDD2 /* MonsterAlien.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterAlien.swift; sourceTree = "<group>"; };
-		B46017491B5F0C4C006A6B09 /* Purple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purple.swift; sourceTree = "<group>"; };
 		B470BD771B5811D0004A0849 /* Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jump.swift; sourceTree = "<group>"; };
 		B47D1EA21B4495F8005B3024 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Source/Hero.swift; sourceTree = "<group>"; };
 		B4810D341B502E5100CF0DF6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
@@ -470,13 +466,11 @@
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				B49252061B5C1B3700CCD1BA /* Mode.swift */,
 				B42ADE461B45CF1D003F3078 /* Gameplay.swift */,
+				B42B233F1B601C5300FCDF17 /* Enemy.swift */,
 				B42B233D1B60198900FCDF17 /* Powerup.swift */,
 				B42B23391B60081100FCDF17 /* CCColor.swift */,
-				B46017491B5F0C4C006A6B09 /* Purple.swift */,
 				B41CF7131B584235004BA17F /* ShieldCircle.swift */,
 				B470BD771B5811D0004A0849 /* Jump.swift */,
-				B41284B81B55CF94001527C1 /* Lightning.swift */,
-				B41284BA1B55CFA1001527C1 /* Shield.swift */,
 				B41284A61B55717D001527C1 /* UfoAlien.swift */,
 				B4E80D2C1B5475AD00C145C5 /* Bird.swift */,
 				B4810D341B502E5100CF0DF6 /* GameOver.swift */,
@@ -863,14 +857,13 @@
 			files = (
 				B42B233E1B60198900FCDF17 /* Powerup.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				B41284BB1B55CFA1001527C1 /* Shield.swift in Sources */,
 				B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */,
 				B42B233A1B60081100FCDF17 /* CCColor.swift in Sources */,
 				B41284A71B55717D001527C1 /* UfoAlien.swift in Sources */,
 				B42C2B0B1B4DE4EF0095FDD2 /* MonsterAlien.swift in Sources */,
 				B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */,
+				B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
-				B460174A1B5F0C4C006A6B09 /* Purple.swift in Sources */,
 				B425B4701B4EE27E00A67EEA /* Asteroid.swift in Sources */,
 				B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */,
 				B4E80D2D1B5475AD00C145C5 /* Bird.swift in Sources */,
@@ -878,7 +871,6 @@
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */,
 				B470BD781B5811D0004A0849 /* Jump.swift in Sources */,
-				B41284B91B55CF94001527C1 /* Lightning.swift in Sources */,
 				B42ADE371B45B9C8003F3078 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

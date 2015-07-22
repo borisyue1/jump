@@ -202,7 +202,7 @@
 				<key>displayName</key>
 				<string>bluelaser</string>
 				<key>memberVarAssignmentName</key>
-				<string>laser</string>
+				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>physicsBody</key>
@@ -707,7 +707,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>UfoAlien</string>
+		<string>Enemy</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -776,6 +776,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

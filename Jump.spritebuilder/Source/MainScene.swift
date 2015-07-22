@@ -23,7 +23,7 @@ class MainScene: CCNode {
         if hero.physicsBody.velocity.y < 0 {
             hero.down()
         }
-        if tracker > 20 {
+        if tracker > 30 {
             checkOffScreen()
         }
     }
