@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>101</integer>
+	<integer>110</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -171,8 +171,6 @@
 								<string>Background.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1366,14 +1364,14 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
-						<integer>4</integer>
+						<integer>104</integer>
 						<key>baseClass</key>
 						<string>CCPhysicsNode</string>
 						<key>children</key>
 						<array>
 							<dict>
 								<key>UUID</key>
-								<integer>59</integer>
+								<integer>105</integer>
 								<key>baseClass</key>
 								<string>CCBFile</string>
 								<key>children</key>
@@ -1435,7 +1433,7 @@
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>60</integer>
+								<integer>106</integer>
 								<key>baseClass</key>
 								<string>CCBFile</string>
 								<key>children</key>
@@ -1465,11 +1463,11 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>159.83999633789062</real>
-											<real>220.40521240234375</real>
+											<real>0.5</real>
+											<real>0.38999998569488525</real>
 											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
+											<integer>2</integer>
+											<integer>2</integer>
 										</array>
 									</dict>
 									<dict>
@@ -2714,7 +2712,7 @@
 		</dict>
 	</array>
 	<key>stageBorder</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>stageColor</key>
 	<integer>0</integer>
 </dict>

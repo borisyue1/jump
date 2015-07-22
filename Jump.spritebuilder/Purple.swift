@@ -10,4 +10,7 @@ import UIKit
 
 class Purple: CCNode {
    
+    func didLoadFromCCB() {
+        self.physicsBody.sensor = true
+    }
 }

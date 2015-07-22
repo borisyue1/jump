@@ -8,6 +8,15 @@
 
 import UIKit
 
-class CCColor: NSObject {
-   
+extension CCColor {
+    
+    
+    
+     convenience init(r: Float, g: Float, b: Float)  {
+        let redf = r / 255
+        let greenf = g / 255
+        let bluef = b / 255
+        self.init(red: redf,green: greenf,blue: bluef)
+    
+    }
 }

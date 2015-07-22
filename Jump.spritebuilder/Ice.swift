@@ -10,4 +10,8 @@ import UIKit
 
 class Ice: CCNode {
    
+    func didLoadFromCCB() {
+        self.physicsBody.sensor = true
+        
+    }
 }

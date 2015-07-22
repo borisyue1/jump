@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>374</integer>
+	<integer>117</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,7 +41,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>224</integer>
+				<integer>1</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -49,7 +49,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>line</string>
+				<string>purpleline</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -97,7 +97,7 @@
 						<key>value</key>
 						<array>
 							<real>1</real>
-							<real>1</real>
+							<real>1.1000000238418579</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/line.png</string>
+							<string>makeschoolpics/purpleline.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -146,26 +146,7 @@
 						<array>
 							<dict>
 								<key>UUID</key>
-								<integer>231</integer>
-								<key>baseClass</key>
-								<string>CCEffectContrast</string>
-								<key>className</key>
-								<string>CCBPEffectContrast</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>contrast</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.38407382369041443</real>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>234</integer>
+								<integer>2</integer>
 								<key>baseClass</key>
 								<string>CCEffectBrightness</string>
 								<key>className</key>
@@ -178,13 +159,51 @@
 										<key>type</key>
 										<string>Float</string>
 										<key>value</key>
+										<real>-0.11666038632392883</real>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>3</integer>
+								<key>baseClass</key>
+								<string>CCEffectSaturation</string>
+								<key>className</key>
+								<string>CCBPEffectSaturation</string>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>saturation</string>
+										<key>type</key>
+										<string>Float</string>
+										<key>value</key>
 										<real>0.0</real>
 									</dict>
 								</array>
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>239</integer>
+								<integer>6</integer>
+								<key>baseClass</key>
+								<string>CCEffectContrast</string>
+								<key>className</key>
+								<string>CCBPEffectContrast</string>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>contrast</string>
+										<key>type</key>
+										<string>Float</string>
+										<key>value</key>
+										<real>1</real>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>19</integer>
 								<key>baseClass</key>
 								<string>CCEffectBloom</string>
 								<key>className</key>
@@ -205,30 +224,11 @@
 										<key>type</key>
 										<string>Float</string>
 										<key>value</key>
-										<real>0.45543110370635986</real>
+										<real>0.40000000596046448</real>
 									</dict>
 									<dict>
 										<key>name</key>
 										<string>luminanceThreshold</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.0</real>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>303</integer>
-								<key>baseClass</key>
-								<string>CCEffectHue</string>
-								<key>className</key>
-								<string>CCBPEffectHue</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>hue</string>
 										<key>type</key>
 										<string>Float</string>
 										<key>value</key>
@@ -440,42 +440,6 @@
 			<real>128</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
-			<key>soundChannel</key>
-			<dict>
-				<key>isExpanded</key>
-				<false/>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>11</integer>
-			</dict>
-		</dict>
-		<dict>
-			<key>autoPlay</key>
-			<false/>
-			<key>callbackChannel</key>
-			<dict>
-				<key>keyframes</key>
-				<array/>
-				<key>type</key>
-				<integer>12</integer>
-			</dict>
-			<key>chainedSequenceId</key>
-			<integer>-1</integer>
-			<key>length</key>
-			<real>0.40000000596046448</real>
-			<key>name</key>
-			<string>scale</string>
-			<key>offset</key>
-			<real>0.0</real>
-			<key>position</key>
-			<real>0.20000000298023224</real>
-			<key>resolution</key>
-			<real>30</real>
-			<key>scale</key>
-			<real>128</real>
-			<key>sequenceId</key>
-			<integer>1</integer>
 			<key>soundChannel</key>
 			<dict>
 				<key>isExpanded</key>
