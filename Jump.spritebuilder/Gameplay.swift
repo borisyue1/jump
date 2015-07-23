@@ -23,6 +23,7 @@ class Gameplay: CCNode {
     weak var contentNode : CCNode!
     weak var sky1 : CCNode!
     weak var sky2 : CCNode!
+    weak var tutorial: CCNode!
     var gameOver = false
     var startedJumping = false
     var firstJump = false
@@ -59,6 +60,7 @@ class Gameplay: CCNode {
     var pause: CCNode!
     var pausedOnce = false
     
+    
     func didLoadFromCCB(){
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
@@ -66,8 +68,13 @@ class Gameplay: CCNode {
         backgrounds.append(sky1)
         backgrounds.append(sky2)
         var timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("checkAliensandObstaclesOffScreen"), userInfo: nil, repeats: true)
+//        var planet = CCSprite(imageNamed: "planets/Planet-2@4x.png")
+//        planet.scale = 0.5
+//        contentNode.addChild(planet)
+//        planet.position = ccp(200,1000)
 
     }
+
 
     override func update(delta: CCTime) {
         if gameOver {
@@ -107,6 +114,7 @@ class Gameplay: CCNode {
             }
         }
         else {
+            particles()
             powerupTrack++
             contentNode.position = ccpAdd(contentNode.position, ccp(0, -30))
             addToY += 30
@@ -117,6 +125,10 @@ class Gameplay: CCNode {
                 lightningTouched = false
                 powerupTrack = 0
                 hero.physicsBody.velocity.y = 0
+                if hero.positionInPoints.y > 10000 {
+                    birdProb = 0
+                    alienProb += 0.3
+                }
             }
         }
         if shieldTouched {
@@ -131,7 +143,12 @@ class Gameplay: CCNode {
 
         
     }
-
+    func particles() {
+        let boost = CCBReader.load("Boost") as! CCParticleSystem
+        boost.autoRemoveOnFinish = true;
+        boost.position = ccp(hero.positionInPoints.x, CGFloat(hero.positionInPoints.y - hero.boundingBox().height / 2));
+        hero.parent.addChild(boost)
+    }
     func spawnPowerUps(){
 //        if hero.position.y > CGFloat(randThresh) + 800 {
         var powerup: Powerup
@@ -146,7 +163,7 @@ class Gameplay: CCNode {
                 powerup = CCBReader.load("Shield") as! Powerup
             }
             else {
-                powerup = CCBReader.load("Shield") as! Powerup
+                powerup = CCBReader.load("Purple") as! Powerup
             }
             gamePhysicsNode.addChild(powerup)
             powerup.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
@@ -158,51 +175,52 @@ class Gameplay: CCNode {
         //}
     }
     func spawnRandomStuff(){
+        var enemy: Enemy
         var randX = CCRANDOM_0_1() * 260 + 20
         var jumpNum = CCRANDOM_0_1()
         if jumpNum < spawnProb {
             var rand = CCRANDOM_0_1()
             if rand < asteroidProb {
-                var asteroid = CCBReader.load("Asteroid") as! Asteroid
-                gamePhysicsNode.addChild(asteroid)
-                stuff.append(asteroid)
-                asteroid.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(1000))
+                enemy = CCBReader.load("Asteroid") as! Enemy
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(1000))
+                gamePhysicsNode.addChild(enemy)
+                stuff.append(enemy)
             }
             else if rand > asteroidProb  &&  rand < birdProb {
-                var bird = CCBReader.load("Bird") as! Bird
-                gamePhysicsNode.addChild(bird)
-                stuff.append(bird)
-                bird.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                enemy = CCBReader.load("Bird") as! Enemy
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                gamePhysicsNode.addChild(enemy)
+                stuff.append(enemy)
                 
             }
             else if rand > birdProb  &&  rand < alienProb {
-                var alien = CCBReader.load("MonsterAlien") as! MonsterAlien
-                gamePhysicsNode.addChild(alien)
-                stuff.append(alien)
-                alien.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                enemy = CCBReader.load("MonsterAlien") as! Enemy
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                gamePhysicsNode.addChild(enemy)
+                stuff.append(enemy)
             }
-            else if rand > alienProb  &&  rand < ufoProb {
+            else if rand > alienProb && rand < ufoProb {
                 var randUfoX = CCRANDOM_0_1() * 180 + 30
-                var ufo = CCBReader.load("UfoAlien") as! UfoAlien
-                gamePhysicsNode.addChild(ufo)
-                stuff.append(ufo)
-                ufo.position = ccp(CGFloat(randUfoX), hero.positionInPoints.y + CGFloat(470))
+                enemy = CCBReader.load("UfoAlien") as! Enemy
+                enemy.position = ccp(CGFloat(randUfoX), hero.positionInPoints.y + CGFloat(470))
+                gamePhysicsNode.addChild(enemy)
+                stuff.append(enemy)
             }
             asteroidProb += 0.04
             birdProb -= 0.1//0.1
-            alienProb += 0.2//.2
+            alienProb += 0.15//.2
             ufoProb += 0.08//.08
-            spawnProb += 0.4
+            spawnProb += 0.04
             if spawnProb > 0.75 {
                 spawnProb = 0.75
             }
-            if asteroidProb > 0.4 {
-                asteroidProb = 0.4
+            if asteroidProb > 0.35 {
+                asteroidProb = 0.35
             }
             if alienProb > 0.75 {
                 alienProb = 0.75
             }
-
+          
         }
     }
     func checkAliensandObstaclesOffScreen(){
@@ -218,7 +236,8 @@ class Gameplay: CCNode {
     }
 
     func checkWallsOffScreen(){
-        for sky in backgrounds {
+        for var s = backgrounds.count - 1; s>=0; --s {
+            var sky = backgrounds[s]
             let skyWorldPosition = gamePhysicsNode.convertToWorldSpace(sky.position)
             let skyScreenPosition = convertToNodeSpace(skyWorldPosition)
             if skyOff != 10 {
@@ -227,6 +246,17 @@ class Gameplay: CCNode {
                     skyOff++
                 }
             }
+//            if skyOff > 10 {
+//                if skyScreenPosition.y <= (-sky.boundingBox().height) {
+//                    var space = CCBReader.load("Space") as CCNode
+//                    space.position = ccp(sky.position.x, sky.position.y + sky.boundingBox().height * 2)
+//                    contentNode.addChild(space, z: -1)
+//                    backgrounds.append(space)
+//                    sky.removeFromParent()
+//                    backgrounds.removeAtIndex(s)
+//                   
+//                }
+//            }
         }
         if skyOff == 10 {
             var darker = CCBReader.load("SkyDarker") as CCNode
@@ -315,7 +345,7 @@ class Gameplay: CCNode {
 //            println("adfdsf")
 //        }
         drawline.setJump(true)
-        if hero.physicsBody.velocity.y >= 0{
+        if hero.physicsBody.velocity.y > 0{
             return true
         }
         jump = Jump()
@@ -471,11 +501,14 @@ class Gameplay: CCNode {
         
         CCDirector.sharedDirector().presentScene(scene, withTransition: transition)
         gameOver = false
+        Space.canSpawn = 0
     }
     func main (){
         var main = CCBReader.loadAsScene("MainScene")
         var transition = CCTransition(fadeWithDuration: 0.2)
         CCDirector.sharedDirector().presentScene(main, withTransition: transition)
+        Space.canSpawn = 0
+
 
     }
     
@@ -509,6 +542,9 @@ class Gameplay: CCNode {
         var constant: Float = 25
         yVel = -1000
         if(touchMoved){
+            if let t = tutorial {
+                tutorial.removeFromParent()
+            }
             endPoint = ccpAdd(touch.locationInWorld(), ccp(0, addToY))
             var distanceOne = hypotf(Float(startPoint!.x - endPoint!.x), Float(startPoint!.y - endPoint!.y))
             var distanceTwo : Float = Float(abs(startPoint!.x - endPoint!.x))

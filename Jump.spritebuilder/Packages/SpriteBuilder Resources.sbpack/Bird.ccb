@@ -326,8 +326,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.14000000059604645</real>
-							<real>0.14000000059604645</real>
+							<real>0.13500000536441803</real>
+							<real>0.13500000536441803</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -381,6 +381,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -455,8 +457,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
