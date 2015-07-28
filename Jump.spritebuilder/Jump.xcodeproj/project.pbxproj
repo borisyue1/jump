@@ -68,11 +68,13 @@
 		B42B233A1B60081100FCDF17 /* CCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B23391B60081100FCDF17 /* CCColor.swift */; };
 		B42B233E1B60198900FCDF17 /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233D1B60198900FCDF17 /* Powerup.swift */; };
 		B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233F1B601C5300FCDF17 /* Enemy.swift */; };
+		B44C47711B62D0500026AD3C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44C47701B62D0500026AD3C /* Settings.swift */; };
 		B470BD781B5811D0004A0849 /* Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = B470BD771B5811D0004A0849 /* Jump.swift */; };
 		B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D1EA21B4495F8005B3024 /* Hero.swift */; };
 		B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4810D341B502E5100CF0DF6 /* GameOver.swift */; };
 		B49252071B5C1B3700CCD1BA /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49252061B5C1B3700CCD1BA /* Mode.swift */; };
 		B49AD9E71B617D2400CCCD6A /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AD9E61B617D2400CCCD6A /* Space.swift */; };
+		B4F7C4C31B66AC1100E4AC7E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7C4C21B66AC1100E4AC7E /* Store.swift */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -190,11 +192,13 @@
 		B42B23391B60081100FCDF17 /* CCColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCColor.swift; sourceTree = "<group>"; };
 		B42B233D1B60198900FCDF17 /* Powerup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerup.swift; sourceTree = "<group>"; };
 		B42B233F1B601C5300FCDF17 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		B44C47701B62D0500026AD3C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B470BD771B5811D0004A0849 /* Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jump.swift; sourceTree = "<group>"; };
 		B47D1EA21B4495F8005B3024 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Source/Hero.swift; sourceTree = "<group>"; };
 		B4810D341B502E5100CF0DF6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B49252061B5C1B3700CCD1BA /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		B49AD9E61B617D2400CCCD6A /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		B4F7C4C21B66AC1100E4AC7E /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				B4F7C4C21B66AC1100E4AC7E /* Store.swift */,
 				B49252061B5C1B3700CCD1BA /* Mode.swift */,
 				B42ADE461B45CF1D003F3078 /* Gameplay.swift */,
 				B49AD9E61B617D2400CCCD6A /* Space.swift */,
@@ -467,6 +472,7 @@
 				B41CF7131B584235004BA17F /* ShieldCircle.swift */,
 				B470BD771B5811D0004A0849 /* Jump.swift */,
 				B4810D341B502E5100CF0DF6 /* GameOver.swift */,
+				B44C47701B62D0500026AD3C /* Settings.swift */,
 				B47D1EA21B4495F8005B3024 /* Hero.swift */,
 				B42ADE361B45B9C8003F3078 /* Line.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -849,12 +855,14 @@
 				B42B233E1B60198900FCDF17 /* Powerup.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				B49AD9E71B617D2400CCCD6A /* Space.swift in Sources */,
+				B4F7C4C31B66AC1100E4AC7E /* Store.swift in Sources */,
 				B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */,
 				B42B233A1B60081100FCDF17 /* CCColor.swift in Sources */,
 				B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */,
 				B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */,
+				B44C47711B62D0500026AD3C /* Settings.swift in Sources */,
 				B49252071B5C1B3700CCD1BA /* Mode.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */,

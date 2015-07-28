@@ -17,9 +17,12 @@ class GameOver: CCNode {
            scoreLabel.string = "\(score)"
         }
     }
+    weak var b: CCButton!
+    
     
     func didLoadFromCCB(){
         updateHighscore()
+       
     }
     func updateHighscore() {
         if Gameplay.boundary {

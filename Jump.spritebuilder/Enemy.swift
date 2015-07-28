@@ -10,4 +10,7 @@ import UIKit
 
 class Enemy: CCNode {
    
+    func fireWithoutSound() {
+        self.animationManager.runAnimationsForSequenceNamed("fire")
+    }
 }

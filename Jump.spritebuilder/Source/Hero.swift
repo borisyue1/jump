@@ -20,4 +20,7 @@ class Hero: CCSprite {
     func down(){
         self.animationManager.runAnimationsForSequenceNamed("down")
     }
+    func jumpUpWithSound() {
+        self.animationManager.runAnimationsForSequenceNamed("jumpupsound")
+    }
 }

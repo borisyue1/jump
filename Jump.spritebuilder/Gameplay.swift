@@ -17,6 +17,13 @@ class Gameplay: CCNode {
             scoreLabel.string = "\(score)"
         }
     }
+    weak var gemNum: CCLabelTTF!
+    var gemTrack: Int = NSUserDefaults.standardUserDefaults().integerForKey("gems") ?? 0 {
+        didSet {
+            NSUserDefaults.standardUserDefaults().setInteger(gemTrack, forKey:"gems")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
     weak var gamePhysicsNode : CCPhysicsNode!
     weak var hero : Hero!
     weak var drawLine: CCPhysicsNode!
@@ -52,36 +59,82 @@ class Gameplay: CCNode {
     var purpleTrack = 0
     var powerupTrack = 0
     var shield: ShieldCircle?
-    var canSpawn : Float = 0.22
     var alreadySpawned = false
     var skyOff = 0
-    static var boundary = false
     var crashed = false
     var pause: CCNode!
     var pausedOnce = false
-    
+    static var boundary = false
+    static var lineScale: Float = NSUserDefaults.standardUserDefaults().floatForKey("scale") ?? 0.9 {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setFloat(lineScale, forKey:"scale")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    static var lightningSpeed: Int =  NSUserDefaults.standardUserDefaults().integerForKey("lightningspeed") ?? 175 {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setInteger(lightningSpeed, forKey:"lightningspeed")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    static var purpleTime: Int = NSUserDefaults.standardUserDefaults().integerForKey("purpletime") ?? 1100 {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setInteger(purpleTime, forKey:"purpletime")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    static var shieldHit: Int = NSUserDefaults.standardUserDefaults().integerForKey("shieldhit") ?? 1 {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setInteger(shieldHit, forKey:"shieldhit")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    var hits = 0
+    static var canSpawn: Float = 0.22
+    static var startSpawn: Float = NSUserDefaults.standardUserDefaults().floatForKey("star") ?? 0.22 {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setFloat(startSpawn, forKey:"star")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            Gameplay.canSpawn = Gameplay.startSpawn
+        }
+    }
     
     func didLoadFromCCB(){
+//        gemTrack+=500
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
 //        gamePhysicsNode.debugDraw = true
         backgrounds.append(sky1)
         backgrounds.append(sky2)
-        var timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("checkAliensandObstaclesOffScreen"), userInfo: nil, repeats: true)
-//        var planet = CCSprite(imageNamed: "planets/Planet-2@4x.png")
-//        planet.scale = 0.5
-//        contentNode.addChild(planet)
-//        planet.position = ccp(200,1000)
-
+        gemNum.string = "\(gemTrack)"
+        if Gameplay.lineScale == 0 {
+            Gameplay.lineScale = 0.9
+        }
+        if Gameplay.lightningSpeed == 0 {
+            Gameplay.lightningSpeed = 175
+        }
+        if Gameplay.purpleTime == 0 {
+            Gameplay.purpleTime = 1100
+        }
+        if Gameplay.shieldHit == 0 {
+            Gameplay.shieldHit = 1
+        }
     }
-
-
+    func getGems() -> Int {
+        return gemTrack
+    }
+    func subGems(s: Int) {
+        gemTrack-=s
+        
+    }
     override func update(delta: CCTime) {
         if gameOver {
             return
         }
+        println(Gameplay.canSpawn)
+        gemNum.string = "\(gemTrack)"
         purpleTrack++
-        if purpleTrack > 1050 {
+        if purpleTrack > Gameplay.purpleTime {
             purpleTrack = 0
             purpleTouched = false
         }
@@ -118,14 +171,14 @@ class Gameplay: CCNode {
             powerupTrack++
             contentNode.position = ccpAdd(contentNode.position, ccp(0, -30))
             addToY += 30
-            score += 20
-            hero.physicsBody.velocity.y = 1830
+            score += 16
+            hero.physicsBody.velocity.y = 1820
             hero.physicsBody.velocity.x = 0
-            if powerupTrack > 175 {
+            if powerupTrack > Gameplay.lightningSpeed {
                 lightningTouched = false
                 powerupTrack = 0
                 hero.physicsBody.velocity.y = 0
-                if hero.positionInPoints.y > 10000 {
+                if hero.positionInPoints.y > 9000 {
                     birdProb = 0
                     alienProb += 0.3
                 }
@@ -140,39 +193,43 @@ class Gameplay: CCNode {
             shieldPresent.position = hero.positionInPoints
         }
         checkWallsOffScreen()
-
+        checkAliensandObstaclesOffScreen()
         
     }
     func particles() {
         let boost = CCBReader.load("Boost") as! CCParticleSystem
         boost.autoRemoveOnFinish = true;
-        boost.position = ccp(hero.positionInPoints.x, CGFloat(hero.positionInPoints.y - hero.boundingBox().height / 2));
-        hero.parent.addChild(boost)
+        boost.position = ccp(hero.positionInPoints.x, CGFloat(hero.positionInPoints.y - hero.boundingBox().height / 2 - 20));
+        contentNode.addChild(boost)
     }
     func spawnPowerUps(){
 //        if hero.position.y > CGFloat(randThresh) + 800 {
         var powerup: Powerup
         var randX = CCRANDOM_0_1() * 270 + 20
         var rand = CCRANDOM_0_1()
-        if rand < canSpawn {
+        if rand < Gameplay.canSpawn {
             var prob = CCRANDOM_0_1()
             if prob < 0.35 {
                 powerup = CCBReader.load("Lightning") as! Powerup
             }
-            else if prob < 0.85 {
+            else if prob < 0.8 {
                 powerup = CCBReader.load("Shield") as! Powerup
             }
-            else {
+            else if prob < 0.95 {
                 powerup = CCBReader.load("Purple") as! Powerup
             }
+            else {
+                powerup = CCBReader.load("Gem") as! Powerup
+            }
             gamePhysicsNode.addChild(powerup)
+            stuff.append(powerup)
             powerup.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
-            canSpawn -= 0.08
-            if canSpawn <= 0.08 {
-                canSpawn = 0.08
+            Gameplay.canSpawn -= 0.015
+            if Gameplay.canSpawn <= Gameplay.startSpawn - 0.14 {
+                Gameplay.canSpawn = Gameplay.startSpawn - 0.14
             }
         }
-        //}
+
     }
     func spawnRandomStuff(){
         var enemy: Enemy
@@ -202,6 +259,9 @@ class Gameplay: CCNode {
             else if rand > alienProb && rand < ufoProb {
                 var randUfoX = CCRANDOM_0_1() * 180 + 30
                 enemy = CCBReader.load("UfoAlien") as! Enemy
+                if Settings.pressed {
+                    enemy.fireWithoutSound()
+                }
                 enemy.position = ccp(CGFloat(randUfoX), hero.positionInPoints.y + CGFloat(470))
                 gamePhysicsNode.addChild(enemy)
                 stuff.append(enemy)
@@ -209,7 +269,7 @@ class Gameplay: CCNode {
             asteroidProb += 0.04
             birdProb -= 0.1//0.1
             alienProb += 0.15//.2
-            ufoProb += 0.08//.08
+            ufoProb += 0.07//.07
             spawnProb += 0.04
             if spawnProb > 0.75 {
                 spawnProb = 0.75
@@ -230,7 +290,7 @@ class Gameplay: CCNode {
             let alienScreenPosition = convertToNodeSpace(alienWorldPosition)
             if alienScreenPosition.y < 0 {
                 stuff.removeAtIndex(s)
-                gamePhysicsNode.removeChild(a)
+                a.removeFromParent()
             }
         }
     }
@@ -246,15 +306,20 @@ class Gameplay: CCNode {
                     skyOff++
                 }
             }
-//            if skyOff > 10 {
-//                if skyScreenPosition.y <= (-sky.boundingBox().height) {
+//            if skyOff == 11 {
+//                println(-sky.boundingBox().height)
+//                if skyScreenPosition.y <= (-sky.boundingBox().height / 2) {
 //                    var space = CCBReader.load("Space") as CCNode
-//                    space.position = ccp(sky.position.x, sky.position.y + sky.boundingBox().height * 2)
+//                    var space2 = CCBReader.load("Space") as CCNode
+//                    space.position = ccp(0, sky.position.y + sky.boundingBox().height)
+//                    space2.position = ccp(0, space.position.y + space.boundingBox().height)
 //                    contentNode.addChild(space, z: -1)
+//                    contentNode.addChild(space2, z: -1)
 //                    backgrounds.append(space)
-//                    sky.removeFromParent()
+//                    backgrounds.append(space2)
 //                    backgrounds.removeAtIndex(s)
-//                   
+//                    skyOff++
+//
 //                }
 //            }
         }
@@ -289,25 +354,33 @@ class Gameplay: CCNode {
         var heroWorldPosition = gamePhysicsNode.convertToWorldSpace(hero.positionInPoints)
         var heroScreenPosition = convertToNodeSpace(heroWorldPosition)
         if !Gameplay.boundary {
-            if heroScreenPosition.x < (-hero.boundingBox().width / 2) {
-                hero.positionInPoints = ccp( self.boundingBox().width + hero.boundingBox().width / 2, hero.positionInPoints.y)
-                hero.physicsBody.velocity.x -= 100
-                hero.physicsBody.velocity.y += 100
-                jump!.jumps++
-                if jump!.jumps >= 2{
-                    hero.physicsBody.velocity.x += 350
-                    hero.physicsBody.velocity.y -= 175
+//            if heroScreenPosition.x < (-hero.boundingBox().width / 2) {
+            if heroScreenPosition.x < -7 {
+//                hero.positionInPoints = ccp( self.boundingBox().width + hero.boundingBox().width / 2, hero.positionInPoints.y)
+                hero.positionInPoints = ccp( self.boundingBox().width + 7, hero.positionInPoints.y)
+                if firstJump {
+                    hero.physicsBody.velocity.x -= 100
+                    hero.physicsBody.velocity.y += 100
+                    jump!.jumps++
+                    if jump!.jumps >= 2{
+                        hero.physicsBody.velocity.x += 325
+                        hero.physicsBody.velocity.y -= 175
+                    }
                 }
 
             }
-            else if heroScreenPosition.x - hero.boundingBox().width / 2 > (self.boundingBox().width ) {
-                hero.positionInPoints = ccp(-hero.boundingBox().width / 2, hero.positionInPoints.y)
-                hero.physicsBody.velocity.x += 100
-                hero.physicsBody.velocity.y += 100
-                jump!.jumps++
-                if jump!.jumps >= 2{
-                    hero.physicsBody.velocity.x -= 350
-                    hero.physicsBody.velocity.y -= 175
+//            else if heroScreenPosition.x - hero.boundingBox().width / 2 > (self.boundingBox().width ) {
+            else if heroScreenPosition.x > self.boundingBox().width + 7 {
+//                hero.positionInPoints = ccp(-hero.boundingBox().width / 2, hero.positionInPoints.y)
+                hero.positionInPoints = ccp(-7, hero.positionInPoints.y)
+                if firstJump {
+                    hero.physicsBody.velocity.x += 100
+                    hero.physicsBody.velocity.y += 100
+                    jump!.jumps++
+                    if jump!.jumps >= 2{
+                        hero.physicsBody.velocity.x -= 325
+                        hero.physicsBody.velocity.y -= 175
+                    }
                 }
 
             }
@@ -335,7 +408,9 @@ class Gameplay: CCNode {
         if gameOver {
             return false
         }
-        hero.jumpUpAnimation()
+        if !Settings.pressed {
+            hero.jumpUpWithSound()
+        } else { hero.jumpUpAnimation() }
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: Line!) -> ObjCBool {
@@ -345,13 +420,17 @@ class Gameplay: CCNode {
 //            println("adfdsf")
 //        }
         drawline.setJump(true)
-        if hero.physicsBody.velocity.y > 0{
+        if gameOver {
+            return false
+        }
+        if hero.physicsBody.velocity.y > 0 {
             return true
         }
         jump = Jump()
-//        jumpPos = hero.position
         jumpPos = screenPos
-        hero.jumpUpAnimation()
+        if !Settings.pressed {
+            hero.jumpUpWithSound()
+        } else { hero.jumpUpAnimation() }
         hero.physicsBody.angularVelocity = 1
         hero.physicsBody.velocity = ccp(xVel, yVel )
         startedJumping = true
@@ -360,13 +439,20 @@ class Gameplay: CCNode {
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, bird: CCNode!) -> ObjCBool {
-        if lightningTouched {
+        if lightningTouched || gameOver {
             return false
         }
         if let shieldPresent = shield {
-            shield!.removeFromParent()
-            shield = nil
+            hits++
+            if hits >= Gameplay.shieldHit {
+                shield!.removeFromParent()
+                shield = nil
+                hits = 0
+            }
             return false
+        }
+        if !Settings.pressed {
+            OALSimpleAudio.sharedInstance().playEffect("sounds/crash.wav")
         }
         crashed = true
         shake()
@@ -385,13 +471,16 @@ class Gameplay: CCNode {
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, alien: CCNode!) -> ObjCBool {
-        if lightningTouched {
+        if lightningTouched || gameOver {
             return false
         }
         if let shieldPresent = shield {
             shield!.removeFromParent()
             shield = nil
             return false
+        }
+        if !Settings.pressed {
+            OALSimpleAudio.sharedInstance().playEffect("sounds/crash.wav")
         }
         crashed = true
         shake()
@@ -402,7 +491,7 @@ class Gameplay: CCNode {
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, laser: CCNode!) -> ObjCBool {
         laser.removeFromParent()
-        if lightningTouched {
+        if lightningTouched || gameOver {
             return false
         }
         if let shieldPresent = shield {
@@ -418,13 +507,16 @@ class Gameplay: CCNode {
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, ufo: CCNode!) -> ObjCBool {
-        if lightningTouched {
+        if lightningTouched || gameOver {
             return false
         }
         if let shieldPresent = shield {
             shield!.removeFromParent()
             shield = nil
             return false
+        }
+        if !Settings.pressed {
+            OALSimpleAudio.sharedInstance().playEffect("sounds/crash.wav")
         }
         crashed = true
         shake()
@@ -434,11 +526,16 @@ class Gameplay: CCNode {
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, lightning: CCNode!) -> ObjCBool {
+        stuff.filter({$0 != lightning})
         gamePhysicsNode.removeChild(lightning)
+        if !Settings.pressed {
+            OALSimpleAudio.sharedInstance().playEffect("sounds/launch.wav")
+        }
         lightningTouched = true
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, shield: CCNode!) -> ObjCBool {
+        stuff.filter({$0 != shield})
         gamePhysicsNode.removeChild(shield)
         if let shieldPresent = self.shield {
             return false
@@ -447,8 +544,15 @@ class Gameplay: CCNode {
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, purple: CCNode!) -> ObjCBool {
+        stuff.filter({$0 != purple})
         gamePhysicsNode.removeChild(purple)
         purpleTouched = true
+        return true
+    }
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, gem: CCNode!) -> ObjCBool {
+        stuff.filter({$0 != gem})
+        gem.removeFromParent()
+        gemTrack++
         return true
     }
     func pausey() {
@@ -474,6 +578,9 @@ class Gameplay: CCNode {
     func triggerGameOver() {
         gameOver = true
         pausedOnce = true
+        if !Settings.pressed {
+            OALSimpleAudio.sharedInstance().playEffect("sounds/falling.wav")
+        }
         var gameOverScreen = CCBReader.load("GameOver", owner: self) as! GameOver
         self.addChild(gameOverScreen)
         gameOverScreen.score = self.score
@@ -493,6 +600,7 @@ class Gameplay: CCNode {
         }
     }
     func restart() {
+        OALSimpleAudio.sharedInstance().stopAllEffects()
         var mainScene = CCBReader.load("Gameplay") as! Gameplay
         var scene = CCScene()
         scene.addChild(mainScene)
@@ -580,8 +688,8 @@ class Gameplay: CCNode {
             var line: Line
             if !purpleTouched {
                 line = CCBReader.load("Line") as! Line
-                if scaleFact > 0.9 {
-                    line.scaleX = 0.9
+                if scaleFact > Gameplay.lineScale {
+                    line.scaleX = Gameplay.lineScale
                 } else{  line.scaleX = scaleFact }
             }
             else {
@@ -597,5 +705,5 @@ class Gameplay: CCNode {
             touchMoved = false
         }
     }
-    
 }
+

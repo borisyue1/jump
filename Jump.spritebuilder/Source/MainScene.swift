@@ -10,10 +10,13 @@ class MainScene: CCNode {
     var xVel: CGFloat = 0
     var tracker = 0
     var pressed = false
+    static var storePressed = false
+
 
     func didLoadFromCCB() {
         physics.collisionDelegate = self
         userInteractionEnabled = true
+    
     }
     override func update(delta: CCTime) {
         tracker++
@@ -46,8 +49,34 @@ class MainScene: CCNode {
         }
         pressed = true
     }
+    func store() {
+        if !MainScene.storePressed {
+            let store = CCBReader.load("Store") as! Store
+            self.paused = true
+            self.addChild(store)
+        }
+        MainScene.storePressed = true
+    }
+    func settings() {
+        let setting = CCBReader.loadAsScene("Settings")
+        CCDirector.sharedDirector().pushScene(setting)
+    }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, ground: CCPhysicsNode!) -> ObjCBool {
-        hero.jumpUpAnimation()
+        if !Settings.pressed {
+            hero.jumpUpWithSound()
+        } else { hero.jumpUpAnimation() }
+        return true
+    }
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: Line!) -> ObjCBool {
+        drawline.setJump(true)
+        if hero.physicsBody.velocity.y >= 0{
+            return true
+        }
+        if !Settings.pressed {
+            hero.jumpUpWithSound()
+        } else { hero.jumpUpAnimation() }
+        hero.physicsBody.angularVelocity = 1
+        hero.physicsBody.velocity = ccp(xVel, -1000 )
         return true
     }
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
@@ -103,16 +132,7 @@ class MainScene: CCNode {
             touchMoved = false
         }
     }
-    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: Line!) -> ObjCBool {
-        drawline.setJump(true)
-        if hero.physicsBody.velocity.y >= 0{
-            return true
-        }
-        hero.jumpUpAnimation()
-        hero.physicsBody.angularVelocity = 1
-        hero.physicsBody.velocity = ccp(xVel, -1000 )
-        return true
-    }
+
     func checkTimeForLines() {
         for var s = linesList.count - 1; s>=0; --s {
             linesList[s].increaseTime(1)
@@ -122,4 +142,5 @@ class MainScene: CCNode {
             }
         }
     }
+    
 }
