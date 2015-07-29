@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class Store: CCNode {
     weak var gems: CCLabelTTF!
@@ -57,10 +58,18 @@ class Store: CCNode {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "starbought")
         }
     }
+    weak var gemGemButton: CCButton!
+    weak var moneyGemButton: CCButton!
+    weak var gemBoughtColor: CCNodeColor!
+    static var gemBought = false {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "gembought")
+        }
+    }
     
     func didLoadFromCCB(){
         gemTrack = g.getGems()
-//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "shieldbought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "gembought")
         if NSUserDefaults.standardUserDefaults().boolForKey("longlinebought") {
             longLineBoughtColor.visible = true
             gemLongLineButton.enabled = false
@@ -81,19 +90,27 @@ class Store: CCNode {
             gemShieldButton.enabled = false
             moneyShieldButton.enabled = false
         }
+        if NSUserDefaults.standardUserDefaults().boolForKey("starbought") {
+            starBoughtColor.visible = true
+            gemStarButton.enabled = false
+            moneyStarButton.enabled = false
+        }
+        if NSUserDefaults.standardUserDefaults().boolForKey("gembought") {
+            gemBoughtColor.visible = true
+            gemGemButton.enabled = false
+            moneyGemButton.enabled = false
+        }
     }
-    override func onEnter() {
-        super.onEnter()
-    }
+
     func back() {
         self.parent.paused = false
         self.removeFromParent()
-        MainScene.storePressed = false
+//        MainScene.storePressed = false
     }
     func gemsLongLine() {
-        if g.getGems() >= 10 {
+        if g.getGems() >= 5 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
-            g.subGems(10)
+            g.subGems(5)
             gemTrack = g.getGems()
             Gameplay.lineScale = 1.1
             longLineBoughtColor.visible = true
@@ -102,10 +119,13 @@ class Store: CCNode {
             Store.longLineBought = true
         }
     }
+    func moneyLongLine() {
+        
+    }
     func gemsLightning() {
-        if g.getGems() >= 15 {
+        if g.getGems() >= 10 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
-            g.subGems(15)
+            g.subGems(10)
             gemTrack = g.getGems()
             Gameplay.lightningSpeed = 245
             lightningBoughtColor.visible = true
@@ -116,9 +136,9 @@ class Store: CCNode {
         }
     }
     func gemsPurple() {
-        if g.getGems() >= 15 {
+        if g.getGems() >= 10 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
-            g.subGems(15)
+            g.subGems(10)
             gemTrack = g.getGems()
             Gameplay.purpleTime = 1650
             purpleBoughtColor.visible = true
@@ -128,9 +148,9 @@ class Store: CCNode {
         }
     }
     func gemsShield() {
-        if g.getGems() >= 15 {
+        if g.getGems() >= 10 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
-            g.subGems(15)
+            g.subGems(10)
             gemTrack = g.getGems()
             Gameplay.shieldHit = 2
             shieldBoughtColor.visible = true
@@ -140,15 +160,28 @@ class Store: CCNode {
         }
     }
     func gemsStar() {
-        if g.getGems() >= 20 {
+        if g.getGems() >= 15 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
-            g.subGems(20)
+            g.subGems(15)
             gemTrack = g.getGems()
-//            Gameplay.shieldHit = 2
+            Gameplay.startSpawn = 0.34
             starBoughtColor.visible = true
             gemStarButton.enabled = false
             moneyStarButton.enabled = false
             Store.starBought = true
+        }
+    }
+    func gemsGem() {
+//        OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
+        if g.getGems() >= 15 {
+            OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
+            g.subGems(15)
+            gemTrack = g.getGems()
+            Gameplay.spawnPower = 0.12//.07
+            gemBoughtColor.visible = true
+            gemGemButton.enabled = false
+            moneyGemButton.enabled = false
+            Store.gemBought = true
         }
     }
 }

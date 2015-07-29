@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SpriteKit
+import GameKit
 
 class Gameplay: CCNode {
     
@@ -98,6 +98,13 @@ class Gameplay: CCNode {
             Gameplay.canSpawn = Gameplay.startSpawn
         }
     }
+    static var spawnPower: Float = NSUserDefaults.standardUserDefaults().floatForKey("spawnpower") ?? 0.05 {
+        didSet{
+            NSUserDefaults.standardUserDefaults().setFloat(spawnPower, forKey:"spawnpower")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    var timer: NSTimer!
     
     func didLoadFromCCB(){
 //        gemTrack+=500
@@ -119,6 +126,24 @@ class Gameplay: CCNode {
         if Gameplay.shieldHit == 0 {
             Gameplay.shieldHit = 1
         }
+        if Gameplay.startSpawn == 0.34 {
+            Gameplay.canSpawn = 0.34
+        }
+        if Gameplay.spawnPower == 0.0 {
+            Gameplay.spawnPower = 0.05
+        }
+        timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "spawnGems", userInfo: nil, repeats: true)
+    }
+    func spawnGems() {
+        if hero.positionInPoints.y > CGFloat(randThresh) + 800 {
+            var rand = CCRANDOM_0_1()
+            if rand < Gameplay.spawnPower {
+                var powerup = CCBReader.load("Gem") as! Powerup
+                gamePhysicsNode.addChild(powerup)
+                stuff.append(powerup)
+                powerup.position = ccp(CGFloat(200), hero.positionInPoints.y + CGFloat(500))
+            }
+        }
     }
     func getGems() -> Int {
         return gemTrack
@@ -131,7 +156,6 @@ class Gameplay: CCNode {
         if gameOver {
             return
         }
-        println(Gameplay.canSpawn)
         gemNum.string = "\(gemTrack)"
         purpleTrack++
         if purpleTrack > Gameplay.purpleTime {
@@ -178,10 +202,6 @@ class Gameplay: CCNode {
                 lightningTouched = false
                 powerupTrack = 0
                 hero.physicsBody.velocity.y = 0
-                if hero.positionInPoints.y > 9000 {
-                    birdProb = 0
-                    alienProb += 0.3
-                }
             }
         }
         if shieldTouched {
@@ -191,6 +211,10 @@ class Gameplay: CCNode {
         }
         if let shieldPresent = shield {
             shieldPresent.position = hero.positionInPoints
+        }
+        if hero.positionInPoints.y > 9000 {
+            birdProb = 0
+            alienProb += 0.4
         }
         checkWallsOffScreen()
         checkAliensandObstaclesOffScreen()
@@ -209,22 +233,22 @@ class Gameplay: CCNode {
         var rand = CCRANDOM_0_1()
         if rand < Gameplay.canSpawn {
             var prob = CCRANDOM_0_1()
-            if prob < 0.35 {
+            if prob < 0.30 {//.32
                 powerup = CCBReader.load("Lightning") as! Powerup
             }
-            else if prob < 0.8 {
+            else if prob < 0.8  {//.75
                 powerup = CCBReader.load("Shield") as! Powerup
             }
-            else if prob < 0.95 {
+            else {//.9,spawnpower
                 powerup = CCBReader.load("Purple") as! Powerup
             }
-            else {
-                powerup = CCBReader.load("Gem") as! Powerup
-            }
+//            else {
+//                powerup = CCBReader.load("Gem") as! Powerup
+//            }
             gamePhysicsNode.addChild(powerup)
             stuff.append(powerup)
             powerup.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
-            Gameplay.canSpawn -= 0.015
+            Gameplay.canSpawn -= 0.02
             if Gameplay.canSpawn <= Gameplay.startSpawn - 0.14 {
                 Gameplay.canSpawn = Gameplay.startSpawn - 0.14
             }
@@ -270,9 +294,9 @@ class Gameplay: CCNode {
             birdProb -= 0.1//0.1
             alienProb += 0.15//.2
             ufoProb += 0.07//.07
-            spawnProb += 0.04
-            if spawnProb > 0.75 {
-                spawnProb = 0.75
+            spawnProb += 0.01
+            if spawnProb > 0.8 {
+                spawnProb = 0.8
             }
             if asteroidProb > 0.35 {
                 asteroidProb = 0.35
@@ -288,7 +312,7 @@ class Gameplay: CCNode {
             var a = stuff[s]
             let alienWorldPosition = gamePhysicsNode.convertToWorldSpace(a.position)
             let alienScreenPosition = convertToNodeSpace(alienWorldPosition)
-            if alienScreenPosition.y < 0 {
+            if alienScreenPosition.y < -10 {
                 stuff.removeAtIndex(s)
                 a.removeFromParent()
             }
@@ -560,6 +584,7 @@ class Gameplay: CCNode {
             return
         }
         self.paused = true
+        timer.invalidate()
         pause = CCBReader.load("Pause", owner: self) as CCNode
         self.addChild(pause)
         pausedOnce = true
@@ -568,6 +593,7 @@ class Gameplay: CCNode {
         self.paused = false
         self.removeChild(pause)
         pausedOnce = false
+        timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "spawnGems", userInfo: nil, repeats: true)
     }
 
     func quit(){
@@ -589,6 +615,7 @@ class Gameplay: CCNode {
             var highscore = defaults.integerForKey("highscoreeasy")
             if self.score > highscore {
                 defaults.setInteger(Int(self.score), forKey: "highscoreeasy")
+                GameCenterInteractor.sharedInstance.reportHighScoreToGameCenterEasy(self.score)
             }
         }
         else {
@@ -596,6 +623,7 @@ class Gameplay: CCNode {
             var highscore = defaults.integerForKey("highscorehard")
             if self.score > highscore {
                 defaults.setInteger(Int(self.score), forKey: "highscorehard")
+                GameCenterInteractor.sharedInstance.reportHighScoreToGameCenterHard(self.score)
             }
         }
     }
@@ -616,8 +644,9 @@ class Gameplay: CCNode {
         var transition = CCTransition(fadeWithDuration: 0.2)
         CCDirector.sharedDirector().presentScene(main, withTransition: transition)
         Space.canSpawn = 0
-
-
+    }
+    func leader() {
+        showLeaderboard()
     }
     
     func restartDuringPlay() {
@@ -659,7 +688,6 @@ class Gameplay: CCNode {
             var product  = (distanceTwo) / distanceOne
             var radian: Float = acos(product)
             var angle: Float = radian * 180 / Float(M_PI)
-//            println(angle)
             yVel = yVel + CGFloat(angle * 2.5)
             if endPoint!.y > startPoint!.y && endPoint!.x > startPoint!.x {
                 xVel = CGFloat(angle * constant)
@@ -706,4 +734,18 @@ class Gameplay: CCNode {
         }
     }
 }
+extension Gameplay: GKGameCenterControllerDelegate {
+    func showLeaderboard() {
+        var viewController = CCDirector.sharedDirector().parentViewController!
+        var gameCenterViewController = GKGameCenterViewController()
+        gameCenterViewController.gameCenterDelegate = self
+        viewController.presentViewController(gameCenterViewController, animated: true, completion: nil)
+    }
+    
+    // Delegate methods
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
 

@@ -25,5 +25,7 @@ class Mode: CCNode {
     func back() {
         let gameplayScene = CCBReader.loadAsScene("MainScene")
         CCDirector.sharedDirector().presentScene(gameplayScene)
+//        self.removeFromParent()
+//        MainScene.pressed = false
     }
 }

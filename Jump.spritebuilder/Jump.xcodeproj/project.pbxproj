@@ -65,12 +65,14 @@
 		B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41CF7131B584235004BA17F /* ShieldCircle.swift */; };
 		B42ADE371B45B9C8003F3078 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE361B45B9C8003F3078 /* Line.swift */; };
 		B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE461B45CF1D003F3078 /* Gameplay.swift */; };
-		B42B233A1B60081100FCDF17 /* CCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B23391B60081100FCDF17 /* CCColor.swift */; };
 		B42B233E1B60198900FCDF17 /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233D1B60198900FCDF17 /* Powerup.swift */; };
 		B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233F1B601C5300FCDF17 /* Enemy.swift */; };
 		B44C47711B62D0500026AD3C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44C47701B62D0500026AD3C /* Settings.swift */; };
 		B470BD781B5811D0004A0849 /* Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = B470BD771B5811D0004A0849 /* Jump.swift */; };
 		B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D1EA21B4495F8005B3024 /* Hero.swift */; };
+		B47F91AE1B6934BF002B268A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47F91AD1B6934BF002B268A /* GameKit.framework */; };
+		B47F91B21B6935CF002B268A /* sdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47F91B11B6935CF002B268A /* sdf.swift */; };
+		B47F91B41B696445002B268A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47F91B31B696445002B268A /* StoreKit.framework */; };
 		B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4810D341B502E5100CF0DF6 /* GameOver.swift */; };
 		B49252071B5C1B3700CCD1BA /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49252061B5C1B3700CCD1BA /* Mode.swift */; };
 		B49AD9E71B617D2400CCCD6A /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AD9E61B617D2400CCCD6A /* Space.swift */; };
@@ -189,12 +191,14 @@
 		B41CF7131B584235004BA17F /* ShieldCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShieldCircle.swift; sourceTree = "<group>"; };
 		B42ADE361B45B9C8003F3078 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		B42ADE461B45CF1D003F3078 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
-		B42B23391B60081100FCDF17 /* CCColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCColor.swift; sourceTree = "<group>"; };
 		B42B233D1B60198900FCDF17 /* Powerup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerup.swift; sourceTree = "<group>"; };
 		B42B233F1B601C5300FCDF17 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		B44C47701B62D0500026AD3C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B470BD771B5811D0004A0849 /* Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jump.swift; sourceTree = "<group>"; };
 		B47D1EA21B4495F8005B3024 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Source/Hero.swift; sourceTree = "<group>"; };
+		B47F91AD1B6934BF002B268A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		B47F91B11B6935CF002B268A /* sdf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sdf.swift; sourceTree = "<group>"; };
+		B47F91B31B696445002B268A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B4810D341B502E5100CF0DF6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B49252061B5C1B3700CCD1BA /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		B49AD9E61B617D2400CCCD6A /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47F91B41B696445002B268A /* StoreKit.framework in Frameworks */,
+				B47F91AE1B6934BF002B268A /* GameKit.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -462,13 +468,13 @@
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				B47F91B11B6935CF002B268A /* sdf.swift */,
 				B4F7C4C21B66AC1100E4AC7E /* Store.swift */,
 				B49252061B5C1B3700CCD1BA /* Mode.swift */,
 				B42ADE461B45CF1D003F3078 /* Gameplay.swift */,
 				B49AD9E61B617D2400CCCD6A /* Space.swift */,
 				B42B233F1B601C5300FCDF17 /* Enemy.swift */,
 				B42B233D1B60198900FCDF17 /* Powerup.swift */,
-				B42B23391B60081100FCDF17 /* CCColor.swift */,
 				B41CF7131B584235004BA17F /* ShieldCircle.swift */,
 				B470BD771B5811D0004A0849 /* Jump.swift */,
 				B4810D341B502E5100CF0DF6 /* GameOver.swift */,
@@ -526,6 +532,8 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B47F91B31B696445002B268A /* StoreKit.framework */,
+				B47F91AD1B6934BF002B268A /* GameKit.framework */,
 				BC5399D31A44DCC90063F482 /* AndroidKit.framework */,
 				BC5399D41A44DCC90063F482 /* CoreJava.framework */,
 				BC5399D51A44DCC90063F482 /* GLActivityKit.framework */,
@@ -857,7 +865,6 @@
 				B49AD9E71B617D2400CCCD6A /* Space.swift in Sources */,
 				B4F7C4C31B66AC1100E4AC7E /* Store.swift in Sources */,
 				B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */,
-				B42B233A1B60081100FCDF17 /* CCColor.swift in Sources */,
 				B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */,
 				B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
@@ -868,6 +875,7 @@
 				B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */,
 				B470BD781B5811D0004A0849 /* Jump.swift in Sources */,
 				B42ADE371B45B9C8003F3078 /* Line.swift in Sources */,
+				B47F91B21B6935CF002B268A /* sdf.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

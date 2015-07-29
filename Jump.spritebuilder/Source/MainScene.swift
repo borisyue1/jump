@@ -1,4 +1,5 @@
 import Foundation
+import GameKit
 
 class MainScene: CCNode {
 
@@ -10,13 +11,21 @@ class MainScene: CCNode {
     var xVel: CGFloat = 0
     var tracker = 0
     var pressed = false
-    static var storePressed = false
+//    static var storePressed = false
 
 
     func didLoadFromCCB() {
         physics.collisionDelegate = self
         userInteractionEnabled = true
+        setUpGameCenter()
     
+    }
+    func setUpGameCenter(){
+        let gameCenterInteractor = GameCenterInteractor.sharedInstance
+        gameCenterInteractor.authenticationCheck()
+    }
+    func openGameCenter(){
+        showLeaderboard()
     }
     override func update(delta: CCTime) {
         tracker++
@@ -50,12 +59,12 @@ class MainScene: CCNode {
         pressed = true
     }
     func store() {
-        if !MainScene.storePressed {
+//        if !MainScene.storePressed {
             let store = CCBReader.load("Store") as! Store
             self.paused = true
             self.addChild(store)
-        }
-        MainScene.storePressed = true
+        //}
+        //MainScene.storePressed = true
     }
     func settings() {
         let setting = CCBReader.loadAsScene("Settings")
@@ -132,7 +141,6 @@ class MainScene: CCNode {
             touchMoved = false
         }
     }
-
     func checkTimeForLines() {
         for var s = linesList.count - 1; s>=0; --s {
             linesList[s].increaseTime(1)
@@ -142,5 +150,17 @@ class MainScene: CCNode {
             }
         }
     }
+}
+extension MainScene: GKGameCenterControllerDelegate {
+    func showLeaderboard() {
+        var viewController = CCDirector.sharedDirector().parentViewController!
+        var gameCenterViewController = GKGameCenterViewController()
+        gameCenterViewController.gameCenterDelegate = self
+        viewController.presentViewController(gameCenterViewController, animated: true, completion: nil)
+    }
     
+    // Delegate methods
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
