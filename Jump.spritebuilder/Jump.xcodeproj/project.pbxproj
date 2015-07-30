@@ -73,6 +73,8 @@
 		B47F91AE1B6934BF002B268A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47F91AD1B6934BF002B268A /* GameKit.framework */; };
 		B47F91B21B6935CF002B268A /* sdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47F91B11B6935CF002B268A /* sdf.swift */; };
 		B47F91B41B696445002B268A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47F91B31B696445002B268A /* StoreKit.framework */; };
+		B47F91BD1B698411002B268A /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B47F91BC1B698411002B268A /* MKStoreKit.m */; };
+		B47F91C01B6987EE002B268A /* MKStoreKitConfigs.plist in Resources */ = {isa = PBXBuildFile; fileRef = B47F91BF1B6987EE002B268A /* MKStoreKitConfigs.plist */; };
 		B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4810D341B502E5100CF0DF6 /* GameOver.swift */; };
 		B49252071B5C1B3700CCD1BA /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49252061B5C1B3700CCD1BA /* Mode.swift */; };
 		B49AD9E71B617D2400CCCD6A /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AD9E61B617D2400CCCD6A /* Space.swift */; };
@@ -199,6 +201,9 @@
 		B47F91AD1B6934BF002B268A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B47F91B11B6935CF002B268A /* sdf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sdf.swift; sourceTree = "<group>"; };
 		B47F91B31B696445002B268A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B47F91BB1B698404002B268A /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
+		B47F91BC1B698411002B268A /* MKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKStoreKit.m; sourceTree = "<group>"; };
+		B47F91BF1B6987EE002B268A /* MKStoreKitConfigs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MKStoreKitConfigs.plist; sourceTree = "<group>"; };
 		B4810D341B502E5100CF0DF6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B49252061B5C1B3700CCD1BA /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		B49AD9E61B617D2400CCCD6A /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
@@ -413,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				5B121034197485FE004C1E1D /* Info.plist */,
+				B47F91BF1B6987EE002B268A /* MKStoreKitConfigs.plist */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -463,9 +469,19 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		B47F91BA1B6983F6002B268A /* MKStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				B47F91BB1B698404002B268A /* MKStoreKit.h */,
+				B47F91BC1B698411002B268A /* MKStoreKit.m */,
+			);
+			name = MKStoreKit;
+			sourceTree = "<group>";
+		};
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B47F91BA1B6983F6002B268A /* MKStoreKit */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				B47F91B11B6935CF002B268A /* sdf.swift */,
@@ -779,6 +795,7 @@
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
+				B47F91C01B6987EE002B268A /* MKStoreKitConfigs.plist in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
@@ -867,6 +884,7 @@
 				B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */,
 				B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */,
 				B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */,
+				B47F91BD1B698411002B268A /* MKStoreKit.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */,
 				B44C47711B62D0500026AD3C /* Settings.swift in Sources */,

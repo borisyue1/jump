@@ -18,7 +18,25 @@ class MainScene: CCNode {
         physics.collisionDelegate = self
         userInteractionEnabled = true
         setUpGameCenter()
-    
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlines") {
+            Gameplay.lineScale = 0.9
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlightningpowerup") {
+            Gameplay.lightningSpeed = 175
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerpotionpowerup") {
+            Gameplay.purpleTime = 1100
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longershieldpowerup") {
+            Gameplay.shieldHit = 1
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.morepowerups") {
+            Gameplay.startSpawn = 0.22
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
+            Gameplay.spawnPower = 0.05
+        }
+ 
     }
     func setUpGameCenter(){
         let gameCenterInteractor = GameCenterInteractor.sharedInstance

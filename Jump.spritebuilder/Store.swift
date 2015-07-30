@@ -66,10 +66,36 @@ class Store: CCNode {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "gembought")
         }
     }
+//    let productIdentifiers = Set(["com.yueboris.longerlines", "com.yueboris.longerpotionpowerup", "com.yueboris.longerlightningpowerup", "com.yueboris.longershieldpowerup", "com.yueboris.morepowerups", "com.yueboris.moregems"])
+    var list = [SKProduct]()
+    var p = SKProduct()
     
     func didLoadFromCCB(){
         gemTrack = g.getGems()
-//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "gembought")
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlines") {
+            Store.longLineBought = true
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlightningpowerup") {
+            Store.lightningBought = true
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerpotionpowerup") {
+            Store.purpleBought = true
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longershieldpowerup") {
+            Store.shieldBought = true
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.morepowerups") {
+            Store.starBought = true
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
+            Store.gemBought = true
+        }
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "longlinebought")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "lightningbought")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "purplebought")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "shieldbought")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "starbought")
+        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "gembought")
         if NSUserDefaults.standardUserDefaults().boolForKey("longlinebought") {
             longLineBoughtColor.visible = true
             gemLongLineButton.enabled = false
@@ -100,8 +126,8 @@ class Store: CCNode {
             gemGemButton.enabled = false
             moneyGemButton.enabled = false
         }
+      
     }
-
     func back() {
         self.parent.paused = false
         self.removeFromParent()
@@ -109,7 +135,7 @@ class Store: CCNode {
     }
     func gemsLongLine() {
         if g.getGems() >= 5 {
-            OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
+//            OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(5)
             gemTrack = g.getGems()
             Gameplay.lineScale = 1.1
@@ -120,7 +146,12 @@ class Store: CCNode {
         }
     }
     func moneyLongLine() {
-        
+        MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.longerlines")
+//        NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitProductPurchasedNotification, object: nil, queue: NSOperationQueue(), usingBlock: {
+//            (note: NSNotification!) in
+//            println("purchased!!!")
+//            println(MKStoreKit.sharedKit().valueForKey( "purchaseRecord"))
+//        })
     }
     func gemsLightning() {
         if g.getGems() >= 10 {
@@ -135,6 +166,9 @@ class Store: CCNode {
 
         }
     }
+    func moneyLightning() {
+        MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.longerlightningpowerup")
+    }
     func gemsPurple() {
         if g.getGems() >= 10 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
@@ -146,6 +180,9 @@ class Store: CCNode {
             moneyPurpleButton.enabled = false
             Store.purpleBought = true
         }
+    }
+    func moneyPurple() {
+        MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.longerpotionpowerup")
     }
     func gemsShield() {
         if g.getGems() >= 10 {
@@ -159,6 +196,10 @@ class Store: CCNode {
             Store.shieldBought = true
         }
     }
+    func moneyShield() {
+        MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.longershieldpowerup")
+
+    }
     func gemsStar() {
         if g.getGems() >= 15 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
@@ -171,8 +212,10 @@ class Store: CCNode {
             Store.starBought = true
         }
     }
+    func moneyStar() {
+        MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.morepowerups")
+    }
     func gemsGem() {
-//        OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
         if g.getGems() >= 15 {
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(15)
@@ -184,4 +227,10 @@ class Store: CCNode {
             Store.gemBought = true
         }
     }
+    func moneyGem() {
+        MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.moregems")
+
+    }
+    
 }
+

@@ -1468,7 +1468,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string></string>
+													<string>moneyGem</string>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -3537,7 +3537,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string></string>
+													<string>moneyShield</string>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -3792,6 +3792,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -5543,7 +5545,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string></string>
+													<string>moneyStar</string>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -5798,8 +5800,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -7614,7 +7614,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string></string>
+													<string>moneyLightning</string>
 													<integer>1</integer>
 												</array>
 											</dict>
@@ -9574,7 +9574,7 @@
 												<string>Block</string>
 												<key>value</key>
 												<array>
-													<string></string>
+													<string>moneyPurple</string>
 													<integer>1</integer>
 												</array>
 											</dict>

@@ -26,6 +26,7 @@ class Gameplay: CCNode {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
+    weak var newLabel: CCLabelTTF!
     weak var gamePhysicsNode : CCPhysicsNode!
     weak var hero : Hero!
     weak var drawLine: CCPhysicsNode!
@@ -134,6 +135,15 @@ class Gameplay: CCNode {
         if Gameplay.spawnPower == 0.0 {
             Gameplay.spawnPower = 0.05
         }
+//        println(Gameplay.lineScale)
+//        println(Gameplay.lightningSpeed)
+//        println(Gameplay.purpleTime)
+//        println(Gameplay.shieldHit)
+//        println(Gameplay.canSpawn)
+//        println(Gameplay.startSpawn)
+//        println(Gameplay.spawnPower)
+//        NSUserDefaults.standardUserDefaults().setObject(64048, forKey: "highscoreeasy")
+        NSUserDefaults.standardUserDefaults().setObject(58480, forKey: "highscorehard")
         timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "spawnGems", userInfo: nil, repeats: true)
     }
     func spawnGems() {
@@ -214,9 +224,10 @@ class Gameplay: CCNode {
         if let shieldPresent = shield {
             shieldPresent.position = hero.positionInPoints
         }
-        if hero.positionInPoints.y > 9000 {
+        if hero.positionInPoints.y > 9500 {
             birdProb = 0
-            alienProb += 0.4
+            alienProb += 0.3
+            ufoProb += 0.1
         }
         checkWallsOffScreen()
         checkAliensandObstaclesOffScreen()
@@ -295,7 +306,7 @@ class Gameplay: CCNode {
             asteroidProb += 0.04
             birdProb -= 0.1//0.1
             alienProb += 0.15//.2
-            ufoProb += 0.07//.07
+            ufoProb += 0.075//.07
             spawnProb += 0.01
             if spawnProb > 0.8 {
                 spawnProb = 0.8
@@ -618,6 +629,7 @@ class Gameplay: CCNode {
             if self.score > highscore {
                 defaults.setInteger(Int(self.score), forKey: "highscoreeasy")
                 GameCenterInteractor.sharedInstance.reportHighScoreToGameCenterEasy(self.score)
+                newLabel.visible = true
             }
         }
         else {
@@ -626,6 +638,7 @@ class Gameplay: CCNode {
             if self.score > highscore {
                 defaults.setInteger(Int(self.score), forKey: "highscorehard")
                 GameCenterInteractor.sharedInstance.reportHighScoreToGameCenterHard(self.score)
+                newLabel.visible = true
             }
         }
     }
@@ -640,12 +653,14 @@ class Gameplay: CCNode {
         CCDirector.sharedDirector().presentScene(scene, withTransition: transition)
         gameOver = false
         Space.canSpawn = 0
+        newLabel.visible = false
     }
     func main (){
         var main = CCBReader.loadAsScene("MainScene")
         var transition = CCTransition(fadeWithDuration: 0.2)
         CCDirector.sharedDirector().presentScene(main, withTransition: transition)
         Space.canSpawn = 0
+        newLabel.visible = false
     }
     func leader() {
         showLeaderboard()
