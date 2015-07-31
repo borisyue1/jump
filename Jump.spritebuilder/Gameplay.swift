@@ -52,7 +52,7 @@ class Gameplay: CCNode {
     var alienProb: Float = 0
     var ufoProb: Float = 0.0
     var spawnProb: Float = 0.6
-    var randThresh = CCRANDOM_0_1() * 300 + 900
+    var randThresh = CCRANDOM_0_1() * 300 + 1200
     var jumpPos : CGPoint?
     let constant = 0.006
     var jump: Jump?
@@ -381,7 +381,7 @@ class Gameplay: CCNode {
         if skyOff == 10 {
             var darker = CCBReader.load("SkyDarker") as CCNode
             contentNode.addChild(darker, z: -1)
-            darker.position = ccp(0, self.contentSizeInPoints.height * 14)
+            darker.position = ccp(0, backgrounds.last!.position.y + backgrounds.last!.boundingBox().height)
             skyOff++
             backgrounds.removeAll(keepCapacity: true)
             var space = CCBReader.load("Space") as CCNode

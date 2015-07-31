@@ -242,7 +242,7 @@ class Store: CCNode {
         MKStoreKit.sharedKit().restorePurchases()
     }
     func question() {
-        restorePop = CCBReader.load("Restore", owner: self) as! Restore
+        restorePop = CCBReader.load("Restore", owner: self) as CCNode
         self.addChild(restorePop)
     }
     func backRestore() {

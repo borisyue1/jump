@@ -539,8 +539,8 @@ on other devices. </string>
 								<string>Block</string>
 								<key>value</key>
 								<array>
-									<string>back</string>
-									<integer>1</integer>
+									<string>backRestore</string>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -794,6 +794,8 @@ on other devices. </string>
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -887,12 +889,10 @@ on other devices. </string>
 						<real>0.85000002384185791</real>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Restore</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
