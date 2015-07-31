@@ -235,6 +235,7 @@ class Store: CCNode {
 
     }
     func restore() {
+        println("sfs")
         MKStoreKit.sharedKit().restorePurchases()
     }
 }

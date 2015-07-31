@@ -152,7 +152,7 @@ class Gameplay: CCNode {
         if Gameplay.spawnPower == 0.0 {
             Gameplay.spawnPower = 0.05
         }
-//        println(Gameplay.lineScale)
+        println(Gameplay.lineScale)
 //        println(Gameplay.lightningSpeed)
 //        println(Gameplay.purpleTime)
 //        println(Gameplay.shieldHit)
@@ -245,8 +245,7 @@ class Gameplay: CCNode {
         }
         if hero.positionInPoints.y > 9500 {
             birdProb = 0
-            alienProb += 0.3
-            ufoProb += 0.1
+        
         }
         checkWallsOffScreen()
         checkAliensandObstaclesOffScreen()
@@ -325,10 +324,8 @@ class Gameplay: CCNode {
             asteroidProb += 0.04
             birdProb -= 0.1//0.1
             alienProb += 0.15//.2
-            ufoProb += 0.08//.08
+            ufoProb += 0.075//.08
             spawnProb += 0.01
-            println(ufoProb)
-            println(alienProb)
             if spawnProb > 0.8 {
                 spawnProb = 0.8
             }
