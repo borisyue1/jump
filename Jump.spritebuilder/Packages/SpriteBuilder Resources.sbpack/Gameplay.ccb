@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>536</integer>
+	<integer>538</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -1996,7 +1996,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/purplegem.png</string>
+							<string>powerups/purplegem.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -2032,6 +2032,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

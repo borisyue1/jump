@@ -66,9 +66,7 @@ class Store: CCNode {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "gembought")
         }
     }
-//    let productIdentifiers = Set(["com.yueboris.longerlines", "com.yueboris.longerpotionpowerup", "com.yueboris.longerlightningpowerup", "com.yueboris.longershieldpowerup", "com.yueboris.morepowerups", "com.yueboris.moregems"])
-    var list = [SKProduct]()
-    var p = SKProduct()
+    var restorePop: CCNode!
     
     func didLoadFromCCB(){
         gemTrack = g.getGems()
@@ -126,11 +124,16 @@ class Store: CCNode {
             gemGemButton.enabled = false
             moneyGemButton.enabled = false
         }
+//        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("longLine"), userInfo: nil, repeats: true)
       
     }
-    override func update(delta: CCTime) {
-        println("adfadf")
+    func longLine() {
+        NSNotificationCenter.defaultCenter().addObserverForName(kMKStoreKitProductPurchasedNotification, object: nil, queue: NSOperationQueue(), usingBlock: {
+                (note: NSNotification!) in
+                println("purchased!!!")
+        })
     }
+    
     func back() {
         self.parent.paused = false
         self.removeFromParent()
@@ -237,6 +240,13 @@ class Store: CCNode {
     func restore() {
         println("sfs")
         MKStoreKit.sharedKit().restorePurchases()
+    }
+    func question() {
+        restorePop = CCBReader.load("Restore", owner: self) as! Restore
+        self.addChild(restorePop)
+    }
+    func backRestore() {
+        self.removeChild(restorePop)
     }
 }
 

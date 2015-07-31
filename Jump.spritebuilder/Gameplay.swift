@@ -152,7 +152,7 @@ class Gameplay: CCNode {
         if Gameplay.spawnPower == 0.0 {
             Gameplay.spawnPower = 0.05
         }
-        println(Gameplay.lineScale)
+//        println(Gameplay.lineScale)
 //        println(Gameplay.lightningSpeed)
 //        println(Gameplay.purpleTime)
 //        println(Gameplay.shieldHit)
