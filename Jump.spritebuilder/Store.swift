@@ -128,6 +128,9 @@ class Store: CCNode {
         }
       
     }
+    override func update(delta: CCTime) {
+        println("adfadf")
+    }
     func back() {
         self.parent.paused = false
         self.removeFromParent()
@@ -231,6 +234,8 @@ class Store: CCNode {
         MKStoreKit.sharedKit().initiatePaymentRequestForProductWithIdentifier("com.yueboris.bounceyblob.moregems")
 
     }
-    
+    func restore() {
+        MKStoreKit.sharedKit().restorePurchases()
+    }
 }
 

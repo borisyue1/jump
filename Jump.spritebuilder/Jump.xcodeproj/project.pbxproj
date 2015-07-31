@@ -684,7 +684,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "Bouncey Blob" */;
+			buildConfigurationList = B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "Jump" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -962,7 +962,7 @@
 					"-lz",
 				);
 				PRODUCT_MODULE_NAME = Jump;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jump Mac";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1006,7 +1006,7 @@
 					"-lz",
 				);
 				PRODUCT_MODULE_NAME = Jump;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jump Mac";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 			};
@@ -1054,7 +1054,7 @@
 					"-landroid",
 				);
 				PRODUCT_MODULE_NAME = Jump;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jump Android";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
 				WRAPPER_EXTENSION = app;
@@ -1102,7 +1102,7 @@
 					"-landroid",
 				);
 				PRODUCT_MODULE_NAME = Jump;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Jump Android";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = sbandroid;
 				VALIDATE_PRODUCT = YES;
@@ -1267,7 +1267,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "Bouncey Blob" */ = {
+		B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "Jump" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B77F1CDC17B978D8009739AE /* Debug */,

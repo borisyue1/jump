@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
-               BuildableName = "Jump Mac.app"
+               BuildableName = "Bouncey Blob Mac.app"
                BlueprintName = "Jump Mac"
-               ReferencedContainer = "container:Bouncey Blob.xcodeproj">
+               ReferencedContainer = "container:Jump.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
-            BuildableName = "Jump Mac.app"
+            BuildableName = "Bouncey Blob Mac.app"
             BlueprintName = "Jump Mac"
-            ReferencedContainer = "container:Bouncey Blob.xcodeproj">
+            ReferencedContainer = "container:Jump.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
-            BuildableName = "Jump Mac.app"
+            BuildableName = "Bouncey Blob Mac.app"
             BlueprintName = "Jump Mac"
-            ReferencedContainer = "container:Bouncey Blob.xcodeproj">
+            ReferencedContainer = "container:Jump.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A4035FE19DDEE84007B6E8F"
-            BuildableName = "Jump Mac.app"
+            BuildableName = "Bouncey Blob Mac.app"
             BlueprintName = "Jump Mac"
-            ReferencedContainer = "container:Bouncey Blob.xcodeproj">
+            ReferencedContainer = "container:Jump.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

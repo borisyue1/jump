@@ -113,10 +113,27 @@ class Gameplay: CCNode {
 //        gemTrack+=500
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
-//        gamePhysicsNode.debugDraw = true
         backgrounds.append(sky1)
         backgrounds.append(sky2)
         gemNum.string = "\(gemTrack)"
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlines") {
+            Gameplay.lineScale = 0.9
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlightningpowerup") {
+            Gameplay.lightningSpeed = 175
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerpotionpowerup") {
+            Gameplay.purpleTime = 700
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longershieldpowerup") {
+            Gameplay.shieldHit = 1
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.morepowerups") {
+            Gameplay.startSpawn = 0.22
+        }
+        if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
+            Gameplay.spawnPower = 0.05
+        }
         if Gameplay.lineScale == 0 {
             Gameplay.lineScale = 0.9
         }
@@ -124,7 +141,7 @@ class Gameplay: CCNode {
             Gameplay.lightningSpeed = 175
         }
         if Gameplay.purpleTime == 0 {
-            Gameplay.purpleTime = 1100
+            Gameplay.purpleTime = 700
         }
         if Gameplay.shieldHit == 0 {
             Gameplay.shieldHit = 1
@@ -169,10 +186,12 @@ class Gameplay: CCNode {
             return
         }
         gemNum.string = "\(gemTrack)"
-        purpleTrack++
-        if purpleTrack > Gameplay.purpleTime {
-            purpleTrack = 0
-            purpleTouched = false
+        if purpleTouched{
+            purpleTrack++
+            if purpleTrack > Gameplay.purpleTime {
+                purpleTrack = 0
+                purpleTouched = false
+            }
         }
         if !lightningTouched {
             if hero.physicsBody.velocity.y < 0 {
@@ -306,8 +325,10 @@ class Gameplay: CCNode {
             asteroidProb += 0.04
             birdProb -= 0.1//0.1
             alienProb += 0.15//.2
-            ufoProb += 0.075//.07
+            ufoProb += 0.08//.08
             spawnProb += 0.01
+            println(ufoProb)
+            println(alienProb)
             if spawnProb > 0.8 {
                 spawnProb = 0.8
             }
