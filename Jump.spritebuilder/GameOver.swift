@@ -17,12 +17,23 @@ class GameOver: CCNode {
            scoreLabel.string = "\(score)"
         }
     }
-    weak var b: CCButton!
-    
+    weak var rush: CCLabelTTF!
+    weak var multipleLines: CCLabelTTF!
+    weak var asteroids: CCLabelTTF!
+    weak var getHigh: CCLabelTTF!
+    weak var potion: CCLabelTTF!
+    weak var shield: CCLabelTTF!
+    weak var useGems: CCLabelTTF!
     
     func didLoadFromCCB(){
         updateHighscore()
-       
+        rush.visible = false
+        multipleLines.visible = false
+        asteroids.visible = false
+        getHigh.visible = false
+        potion.visible = false
+        shield.visible = false
+        useGems.visible = false
     }
     func updateHighscore() {
         if Gameplay.boundary {
@@ -73,6 +84,29 @@ class GameOver: CCNode {
         rtx.end()
         return rtx.getUIImage()
     }
-
+    func displayTip() {
+        var rand = CCRANDOM_0_1()
+        if rand < 0.143 {
+            rush.visible = true
+        }
+        else if rand < 0.286 {
+            multipleLines.visible = true
+        }
+        else if rand < 0.429 {
+            asteroids.visible = true
+        }
+        else if rand < 0.571{
+            getHigh.visible = true
+        }
+        else if rand < 0.714 {
+            potion.visible = true
+        }
+        else if rand < 0.857 {
+            shield.visible = true
+        }
+        else {
+            useGems.visible = true
+        }
+    }
 
 }

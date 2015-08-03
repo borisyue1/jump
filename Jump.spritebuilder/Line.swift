@@ -12,7 +12,7 @@ class Line: CCNode {
    
     var jumped = false
     var time = 0
-    
+    var timeNoJump = 0
 //    func draw(){
 //        self.animationManager.runAnimationsForSequenceNamed("scale")
 //    }
@@ -27,5 +27,11 @@ class Line: CCNode {
     }
     func setJump(status: Bool) {
         jumped = status
+    }
+    func increaseTimeNoJump(amount: Int) {
+        timeNoJump+=amount
+    }
+    func getTimeNoJump() -> Int {
+        return timeNoJump
     }
 }

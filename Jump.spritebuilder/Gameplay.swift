@@ -108,6 +108,8 @@ class Gameplay: CCNode {
         }
     }
     var timer: NSTimer!
+    var tips = [String](arrayLiteral: "Asteroids don't kill you!", "Take your time, don't rush to draw lines in between jumps.",
+    "You can draw multiple lines per jump.", "Try to get as high as possible by drawing lines for your blob!")
     
     func didLoadFromCCB(){
 //        gemTrack+=500
@@ -258,7 +260,6 @@ class Gameplay: CCNode {
         contentNode.addChild(boost)
     }
     func spawnPowerUps(){
-//        if hero.position.y > CGFloat(randThresh) + 800 {
         var powerup: Powerup
         var randX = CCRANDOM_0_1() * 270 + 20
         var rand = CCRANDOM_0_1()
@@ -273,9 +274,6 @@ class Gameplay: CCNode {
             else {//.9,spawnpower
                 powerup = CCBReader.load("Purple") as! Powerup
             }
-//            else {
-//                powerup = CCBReader.load("Gem") as! Powerup
-//            }
             gamePhysicsNode.addChild(powerup)
             stuff.append(powerup)
             powerup.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
@@ -294,7 +292,7 @@ class Gameplay: CCNode {
             var rand = CCRANDOM_0_1()
             if rand < asteroidProb {
                 enemy = CCBReader.load("Asteroid") as! Enemy
-                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(1000))
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(800))
                 gamePhysicsNode.addChild(enemy)
                 stuff.append(enemy)
             }
@@ -396,12 +394,17 @@ class Gameplay: CCNode {
     }
     func checkTimeForLines() {
         for var s = linesList.count - 1; s>=0; --s {
+            linesList[s].increaseTimeNoJump(1)
             if linesList[s].didJump() {
                 linesList[s].increaseTime(1)
                 if linesList[s].getTime() > 15 || crashed {
                     gamePhysicsNode.removeChild(linesList[s])
                     linesList.removeAtIndex(s)
                 }
+            }
+            else if linesList[s].getTimeNoJump() > 100 || crashed {
+                gamePhysicsNode.removeChild(linesList[s])
+                linesList.removeAtIndex(s)
             }
         }
     }
@@ -640,6 +643,7 @@ class Gameplay: CCNode {
         }
         var gameOverScreen = CCBReader.load("GameOver", owner: self) as! GameOver
         self.addChild(gameOverScreen)
+        gameOverScreen.displayTip()
         gameOverScreen.score = self.score
         if Gameplay.boundary {
             let defaults = NSUserDefaults.standardUserDefaults()
@@ -660,6 +664,7 @@ class Gameplay: CCNode {
             }
         }
     }
+
     func restart() {
         OALSimpleAudio.sharedInstance().stopAllEffects()
         var mainScene = CCBReader.load("Gameplay") as! Gameplay

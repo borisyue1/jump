@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-               BuildableName = "Bouncey Blob.app"
+               BuildableName = "Jump.app"
                BlueprintName = "Jump iOS"
                ReferencedContainer = "container:Jump.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "Bouncey Blob.app"
+            BuildableName = "Jump.app"
             BlueprintName = "Jump iOS"
             ReferencedContainer = "container:Jump.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "Bouncey Blob.app"
+            BuildableName = "Jump.app"
             BlueprintName = "Jump iOS"
             ReferencedContainer = "container:Jump.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "Bouncey Blob.app"
+            BuildableName = "Jump.app"
             BlueprintName = "Jump iOS"
             ReferencedContainer = "container:Jump.xcodeproj">
          </BuildableReference>
