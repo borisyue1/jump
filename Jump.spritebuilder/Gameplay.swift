@@ -119,22 +119,22 @@ class Gameplay: CCNode {
         backgrounds.append(sky2)
         gemNum.string = "\(gemTrack)"
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlines") {
-            Gameplay.lineScale = 0.9
+            Gameplay.lineScale = 1.1//0.9
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlightningpowerup") {
-            Gameplay.lightningSpeed = 175
+            Gameplay.lightningSpeed = 245//175
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerpotionpowerup") {
-            Gameplay.purpleTime = 700
+            Gameplay.purpleTime = 1050//700
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longershieldpowerup") {
-            Gameplay.shieldHit = 1
+            Gameplay.shieldHit = 2//1
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.morepowerups") {
-            Gameplay.startSpawn = 0.22
+            Gameplay.startSpawn = 0.34//0.22
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
-            Gameplay.spawnPower = 0.05
+            Gameplay.spawnPower = 0.1//0.05
         }
         if Gameplay.lineScale == 0 {
             Gameplay.lineScale = 0.9
@@ -147,6 +147,9 @@ class Gameplay: CCNode {
         }
         if Gameplay.shieldHit == 0 {
             Gameplay.shieldHit = 1
+        }
+        if Gameplay.startSpawn == 0 {
+            Gameplay.canSpawn = 0.22
         }
         if Gameplay.startSpawn == 0.34 {
             Gameplay.canSpawn = 0.34
@@ -229,12 +232,12 @@ class Gameplay: CCNode {
             contentNode.position = ccpAdd(contentNode.position, ccp(0, -30))
             addToY += 30
             score += 16
-            hero.physicsBody.velocity.y = 1820
+            hero.physicsBody.velocity.y = 1820//20
             hero.physicsBody.velocity.x = 0
             if powerupTrack > Gameplay.lightningSpeed {
                 lightningTouched = false
                 powerupTrack = 0
-                hero.physicsBody.velocity.y = 0
+                hero.physicsBody.velocity.y = 100
             }
         }
         if shieldTouched {
@@ -327,7 +330,7 @@ class Gameplay: CCNode {
             if spawnProb > 0.8 {
                 spawnProb = 0.8
             }
-            if asteroidProb > 0.35 {
+            if asteroidProb > 0.32 {
                 asteroidProb = 0.35
             }
             if alienProb > 0.75 {
@@ -667,15 +670,11 @@ class Gameplay: CCNode {
 
     func restart() {
         OALSimpleAudio.sharedInstance().stopAllEffects()
-        var mainScene = CCBReader.load("Gameplay") as! Gameplay
-        var scene = CCScene()
-        scene.addChild(mainScene)
-        
+        var mainScene = CCBReader.loadAsScene("Gameplay")
         var transition = CCTransition(fadeWithDuration: 0.2)
         
-        CCDirector.sharedDirector().presentScene(scene, withTransition: transition)
+        CCDirector.sharedDirector().presentScene(mainScene, withTransition: transition)
         gameOver = false
-        Space.canSpawn = 0
         newLabel.visible = false
     }
     func main (){
@@ -690,12 +689,11 @@ class Gameplay: CCNode {
     }
     
     func restartDuringPlay() {
+        self.removeFromParent()
         var mainScene = CCBReader.load("Gameplay") as! Gameplay
         var scene = CCScene()
         scene.addChild(mainScene)
-        
-        var transition = CCTransition(fadeWithDuration: 0.3)
-        
+        var transition = CCTransition(fadeWithDuration: 0.2)
         CCDirector.sharedDirector().presentScene(scene, withTransition: transition)
     }
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {

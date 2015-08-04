@@ -399,7 +399,7 @@
 												<string>Text</string>
 												<key>value</key>
 												<array>
-													<string>Gems appear 7% more often!</string>
+													<string>Gems appear 5% more often!</string>
 													<false/>
 												</array>
 											</dict>
@@ -535,6 +535,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>

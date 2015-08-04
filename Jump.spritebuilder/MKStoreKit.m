@@ -328,8 +328,9 @@ static NSDictionary *errorDictionary;
       NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
       NSInteger status = [jsonResponse[@"status"] integerValue];
       NSString *originalAppVersion = jsonResponse[@"receipt"][@"original_application_version"];
-      [self.purchaseRecord setObject:originalAppVersion forKey:kOriginalAppVersionKey];
-      [self savePurchaseRecord];
+        if (originalAppVersion)
+            [self.purchaseRecord setObject:originalAppVersion forKey:kOriginalAppVersionKey];
+        [self savePurchaseRecord];
       
       if (status != 0) {
         NSError *error = [NSError errorWithDomain:@"com.mugunthkumar.mkstorekit" code:status

@@ -1320,8 +1320,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1946,7 +1944,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>Bouncey
+							<string>Bouncee
    Blob
 </string>
 							<false/>
@@ -2084,6 +2082,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>

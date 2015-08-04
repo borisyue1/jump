@@ -18,7 +18,7 @@ class MainScene: CCNode {
         physics.collisionDelegate = self
         userInteractionEnabled = true
         setUpGameCenter()
-    
+        
  
     }
     func setUpGameCenter(){

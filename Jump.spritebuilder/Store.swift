@@ -88,12 +88,12 @@ class Store: CCNode {
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
             Store.gemBought = true
         }
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "longlinebought")
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "lightningbought")
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "purplebought")
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "shieldbought")
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "starbought")
-        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "gembought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "longlinebought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "lightningbought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "purplebought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "shieldbought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "starbought")
+//        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "gembought")
         if NSUserDefaults.standardUserDefaults().boolForKey("longlinebought") {
             longLineBoughtColor.visible = true
             gemLongLineButton.enabled = false

@@ -63,7 +63,7 @@ class GameOver: CCNode {
         var node: AnyObject = scene.children[0]
         var screenshot = screenShotWithStartNode(node as! CCNode)
         
-        let sharedText = "This is some default text that I want to share with my users. [This is where I put a link to download my awesome game]"
+        let sharedText = "Check out this awesome game!!"
         let itemsToShare = [screenshot, sharedText]
         
         var excludedActivities = [ UIActivityTypeAssignToContact,
