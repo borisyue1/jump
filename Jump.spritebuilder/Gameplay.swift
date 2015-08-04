@@ -357,7 +357,7 @@ class Gameplay: CCNode {
             let skyWorldPosition = gamePhysicsNode.convertToWorldSpace(sky.position)
             let skyScreenPosition = convertToNodeSpace(skyWorldPosition)
             if skyOff != 10 {
-                if skyScreenPosition.y <= (-sky.boundingBox().height) {
+                if skyScreenPosition.y <= (-sky.boundingBox().height / 2) {
                     sky.position = ccp(sky.position.x, sky.position.y + sky.boundingBox().height * 2 )
                     skyOff++
                 }
@@ -382,13 +382,13 @@ class Gameplay: CCNode {
         if skyOff == 10 {
             var darker = CCBReader.load("SkyDarker") as CCNode
             contentNode.addChild(darker, z: -1)
-            darker.position = ccp(0, backgrounds.last!.position.y + backgrounds.last!.boundingBox().height)
+            darker.position = ccp(0, backgrounds.last!.position.y + backgrounds.last!.boundingBox().height / 2)
             skyOff++
             backgrounds.removeAll(keepCapacity: true)
             var space = CCBReader.load("Space") as CCNode
             var space2 = CCBReader.load("Space") as CCNode
-            space.position = ccp(0, darker.position.y + darker.boundingBox().height)
-            space2.position = ccp(0, space.position.y + space.boundingBox().height)
+            space.position = ccp(self.boundingBox().width / 2, darker.position.y + darker.boundingBox().height + space.boundingBox().height / 2)
+            space2.position = ccp(self.boundingBox().width / 2, space.position.y + space.boundingBox().height)
             contentNode.addChild(space, z: -1)
             contentNode.addChild(space2, z: -1)
             backgrounds.append(space)

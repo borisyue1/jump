@@ -66,8 +66,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
 										<real>1</real>
+										<real>2</real>
 									</array>
 								</dict>
 								<dict>
@@ -84,8 +84,8 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>0.0</real>
-										<real>0.0</real>
+										<real>1</real>
+										<real>1</real>
 									</array>
 								</dict>
 							</array>
@@ -1173,11 +1173,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>131.19999694824219</real>
-									<real>125.99999237060547</real>
+									<real>0.40999999642372131</real>
+									<real>0.22183097898960114</real>
 									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
+									<integer>2</integer>
+									<integer>2</integer>
 								</array>
 							</dict>
 							<dict>
@@ -2562,11 +2562,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.41781249642372131</real>
-									<real>0.22183097898960114</real>
+									<real>133.69999694824219</real>
+									<real>125.99999237060547</real>
 									<integer>0</integer>
-									<integer>2</integer>
-									<integer>2</integer>
+									<integer>0</integer>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -2670,11 +2670,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.58906251192092896</real>
-									<real>0.22499999403953552</real>
+									<real>188.5</real>
+									<real>127.79999542236328</real>
 									<integer>0</integer>
-									<integer>2</integer>
-									<integer>2</integer>
+									<integer>0</integer>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -3231,7 +3231,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>*Random Tip: </string>
+									<string>*RANDOM TIP: </string>
 									<false/>
 								</array>
 							</dict>
@@ -4230,8 +4230,6 @@ drawing lines for your blob!</string>
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -4912,10 +4910,10 @@ longer lines for a bit.</string>
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>1</real>
+							<real>1</real>
 							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
 							<integer>2</integer>
 						</array>
 					</dict>
@@ -4939,8 +4937,8 @@ longer lines for a bit.</string>
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>0.5</real>
+							<real>0.5</real>
 						</array>
 					</dict>
 					<dict>
@@ -4978,6 +4976,8 @@ longer lines for a bit.</string>
 						<real>0.5</real>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -5034,8 +5034,8 @@ longer lines for a bit.</string>
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>0.5</real>
+					<real>0.5</real>
 				</array>
 			</dict>
 			<dict>

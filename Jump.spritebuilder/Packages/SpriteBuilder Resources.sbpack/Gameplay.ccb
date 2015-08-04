@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>676</integer>
+	<integer>785</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -81,10 +81,10 @@
 								<key>value</key>
 								<array>
 									<real>0.50039994716644287</real>
-									<real>0.65499997138977051</real>
+									<real>372.03997802734375</real>
 									<integer>0</integer>
 									<integer>2</integer>
-									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -142,11 +142,11 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.49949997663497925</real>
-									<real>1.7923239469528198</real>
+									<real>0.5</real>
+									<real>1018.0399780273438</real>
 									<integer>0</integer>
 									<integer>2</integer>
-									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -745,10 +745,10 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-35.040000915527344</real>
-									<real>1341.0400390625</real>
+									<real>0.5</real>
+									<real>1624.5400390625</real>
 									<integer>0</integer>
-									<integer>0</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -759,8 +759,8 @@
 								<string>Point</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>0.5</real>
+									<real>0.5</real>
 								</array>
 							</dict>
 							<dict>
@@ -1286,10 +1286,10 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-35.040000915527344</real>
-									<real>1908.0400390625</real>
+									<real>0.5</real>
+									<real>2191.5400390625</real>
 									<integer>0</integer>
-									<integer>0</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -1300,8 +1300,8 @@
 								<string>Point</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
-									<real>0.0</real>
+									<real>0.5</real>
+									<real>0.5</real>
 								</array>
 							</dict>
 							<dict>
@@ -1464,10 +1464,10 @@
 										<key>value</key>
 										<array>
 											<real>0.5</real>
-											<real>0.40000000596046448</real>
+											<real>227.19999694824219</real>
 											<integer>0</integer>
 											<integer>2</integer>
-											<integer>2</integer>
+											<integer>0</integer>
 										</array>
 									</dict>
 									<dict>
@@ -1617,10 +1617,10 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.15999999642372131</real>
+									<real>90.879997253417969</real>
 									<integer>0</integer>
 									<integer>2</integer>
-									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</dict>
 							<dict>
@@ -1750,10 +1750,10 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0099999997764825821</real>
+							<real>3.1999998092651367</real>
 							<real>0.0</real>
 							<integer>1</integer>
-							<integer>2</integer>
+							<integer>0</integer>
 							<integer>2</integer>
 						</array>
 					</dict>
@@ -1957,11 +1957,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.012000000104308128</real>
-							<real>0.063000001013278961</real>
+							<real>3.8400001525878906</real>
+							<real>35.78399658203125</real>
 							<integer>1</integer>
-							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
@@ -2065,11 +2065,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.14699999988079071</real>
-							<real>0.076999999582767487</real>
+							<real>47.040000915527344</real>
+							<real>43.73602294921875</real>
 							<integer>1</integer>
-							<integer>2</integer>
-							<integer>2</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
