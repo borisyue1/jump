@@ -165,7 +165,7 @@ class Gameplay: CCNode {
 //        println(Gameplay.startSpawn)
 //        println(Gameplay.spawnPower)
 //        NSUserDefaults.standardUserDefaults().setObject(64048, forKey: "highscoreeasy")
-        NSUserDefaults.standardUserDefaults().setObject(58480, forKey: "highscorehard")
+//        NSUserDefaults.standardUserDefaults().setObject(79888, forKey: "highscorehard")
         timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "spawnGems", userInfo: nil, repeats: true)
     }
     func spawnGems() {
@@ -211,6 +211,9 @@ class Gameplay: CCNode {
                 var constant: CGFloat = 0.009
                 if jumpPos!.y < 150 {
                     constant = 0.005
+                }
+                if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+                    constant = 0.01
                 }
                 var scrollRate = jumpPos!.y * constant + 6.5
                 contentNode.position = ccpAdd(contentNode.position, ccp(0, -scrollRate))
@@ -264,7 +267,7 @@ class Gameplay: CCNode {
     }
     func spawnPowerUps(){
         var powerup: Powerup
-        var randX = CCRANDOM_0_1() * 270 + 20
+        var randX = CCRANDOM_0_1() * Float(self.boundingBox().width - 50) + 20
         var rand = CCRANDOM_0_1()
         if rand < Gameplay.canSpawn {
             var prob = CCRANDOM_0_1()
@@ -289,7 +292,7 @@ class Gameplay: CCNode {
     }
     func spawnRandomStuff(){
         var enemy: Enemy
-        var randX = CCRANDOM_0_1() * 260 + 20
+        var randX = CCRANDOM_0_1() * Float(self.boundingBox().width - 60) + 20
         var jumpNum = CCRANDOM_0_1()
         if jumpNum < spawnProb {
             var rand = CCRANDOM_0_1()
@@ -301,11 +304,7 @@ class Gameplay: CCNode {
             }
             else if rand > asteroidProb  &&  rand < birdProb {
                 enemy = CCBReader.load("Bird") as! Enemy
-                if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-                    println("is pad")
-                    enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y )
-                }
-                else { enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450)) }
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
                 gamePhysicsNode.addChild(enemy)
                 stuff.append(enemy)
                 
@@ -366,22 +365,6 @@ class Gameplay: CCNode {
                     skyOff++
                 }
             }
-//            if skyOff == 11 {
-//                println(-sky.boundingBox().height)
-//                if skyScreenPosition.y <= (-sky.boundingBox().height / 2) {
-//                    var space = CCBReader.load("Space") as CCNode
-//                    var space2 = CCBReader.load("Space") as CCNode
-//                    space.position = ccp(0, sky.position.y + sky.boundingBox().height)
-//                    space2.position = ccp(0, space.position.y + space.boundingBox().height)
-//                    contentNode.addChild(space, z: -1)
-//                    contentNode.addChild(space2, z: -1)
-//                    backgrounds.append(space)
-//                    backgrounds.append(space2)
-//                    backgrounds.removeAtIndex(s)
-//                    skyOff++
-//
-//                }
-//            }
         }
         if skyOff == 10 {
             var darker = CCBReader.load("SkyDarker") as CCNode
@@ -481,9 +464,6 @@ class Gameplay: CCNode {
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, drawline: Line!) -> ObjCBool {
         var worldPos = gamePhysicsNode.convertToWorldSpace(monster.positionInPoints)
         var screenPos = convertToNodeSpace(worldPos)
-//        if hero.position.y - hero.boundingBox().width / 2 == endPoint?.y {
-//            println("adfdsf")
-//        }
         drawline.setJump(true)
         if gameOver {
             return false
@@ -627,6 +607,9 @@ class Gameplay: CCNode {
         self.paused = true
         timer.invalidate()
         pause = CCBReader.load("Pause", owner: self) as CCNode
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            pause.contentSize = CGSize(width: 384, height: 512)
+        }
         self.addChild(pause)
         pausedOnce = true
     }
@@ -649,6 +632,9 @@ class Gameplay: CCNode {
             OALSimpleAudio.sharedInstance().playEffect("sounds/falling.wav")
         }
         var gameOverScreen = CCBReader.load("GameOver", owner: self) as! GameOver
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            gameOverScreen.contentSize = CGSize(width: 384, height: 512)
+        }
         self.addChild(gameOverScreen)
         gameOverScreen.displayTip()
         gameOverScreen.score = self.score

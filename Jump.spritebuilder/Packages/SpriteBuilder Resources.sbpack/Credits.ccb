@@ -78,9 +78,9 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.50133615732192993</real>
-									<real>0.91681629419326782</real>
-									<integer>0</integer>
+									<real>0.5</real>
+									<real>0.083183720707893372</real>
+									<integer>1</integer>
 									<integer>2</integer>
 									<integer>2</integer>
 								</array>
@@ -286,7 +286,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.11732248961925507</real>
+									<real>0.11218644678592682</real>
 									<real>0.044011183083057404</real>
 									<integer>1</integer>
 									<integer>2</integer>
@@ -592,9 +592,9 @@
 						<key>displayName</key>
 						<string>credits</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>creditText</string>
 						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
+						<integer>2</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -612,9 +612,9 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.50133615732192993</real>
-									<real>0.41681629419326782</real>
-									<integer>0</integer>
+									<real>0.5</real>
+									<real>0.14656400680541992</real>
+									<integer>1</integer>
 									<integer>2</integer>
 									<integer>2</integer>
 								</array>
@@ -627,7 +627,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.5</real>
+									<real>1</real>
 								</array>
 							</dict>
 							<dict>
@@ -831,6 +831,8 @@ Blue laser by Kenney on
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -858,11 +860,11 @@ Blue laser by Kenney on
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -872,10 +874,10 @@ Blue laser by Kenney on
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>320</real>
-							<real>568</real>
-							<integer>0</integer>
-							<integer>0</integer>
+							<real>1</real>
+							<real>1</real>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -885,8 +887,8 @@ Blue laser by Kenney on
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>0.5</real>
+							<real>0.5</real>
 						</array>
 					</dict>
 					<dict>
@@ -912,7 +914,7 @@ Blue laser by Kenney on
 							<real>0.0</real>
 							<real>0.0</real>
 							<real>0.0</real>
-							<real>0.75999999046325684</real>
+							<real>0.80000001192092896</real>
 						</array>
 					</dict>
 					<dict>
@@ -921,7 +923,7 @@ Blue laser by Kenney on
 						<key>type</key>
 						<string>Float</string>
 						<key>value</key>
-						<real>0.75999999046325684</real>
+						<real>0.80000001192092896</real>
 					</dict>
 				</array>
 			</dict>
@@ -965,8 +967,8 @@ Blue laser by Kenney on
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>320</real>
+					<real>568</real>
 					<integer>0</integer>
 					<integer>0</integer>
 				</array>

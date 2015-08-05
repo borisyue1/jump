@@ -238,11 +238,13 @@ class Store: CCNode {
 
     }
     func restore() {
-        println("sfs")
         MKStoreKit.sharedKit().restorePurchases()
     }
     func question() {
         restorePop = CCBReader.load("Restore", owner: self) as CCNode
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            restorePop.contentSize = CGSize(width: 384, height: 512)
+        }
         self.addChild(restorePop)
     }
     func backRestore() {

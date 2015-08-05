@@ -18,7 +18,6 @@ class MainScene: CCNode {
         physics.collisionDelegate = self
         userInteractionEnabled = true
         setUpGameCenter()
-        
  
     }
     func setUpGameCenter(){
@@ -55,6 +54,9 @@ class MainScene: CCNode {
     func play() {
         if !pressed {
             let mode = CCBReader.load("Mode") as! Mode
+            if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+                mode.contentSize = CGSize(width: 384, height: 512)
+            }
             self.addChild(mode)
         }
         pressed = true

@@ -14,6 +14,7 @@ class Settings: CCScene {
     static var pressed = false
     var creditPressed = false
     var credit: CCNode!
+    var creditText: CCLabelTTF!
     
     func didLoadFromCCB() {
         if !Settings.pressed {
@@ -37,6 +38,10 @@ class Settings: CCScene {
     func credits() {
         if !creditPressed {
             credit = CCBReader.load("Credits", owner: self) as CCNode
+            if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+                credit.contentSize = CGSize(width: 384, height: 512)
+                creditText.fontSize = 8
+            }
             self.addChild(credit)
         }
         creditPressed = true

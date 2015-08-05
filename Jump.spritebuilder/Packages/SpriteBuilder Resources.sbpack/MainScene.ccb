@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>39</integer>
+	<integer>40</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -1741,7 +1741,7 @@
 				<array>
 					<dict>
 						<key>UUID</key>
-						<integer>36</integer>
+						<integer>39</integer>
 						<key>baseClass</key>
 						<string>CCBFile</string>
 						<key>children</key>
@@ -1749,7 +1749,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>leadericon</string>
+						<string>leader icon</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -1981,7 +1981,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>6</real>
+							<real>5.5</real>
 							<integer>0</integer>
 						</array>
 					</dict>
