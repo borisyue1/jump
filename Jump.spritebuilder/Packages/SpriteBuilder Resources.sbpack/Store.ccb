@@ -535,8 +535,6 @@
 												</array>
 											</dict>
 										</array>
-										<key>selected</key>
-										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>
@@ -4522,7 +4520,7 @@
 												<string>Text</string>
 												<key>value</key>
 												<array>
-													<string>Powerups spawn 12% more often!</string>
+													<string>Powerups spawn 10% more often!</string>
 													<false/>
 												</array>
 											</dict>
@@ -4658,6 +4656,8 @@
 												</array>
 											</dict>
 										</array>
+										<key>selected</key>
+										<true/>
 									</dict>
 									<dict>
 										<key>UUID</key>

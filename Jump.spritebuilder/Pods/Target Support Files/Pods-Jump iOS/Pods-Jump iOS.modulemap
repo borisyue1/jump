@@ -1,0 +1,6 @@
+framework module Pods_Jump_iOS {
+  umbrella header "Pods-Jump iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

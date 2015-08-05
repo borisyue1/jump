@@ -61,6 +61,7 @@ class MainScene: CCNode {
     }
     func store() {
 //        if !MainScene.storePressed {
+        
             let store = CCBReader.load("Store") as! Store
             self.paused = true
             self.addChild(store)

@@ -131,7 +131,7 @@ class Gameplay: CCNode {
             Gameplay.shieldHit = 2//1
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.morepowerups") {
-            Gameplay.startSpawn = 0.34//0.22
+            Gameplay.startSpawn = 0.32//0.22
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
             Gameplay.spawnPower = 0.1//0.05
@@ -151,8 +151,8 @@ class Gameplay: CCNode {
         if Gameplay.startSpawn == 0 {
             Gameplay.canSpawn = 0.22
         }
-        if Gameplay.startSpawn == 0.34 {
-            Gameplay.canSpawn = 0.34
+        if Gameplay.startSpawn == 0.32 {
+            Gameplay.canSpawn = 0.32
         }
         if Gameplay.spawnPower == 0.0 {
             Gameplay.spawnPower = 0.05
@@ -301,7 +301,11 @@ class Gameplay: CCNode {
             }
             else if rand > asteroidProb  &&  rand < birdProb {
                 enemy = CCBReader.load("Bird") as! Enemy
-                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+                    println("is pad")
+                    enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y )
+                }
+                else { enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450)) }
                 gamePhysicsNode.addChild(enemy)
                 stuff.append(enemy)
                 
