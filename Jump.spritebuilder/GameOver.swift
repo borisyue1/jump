@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mixpanel
 
 class GameOver: CCNode {
     
@@ -59,6 +60,7 @@ class GameOver: CCNode {
         }
     }
     func share() {
+        Mixpanel.sharedInstance().track("Game Over", properties: ["Share": "Share clicked"])
         var scene = CCDirector.sharedDirector().runningScene
         var node: AnyObject = scene.children[0]
         var screenshot = screenShotWithStartNode(node as! CCNode)

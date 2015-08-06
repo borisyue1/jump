@@ -108,7 +108,8 @@ class Gameplay: CCNode {
         }
     }
     var timer: NSTimer!
-
+  
+    
     func didLoadFromCCB(){
 //        gemTrack+=500
         gamePhysicsNode.collisionDelegate = self
@@ -210,29 +211,33 @@ class Gameplay: CCNode {
                 var heroWorldPosition = gamePhysicsNode.convertToWorldSpace(hero.positionInPoints)
                 var heroScreenPosition = convertToNodeSpace(heroWorldPosition)
                 var constant: CGFloat = 0.006
-                if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-//                    println("pad")
-                    constant = 0.012
-                }
                 if jumpPos!.y < 160 {
                     constant = 0.003
                 }
                 if jumpPos!.y > 215 {
                     constant = 0.011
                 }
-                println(jumpPos!.y)
+//               println(jumpPos!.y)
+                if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+                    constant = 0.006
+                    if jumpPos!.y < 160 {
+                        constant = 0.004
+                    }
+                    if jumpPos!.y > 230 {
+                        constant = 0.01
+                    }
+                }
                 var scrollRate = heroScreenPosition.y * constant + 6.5
                 contentNode.position = ccpAdd(contentNode.position, ccp(0, -scrollRate))
                 addToY += scrollRate
                 score += 16
                 if hero.positionInPoints.y > CGFloat(randThresh) && hero.physicsBody.velocity.y < 500 && hero.physicsBody.velocity.y > 480 && alreadySpawned {
-                    spawnRandomStuff(heroScreenPosition.y)
+                    spawnRandomStuff()
                     if hero.positionInPoints.y > CGFloat(randThresh) + 1200 {
                         spawnPowerUps()
                     }
                     alreadySpawned = false
                 }
-
             }
         }
         else {
@@ -296,7 +301,7 @@ class Gameplay: CCNode {
         }
 
     }
-    func spawnRandomStuff(yPos: CGFloat){
+    func spawnRandomStuff(){
         var enemy: Enemy
         var randX = CCRANDOM_0_1() * Float(self.boundingBox().width - 60) + 20
         var jumpNum = CCRANDOM_0_1()
@@ -441,10 +446,10 @@ class Gameplay: CCNode {
         }
         else {
             if heroScreenPosition.x - hero.boundingBox().width / 2 + 5 <= 0 {
-                hero.physicsBody.velocity.x = 200
+                hero.physicsBody.velocity.x = 150
             }
             else if heroScreenPosition.x + hero.boundingBox().width / 2  - 5 >= self.boundingBox().width {
-                hero.physicsBody.velocity.x = -200
+                hero.physicsBody.velocity.x = -150
             }
         }
         if heroScreenPosition.y < 0 {
@@ -474,10 +479,10 @@ class Gameplay: CCNode {
         if gameOver {
             return false
         }
-//        if hero.physicsBody.velocity.y > 0 {
-//            hero.physicsBody.velocity = ccp(xVel, 600 )
-//            return true
-//        }
+        if hero.physicsBody.velocity.y > 0 {
+            hero.physicsBody.velocity = ccp(xVel, -700 )
+            return true
+        }
         jump = Jump()
         jumpPos = screenPos
         if !Settings.pressed {
@@ -679,7 +684,6 @@ class Gameplay: CCNode {
         var main = CCBReader.loadAsScene("MainScene")
         var transition = CCTransition(fadeWithDuration: 0.2)
         CCDirector.sharedDirector().presentScene(main, withTransition: transition)
-        Space.canSpawn = 0
         newLabel.visible = false
     }
     func leader() {

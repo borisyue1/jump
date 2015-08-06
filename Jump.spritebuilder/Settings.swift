@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Mixpanel
+
 
 class Settings: CCScene {
    
@@ -33,10 +35,12 @@ class Settings: CCScene {
     }
     func soundPressed() {
         Settings.pressed = !Settings.pressed
-       
+        Mixpanel.sharedInstance().track("Sound pressed")
+
     }
     func credits() {
         if !creditPressed {
+            Mixpanel.sharedInstance().track("Credits clicked")
             credit = CCBReader.load("Credits", owner: self) as CCNode
             if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
                 credit.contentSize = CGSize(width: 384, height: 512)

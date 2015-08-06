@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Mixpanel
 
 class Mode: CCNode {
    
     func boundary() {
+        Mixpanel.sharedInstance().track("Mode", properties: ["Mode": "Boundary"])
         Gameplay.boundary = true
         let gameplayScene = CCBReader.loadAsScene("Gameplay")
         var transition = CCTransition(fadeWithDuration: 0.3)
@@ -18,6 +20,7 @@ class Mode: CCNode {
     }
     func noboundary() {
         Gameplay.boundary = false
+        Mixpanel.sharedInstance().track("Mode", properties: ["Mode": "No boundary"])
         let gameplayScene = CCBReader.loadAsScene("Gameplay")
         var transition = CCTransition(fadeWithDuration: 0.3)
         CCDirector.sharedDirector().presentScene(gameplayScene, withTransition: transition)

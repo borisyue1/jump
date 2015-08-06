@@ -128,7 +128,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdone.png</string>
+										<string>asteroids/birdone.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -146,7 +146,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdtwo.png</string>
+										<string>asteroids/birdtwo.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -164,7 +164,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdthree.png</string>
+										<string>asteroids/birdthree.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -182,7 +182,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdfour.png</string>
+										<string>asteroids/birdfour.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -229,7 +229,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>0.0</real>
+							<real>-3</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -272,7 +272,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/birdone.png</string>
+							<string>asteroids/birdfour.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -319,8 +319,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -450,7 +448,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.066666670143604279</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

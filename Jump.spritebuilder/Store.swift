@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import Mixpanel
 
 class Store: CCNode {
     weak var gems: CCLabelTTF!
@@ -142,6 +143,7 @@ class Store: CCNode {
     func gemsLongLine() {
         if g.getGems() >= 5 {
 //            OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
+            Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Gem": "Longer lines"])
             g.subGems(5)
             gemTrack = g.getGems()
             Gameplay.lineScale = 1.1
@@ -161,6 +163,7 @@ class Store: CCNode {
     }
     func gemsLightning() {
         if g.getGems() >= 10 {
+            Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Gem": "Longer lightning"])
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(10)
             gemTrack = g.getGems()
@@ -177,6 +180,7 @@ class Store: CCNode {
     }
     func gemsPurple() {
         if g.getGems() >= 10 {
+            Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Gem": "Longer potion"])
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(10)
             gemTrack = g.getGems()
@@ -192,6 +196,7 @@ class Store: CCNode {
     }
     func gemsShield() {
         if g.getGems() >= 10 {
+            Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Gem": "Longer shield"])
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(10)
             gemTrack = g.getGems()
@@ -208,6 +213,7 @@ class Store: CCNode {
     }
     func gemsStar() {
         if g.getGems() >= 15 {
+            Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Gem": "More powerups"])
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(15)
             gemTrack = g.getGems()
@@ -223,6 +229,7 @@ class Store: CCNode {
     }
     func gemsGem() {
         if g.getGems() >= 15 {
+            Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Gem": "More gems"])
             OALSimpleAudio.sharedInstance().playEffect("sounds/moneysound.wav")
             g.subGems(15)
             gemTrack = g.getGems()
@@ -239,8 +246,10 @@ class Store: CCNode {
     }
     func restore() {
         MKStoreKit.sharedKit().restorePurchases()
+        Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Restore": "Restore clicked"])
     }
     func question() {
+        Mixpanel.sharedInstance().track("Upgrade bought", properties: ["Restore": "Question clicked"])
         restorePop = CCBReader.load("Restore", owner: self) as CCNode
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             restorePop.contentSize = CGSize(width: 384, height: 512)

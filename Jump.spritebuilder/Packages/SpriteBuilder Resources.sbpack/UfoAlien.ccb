@@ -341,7 +341,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/bluelaser.png</string>
+							<string>asteroids/bluelaser.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -377,6 +377,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -666,7 +668,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/ufoalien.png</string>
+							<string>asteroids/ufoalien.png</string>
 						</array>
 					</dict>
 					<dict>

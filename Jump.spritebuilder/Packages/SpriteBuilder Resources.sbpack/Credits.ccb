@@ -79,7 +79,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.083183720707893372</real>
+									<real>-0.008802817203104496</real>
 									<integer>1</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -93,7 +93,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.5</real>
+									<real>1</real>
 								</array>
 							</dict>
 							<dict>
@@ -613,7 +613,7 @@
 								<key>value</key>
 								<array>
 									<real>0.5</real>
-									<real>0.14656400680541992</real>
+									<real>0.11795774847269058</real>
 									<integer>1</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -714,7 +714,7 @@ Blue laser by Kenney on
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>9.5</real>
+									<real>9.25</real>
 									<integer>0</integer>
 								</array>
 							</dict>

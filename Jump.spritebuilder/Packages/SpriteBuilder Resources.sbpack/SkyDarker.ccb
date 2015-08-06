@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>152</integer>
+	<integer>166</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -1091,7 +1091,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>makeschoolpics/moon.png</string>
+							<string>asteroids/moon.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1163,6 +1163,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

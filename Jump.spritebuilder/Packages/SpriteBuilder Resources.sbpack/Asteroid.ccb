@@ -64,7 +64,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroid.png</string>
+										<string>asteroids/asteroid.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -82,7 +82,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidone.png</string>
+										<string>asteroids/asteroidone.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -100,7 +100,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidtwo.png</string>
+										<string>asteroids/asteroidtwo.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -118,7 +118,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidthree.png</string>
+										<string>asteroids/asteroidthree.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -136,7 +136,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidfour.png</string>
+										<string>asteroids/asteroidfour.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -154,7 +154,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidfive.png</string>
+										<string>asteroids/asteroidfive.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -172,7 +172,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidsix.png</string>
+										<string>asteroids/asteroidsix.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -190,7 +190,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidseven.png</string>
+										<string>asteroids/asteroidseven.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -208,7 +208,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroideight.png</string>
+										<string>asteroids/asteroideight.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -226,7 +226,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/asteroidnine.png</string>
+										<string>asteroids/asteroidnine.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -311,7 +311,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/asteroidnine.png</string>
+							<string>asteroids/asteroid.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -455,8 +455,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -512,7 +510,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.40000000596046448</real>
+			<real>0.13333334028720856</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

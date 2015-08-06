@@ -1,5 +1,6 @@
 import Foundation
 import GameKit
+import Mixpanel
 
 class MainScene: CCNode {
 
@@ -63,7 +64,7 @@ class MainScene: CCNode {
     }
     func store() {
 //        if !MainScene.storePressed {
-        
+            Mixpanel.sharedInstance().track("Store clicked")
             let store = CCBReader.load("Store") as! Store
             self.paused = true
             if UIDevice.currentDevice().userInterfaceIdiom == .Pad {

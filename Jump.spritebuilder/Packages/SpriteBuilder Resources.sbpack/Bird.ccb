@@ -95,6 +95,24 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
+									<real>0.10000000149011612</real>
+									<key>type</key>
+									<integer>3</integer>
+									<key>value</key>
+									<array>
+										<real>0.0</real>
+										<real>0.0</real>
+									</array>
+								</dict>
+								<dict>
+									<key>easing</key>
+									<dict>
+										<key>type</key>
+										<integer>1</integer>
+									</dict>
+									<key>name</key>
+									<string>position</string>
+									<key>time</key>
 									<real>0.13333334028720856</real>
 									<key>type</key>
 									<integer>3</integer>
@@ -128,7 +146,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdone.png</string>
+										<string>asteroids/birdone.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -146,7 +164,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdtwo.png</string>
+										<string>asteroids/birdtwo.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -164,7 +182,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdthree.png</string>
+										<string>asteroids/birdthree.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -182,7 +200,7 @@
 									<integer>7</integer>
 									<key>value</key>
 									<array>
-										<string>enemies/birdfour.png</string>
+										<string>asteroids/birdfour.png</string>
 										<string>Use regular file</string>
 									</array>
 								</dict>
@@ -302,7 +320,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>-1.5000002384185791</real>
+							<real>-1.5</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -345,7 +363,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/birdone.png</string>
+							<string>asteroids/birdfour.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -381,8 +399,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -512,7 +528,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.10000000149011612</real>
+			<real>0.033333335071802139</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

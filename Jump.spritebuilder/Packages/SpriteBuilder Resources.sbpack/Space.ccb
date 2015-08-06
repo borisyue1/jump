@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>enemies/space.png</string>
+							<string>asteroids/space.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -151,7 +151,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Space</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
