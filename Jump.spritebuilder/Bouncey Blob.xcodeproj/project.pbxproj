@@ -63,7 +63,6 @@
 		927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
-		B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41CF7131B584235004BA17F /* ShieldCircle.swift */; };
 		B42ADE371B45B9C8003F3078 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE361B45B9C8003F3078 /* Line.swift */; };
 		B42ADE471B45CF1D003F3078 /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42ADE461B45CF1D003F3078 /* Gameplay.swift */; };
 		B42B233E1B60198900FCDF17 /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B233D1B60198900FCDF17 /* Powerup.swift */; };
@@ -79,6 +78,7 @@
 		B4810D351B502E5100CF0DF6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4810D341B502E5100CF0DF6 /* GameOver.swift */; };
 		B49252071B5C1B3700CCD1BA /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49252061B5C1B3700CCD1BA /* Mode.swift */; };
 		B49AD9E71B617D2400CCCD6A /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49AD9E61B617D2400CCCD6A /* Space.swift */; };
+		B49FE31B1B72C8C100B044BC /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B49FE31A1B72C8C100B044BC /* Launch Screen.xib */; };
 		B4F7C4C31B66AC1100E4AC7E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F7C4C21B66AC1100E4AC7E /* Store.swift */; };
 		B4FACA9B1B6BF834005F52FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4FACA9A1B6BF834005F52FA /* Images.xcassets */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -194,7 +194,6 @@
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* Jump Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B41CF7131B584235004BA17F /* ShieldCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShieldCircle.swift; sourceTree = "<group>"; };
 		B42ADE361B45B9C8003F3078 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		B42ADE461B45CF1D003F3078 /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		B42B233D1B60198900FCDF17 /* Powerup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerup.swift; sourceTree = "<group>"; };
@@ -211,6 +210,7 @@
 		B4810D341B502E5100CF0DF6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		B49252061B5C1B3700CCD1BA /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		B49AD9E61B617D2400CCCD6A /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		B49FE31A1B72C8C100B044BC /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		B4F7C4C21B66AC1100E4AC7E /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B4FACA9A1B6BF834005F52FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -507,7 +507,6 @@
 				B49AD9E61B617D2400CCCD6A /* Space.swift */,
 				B42B233F1B601C5300FCDF17 /* Enemy.swift */,
 				B42B233D1B60198900FCDF17 /* Powerup.swift */,
-				B41CF7131B584235004BA17F /* ShieldCircle.swift */,
 				B470BD771B5811D0004A0849 /* Jump.swift */,
 				B4810D341B502E5100CF0DF6 /* GameOver.swift */,
 				B44C47701B62D0500026AD3C /* Settings.swift */,
@@ -515,6 +514,7 @@
 				B42ADE361B45B9C8003F3078 /* Line.swift */,
 				B4FACA9A1B6BF834005F52FA /* Images.xcassets */,
 				D352B48019EC608A00829775 /* MetalShaders */,
+				B49FE31A1B72C8C100B044BC /* Launch Screen.xib */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -821,6 +821,7 @@
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
+				B49FE31B1B72C8C100B044BC /* Launch Screen.xib in Resources */,
 				B4FACA9B1B6BF834005F52FA /* Images.xcassets in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
@@ -954,7 +955,6 @@
 				B42B23401B601C5300FCDF17 /* Enemy.swift in Sources */,
 				B47F91BD1B698411002B268A /* MKStoreKit.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
-				B41CF7141B584235004BA17F /* ShieldCircle.swift in Sources */,
 				B44C47711B62D0500026AD3C /* Settings.swift in Sources */,
 				B49252071B5C1B3700CCD1BA /* Mode.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,

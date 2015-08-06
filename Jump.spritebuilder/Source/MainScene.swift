@@ -66,6 +66,9 @@ class MainScene: CCNode {
         
             let store = CCBReader.load("Store") as! Store
             self.paused = true
+            if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+                store.contentSize = CGSize(width: 384, height: 512)
+            }
             self.addChild(store)
         //}
         //MainScene.storePressed = true

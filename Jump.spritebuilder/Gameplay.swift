@@ -61,7 +61,7 @@ class Gameplay: CCNode {
     var purpleTouched = false
     var purpleTrack = 0
     var powerupTrack = 0
-    var shield: ShieldCircle?
+    var shield: CCNode?
     var alreadySpawned = false
     var skyOff = 0
     var crashed = false
@@ -108,9 +108,7 @@ class Gameplay: CCNode {
         }
     }
     var timer: NSTimer!
-    var tips = [String](arrayLiteral: "Asteroids don't kill you!", "Take your time, don't rush to draw lines in between jumps.",
-    "You can draw multiple lines per jump.", "Try to get as high as possible by drawing lines for your blob!")
-    
+
     func didLoadFromCCB(){
 //        gemTrack+=500
         gamePhysicsNode.collisionDelegate = self
@@ -172,10 +170,11 @@ class Gameplay: CCNode {
         if hero.positionInPoints.y > CGFloat(randThresh) + 800 {
             var rand = CCRANDOM_0_1()
             if rand < Gameplay.spawnPower {
+                var randX = CCRANDOM_0_1() * Float(self.boundingBox().width - 20) + 10
                 var powerup = CCBReader.load("Gem") as! Powerup
                 gamePhysicsNode.addChild(powerup)
                 stuff.append(powerup)
-                powerup.position = ccp(CGFloat(200), hero.positionInPoints.y + CGFloat(500))
+                powerup.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(500))
             }
         }
     }
@@ -208,19 +207,26 @@ class Gameplay: CCNode {
             }
             checkOffScreen()
             if startedJumping {
-                var constant: CGFloat = 0.009
-                if jumpPos!.y < 150 {
-                    constant = 0.005
-                }
+                var heroWorldPosition = gamePhysicsNode.convertToWorldSpace(hero.positionInPoints)
+                var heroScreenPosition = convertToNodeSpace(heroWorldPosition)
+                var constant: CGFloat = 0.006
                 if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-                    constant = 0.01
+//                    println("pad")
+                    constant = 0.012
                 }
-                var scrollRate = jumpPos!.y * constant + 6.5
+                if jumpPos!.y < 160 {
+                    constant = 0.003
+                }
+                if jumpPos!.y > 215 {
+                    constant = 0.011
+                }
+                println(jumpPos!.y)
+                var scrollRate = heroScreenPosition.y * constant + 6.5
                 contentNode.position = ccpAdd(contentNode.position, ccp(0, -scrollRate))
                 addToY += scrollRate
                 score += 16
                 if hero.positionInPoints.y > CGFloat(randThresh) && hero.physicsBody.velocity.y < 500 && hero.physicsBody.velocity.y > 480 && alreadySpawned {
-                    spawnRandomStuff()
+                    spawnRandomStuff(heroScreenPosition.y)
                     if hero.positionInPoints.y > CGFloat(randThresh) + 1200 {
                         spawnPowerUps()
                     }
@@ -244,7 +250,7 @@ class Gameplay: CCNode {
             }
         }
         if shieldTouched {
-            shield = CCBReader.load("ShieldCircle") as? ShieldCircle
+            shield = CCBReader.load("ShieldCircle") as CCNode
             contentNode.addChild(shield)
             shieldTouched = false
         }
@@ -290,7 +296,7 @@ class Gameplay: CCNode {
         }
 
     }
-    func spawnRandomStuff(){
+    func spawnRandomStuff(yPos: CGFloat){
         var enemy: Enemy
         var randX = CCRANDOM_0_1() * Float(self.boundingBox().width - 60) + 20
         var jumpNum = CCRANDOM_0_1()
@@ -304,19 +310,19 @@ class Gameplay: CCNode {
             }
             else if rand > asteroidProb  &&  rand < birdProb {
                 enemy = CCBReader.load("Bird") as! Enemy
-                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + 450)
                 gamePhysicsNode.addChild(enemy)
                 stuff.append(enemy)
                 
             }
             else if rand > birdProb  &&  rand < alienProb {
                 enemy = CCBReader.load("MonsterAlien") as! Enemy
-                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + CGFloat(450))
+                enemy.position = ccp(CGFloat(randX), hero.positionInPoints.y + 450)
                 gamePhysicsNode.addChild(enemy)
                 stuff.append(enemy)
             }
             else if rand > alienProb && rand < ufoProb {
-                var randUfoX = CCRANDOM_0_1() * 180 + 30
+                var randUfoX = CCRANDOM_0_1() * Float(self.boundingBox().width - 140) + 30
                 enemy = CCBReader.load("UfoAlien") as! Enemy
                 if Settings.pressed {
                     enemy.fireWithoutSound()
@@ -468,9 +474,10 @@ class Gameplay: CCNode {
         if gameOver {
             return false
         }
-        if hero.physicsBody.velocity.y > 0 {
-            return true
-        }
+//        if hero.physicsBody.velocity.y > 0 {
+//            hero.physicsBody.velocity = ccp(xVel, 600 )
+//            return true
+//        }
         jump = Jump()
         jumpPos = screenPos
         if !Settings.pressed {
@@ -478,6 +485,7 @@ class Gameplay: CCNode {
         } else { hero.jumpUpAnimation() }
         hero.physicsBody.angularVelocity = 1
         hero.physicsBody.velocity = ccp(xVel, yVel )
+//        println(hero.physicsBody.velocity)
         startedJumping = true
         firstJump = true
         alreadySpawned = true
@@ -729,6 +737,12 @@ class Gameplay: CCNode {
             }
             else if endPoint!.y > startPoint!.y && endPoint!.x < startPoint!.x {
                 xVel = CGFloat(-angle * constant)
+            }
+            if xVel > 1000 {
+                xVel = 1000
+            }
+            if xVel < -1000 {
+                xVel = -1000
             }
             if(startPoint!.y < endPoint!.y && startPoint!.x < endPoint!.x){
                 angle = 360 - radian * 180 / Float(M_PI)
