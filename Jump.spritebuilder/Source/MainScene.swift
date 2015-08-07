@@ -26,6 +26,7 @@ class MainScene: CCNode {
         gameCenterInteractor.authenticationCheck()
     }
     func openGameCenter(){
+        Mixpanel.sharedInstance().track("Leaderboards clicked")
         showLeaderboard()
     }
     override func update(delta: CCTime) {

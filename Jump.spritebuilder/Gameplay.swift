@@ -10,6 +10,7 @@
 
 import UIKit
 import GameKit
+import Mixpanel
 
 class Gameplay: CCNode {
     
@@ -378,6 +379,7 @@ class Gameplay: CCNode {
             }
         }
         if skyOff == 10 {
+            Mixpanel.sharedInstance().track("Gameplay", properties: ["How high" : "Sky Darker Spawned"]);
             var darker = CCBReader.load("SkyDarker") as CCNode
             contentNode.addChild(darker, z: -1)
             darker.position = ccp(0, backgrounds.last!.position.y + backgrounds.last!.boundingBox().height / 2)
@@ -509,6 +511,7 @@ class Gameplay: CCNode {
             }
             return false
         }
+        Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "Bird"])
         if !Settings.pressed {
             OALSimpleAudio.sharedInstance().playEffect("sounds/crash.wav")
         }
@@ -526,6 +529,7 @@ class Gameplay: CCNode {
             asteroid.physicsBody.velocity.x = 100
             return false
         }
+        Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "Asteroid"])
         return true
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, alien: CCNode!) -> ObjCBool {
@@ -540,6 +544,7 @@ class Gameplay: CCNode {
         if !Settings.pressed {
             OALSimpleAudio.sharedInstance().playEffect("sounds/crash.wav")
         }
+        Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "Alien"])
         crashed = true
         shake()
         hero.physicsBody.velocity.y = -750
@@ -557,6 +562,7 @@ class Gameplay: CCNode {
             shield = nil
             return false
         }
+        Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "Laser"])
         crashed = true
         shake()
         hero.physicsBody.velocity.y = -750
@@ -573,6 +579,7 @@ class Gameplay: CCNode {
             shield = nil
             return false
         }
+        Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "UFO"])
         if !Settings.pressed {
             OALSimpleAudio.sharedInstance().playEffect("sounds/crash.wav")
         }
@@ -639,6 +646,7 @@ class Gameplay: CCNode {
         CCDirector.sharedDirector().presentScene(main, withTransition: transition)
     }
     func triggerGameOver() {
+        Mixpanel.sharedInstance().track("Game Over", properties: ["Score": self.score])
         gameOver = true
         pausedOnce = true
         if !Settings.pressed {
@@ -691,6 +699,7 @@ class Gameplay: CCNode {
     }
     
     func restartDuringPlay() {
+        Mixpanel.sharedInstance().track("Pause screen", properties: ["Restart clicked": "Restart"])
         self.removeFromParent()
         var mainScene = CCBReader.load("Gameplay") as! Gameplay
         var scene = CCScene()

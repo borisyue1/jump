@@ -88,13 +88,13 @@ class GameOver: CCNode {
     }
     func displayTip() {
         var rand = CCRANDOM_0_1()
-        if rand < 0.143 {
+        if rand < 0.2 {
             rush.visible = true
         }
-        else if rand < 0.286 {
+        else if rand < 0.336 {
             multipleLines.visible = true
         }
-        else if rand < 0.429 {
+        else if rand < 0.479 {
             asteroids.visible = true
         }
         else if rand < 0.571{

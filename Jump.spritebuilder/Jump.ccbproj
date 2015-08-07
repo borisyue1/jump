@@ -82,8 +82,6 @@
 		<dict/>
 		<key>asteroids</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
@@ -171,9 +169,32 @@
 		</dict>
 		<key>makeschoolpics</key>
 		<dict/>
+		<key>monster1</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+			<key>trimSprites</key>
+			<true/>
+		</dict>
+		<key>monster2</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+			<key>trimSprites</key>
+			<true/>
+		</dict>
+		<key>monster3</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+			<key>trimSprites</key>
+			<true/>
+		</dict>
 		<key>powerups</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
+			<true/>
+			<key>trimSprites</key>
 			<true/>
 		</dict>
 		<key>sounds</key>

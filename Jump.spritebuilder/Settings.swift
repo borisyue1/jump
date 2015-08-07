@@ -13,10 +13,15 @@ import Mixpanel
 class Settings: CCScene {
    
     weak var sound: CCButton!
-    static var pressed = false
     var creditPressed = false
     var credit: CCNode!
     var creditText: CCLabelTTF!
+    static var pressed = NSUserDefaults.standardUserDefaults().boolForKey("soundpressed") ?? false {
+        didSet {
+            NSUserDefaults.standardUserDefaults().setBool(pressed, forKey: "soundpressed")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
     
     func didLoadFromCCB() {
         if !Settings.pressed {
