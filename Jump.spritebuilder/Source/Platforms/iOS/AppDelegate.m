@@ -67,6 +67,21 @@
                                                       
                                                       NSLog(@"Products available: %@", [[MKStoreKit sharedKit] availableProducts]);
                                                   }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoredPurchasesNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Restored Purchases");
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kMKStoreKitRestoringPurchasesFailedNotification
+                                                      object:nil
+                                                       queue:[[NSOperationQueue alloc] init]
+                                                  usingBlock:^(NSNotification *note) {
+                                                      
+                                                      NSLog(@"Failed restoring purchases with error: %@", [note object]);
+                                                  }];
     
     return YES;
 }

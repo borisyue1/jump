@@ -523,10 +523,14 @@ class Gameplay: CCNode {
     }
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, monster: CCSprite!, asteroid: CCNode!) -> ObjCBool {
         if let shieldPresent = shield {
-            shield!.removeFromParent()
-            shield = nil
+            hits++
             asteroid.physicsBody.velocity.y = 500
             asteroid.physicsBody.velocity.x = 100
+            if hits >= Gameplay.shieldHit {
+                shield!.removeFromParent()
+                shield = nil
+                hits = 0
+            }
             return false
         }
         Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "Asteroid"])
@@ -537,8 +541,12 @@ class Gameplay: CCNode {
             return false
         }
         if let shieldPresent = shield {
-            shield!.removeFromParent()
-            shield = nil
+            hits++
+            if hits >= Gameplay.shieldHit {
+                shield!.removeFromParent()
+                shield = nil
+                hits = 0
+            }
             return false
         }
         if !Settings.pressed {
@@ -558,8 +566,12 @@ class Gameplay: CCNode {
             return false
         }
         if let shieldPresent = shield {
-            shield!.removeFromParent()
-            shield = nil
+            hits++
+            if hits >= Gameplay.shieldHit {
+                shield!.removeFromParent()
+                shield = nil
+                hits = 0
+            }
             return false
         }
         Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "Laser"])
@@ -575,8 +587,12 @@ class Gameplay: CCNode {
             return false
         }
         if let shieldPresent = shield {
-            shield!.removeFromParent()
-            shield = nil
+            hits++
+            if hits >= Gameplay.shieldHit {
+                shield!.removeFromParent()
+                shield = nil
+                hits = 0
+            }
             return false
         }
         Mixpanel.sharedInstance().track("Collision", properties: ["Collision type": "UFO"])

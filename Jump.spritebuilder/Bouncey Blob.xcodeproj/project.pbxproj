@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		515238BCBFB37ADACDC441BD /* Pods_Jump_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 516FA590C6E5131F8E2B9157 /* Pods_Jump_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B121030197484FA004C1E1D /* JumpActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* JumpActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A046D7519E84C36004C4763 /* MainScene.swift */; };
@@ -108,6 +107,7 @@
 		BC5399DA1A44DCC90063F482 /* GLActivityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D51A44DCC90063F482 /* GLActivityKit.framework */; };
 		BC5399DB1A44DCC90063F482 /* JavaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D61A44DCC90063F482 /* JavaFoundation.framework */; };
 		BC5399DC1A44DCC90063F482 /* JavaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D71A44DCC90063F482 /* JavaKit.framework */; };
+		E261293DD05EF48F656486C6 /* Pods_Jump_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2760EB2E29CB09C6E1E487EA /* Pods_Jump_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,8 +163,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		516FA590C6E5131F8E2B9157 /* Pods_Jump_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55ACB3A4841295E847A9B2E1 /* Pods-Jump iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS.release.xcconfig"; sourceTree = "<group>"; };
+		2760EB2E29CB09C6E1E487EA /* Pods_Jump_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -195,6 +194,7 @@
 		B42B233D1B60198900FCDF17 /* Powerup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerup.swift; sourceTree = "<group>"; };
 		B42B233F1B601C5300FCDF17 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		B44C47701B62D0500026AD3C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B46CC24F025A66291FC7B3D6 /* Pods-Jump iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS.release.xcconfig"; sourceTree = "<group>"; };
 		B470BD771B5811D0004A0849 /* Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jump.swift; sourceTree = "<group>"; };
 		B47D1EA21B4495F8005B3024 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Source/Hero.swift; sourceTree = "<group>"; };
 		B47F91AD1B6934BF002B268A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -245,7 +245,7 @@
 		BC5399D61A44DCC90063F482 /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		BC5399D71A44DCC90063F482 /* JavaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaKit.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaKit.framework"; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
-		F8922D5DCAC19E6166F3A868 /* Pods-Jump iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D6FE9932010C8292A2FC3F90 /* Pods-Jump iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,13 +302,22 @@
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
 				B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */,
 				B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */,
-				515238BCBFB37ADACDC441BD /* Pods_Jump_iOS.framework in Frameworks */,
+				E261293DD05EF48F656486C6 /* Pods_Jump_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		559554F2AF44D76C136F1019 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6FE9932010C8292A2FC3F90 /* Pods-Jump iOS.debug.xcconfig */,
+				B46CC24F025A66291FC7B3D6 /* Pods-Jump iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5B12100D197483EE004C1E1D /* res */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,15 +359,6 @@
 				5B121015197483EE004C1E1D /* ic_launcher.png */,
 			);
 			path = "drawable-xxhdpi";
-			sourceTree = "<group>";
-		};
-		7840F586952C1146DF34F171 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F8922D5DCAC19E6166F3A868 /* Pods-Jump iOS.debug.xcconfig */,
-				55ACB3A4841295E847A9B2E1 /* Pods-Jump iOS.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		7A40362019DDEF0D007B6E8F /* Platforms */ = {
@@ -541,7 +541,7 @@
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
 				B77F1B3017B978D7009739AE /* Frameworks */,
 				B77F1B2F17B978D7009739AE /* Products */,
-				7840F586952C1146DF34F171 /* Pods */,
+				559554F2AF44D76C136F1019 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -581,7 +581,7 @@
 				B77F1B3D17B978D7009739AE /* Foundation.framework */,
 				B77F1B3F17B978D7009739AE /* CoreGraphics.framework */,
 				B77F1B4117B978D7009739AE /* CoreText.framework */,
-				516FA590C6E5131F8E2B9157 /* Pods_Jump_iOS.framework */,
+				2760EB2E29CB09C6E1E487EA /* Pods_Jump_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -654,14 +654,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "Jump iOS" */;
 			buildPhases = (
-				09B301746EFB6A626F81B962 /* Check Pods Manifest.lock */,
+				1B413D818B57F4F00663A49F /* Check Pods Manifest.lock */,
 				D2E0167A18D782EC00927430 /* Run Script */,
 				B77F1B2A17B978D7009739AE /* Sources */,
 				B77F1B2B17B978D7009739AE /* Frameworks */,
 				D352B47A19EC5D8A00829775 /* Compile Metal Shaders */,
 				B77F1B2C17B978D7009739AE /* Resources */,
 				D6C2D376177A89775706BDEC /* Embed Pods Frameworks */,
-				C52180A0C69E433E01C4B682 /* Copy Pods Resources */,
+				567D7B82CD282CAA70F5FD89 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -823,7 +823,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09B301746EFB6A626F81B962 /* Check Pods Manifest.lock */ = {
+		1B413D818B57F4F00663A49F /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -836,6 +836,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		567D7B82CD282CAA70F5FD89 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		927F619B196C771E000F43EF /* Run Script */ = {
@@ -851,21 +866,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "osascript -e 'tell application \"System Events\"' -e 'set ProcessList to name of every process' -e 'if \"SpriteBuilder\" is in ProcessList then' -e 'tell application \"SpriteBuilder\" to publish' -e 'end if' -e 'end tell'";
-		};
-		C52180A0C69E433E01C4B682 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		D2E0167A18D782EC00927430 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1228,7 +1228,7 @@
 		};
 		B77F1CDF17B978D8009739AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8922D5DCAC19E6166F3A868 /* Pods-Jump iOS.debug.xcconfig */;
+			baseConfigurationReference = D6FE9932010C8292A2FC3F90 /* Pods-Jump iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1269,7 +1269,7 @@
 		};
 		B77F1CE017B978D8009739AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55ACB3A4841295E847A9B2E1 /* Pods-Jump iOS.release.xcconfig */;
+			baseConfigurationReference = B46CC24F025A66291FC7B3D6 /* Pods-Jump iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

@@ -1,17 +1,18 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '6.0'
 
-use_frameworks!
+  use_frameworks!
 
-target 'Bouncey Blob iOS' do
-   pod 'Mixpanel'
+
+target 'Bouncey Blob' do
+pod 'Mixpanel'
 end
 
-target 'Jump Android' do
+target 'Bouncey Blob Android' do
 
 end
 
-target 'Jump Mac' do
+target 'Bouncey Blob Mac' do
 
 end
 
