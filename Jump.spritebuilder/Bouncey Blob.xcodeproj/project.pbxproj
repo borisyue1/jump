@@ -67,7 +67,6 @@
 		B44C47711B62D0500026AD3C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44C47701B62D0500026AD3C /* Settings.swift */; };
 		B470BD781B5811D0004A0849 /* Jump.swift in Sources */ = {isa = PBXBuildFile; fileRef = B470BD771B5811D0004A0849 /* Jump.swift */; };
 		B47D1EA31B4495F8005B3024 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D1EA21B4495F8005B3024 /* Hero.swift */; };
-		B47F91AE1B6934BF002B268A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47F91AD1B6934BF002B268A /* GameKit.framework */; };
 		B47F91B21B6935CF002B268A /* sdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47F91B11B6935CF002B268A /* sdf.swift */; };
 		B47F91B41B696445002B268A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47F91B31B696445002B268A /* StoreKit.framework */; };
 		B47F91BD1B698411002B268A /* MKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B47F91BC1B698411002B268A /* MKStoreKit.m */; };
@@ -197,7 +196,6 @@
 		B46CC24F025A66291FC7B3D6 /* Pods-Jump iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jump iOS/Pods-Jump iOS.release.xcconfig"; sourceTree = "<group>"; };
 		B470BD771B5811D0004A0849 /* Jump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jump.swift; sourceTree = "<group>"; };
 		B47D1EA21B4495F8005B3024 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Source/Hero.swift; sourceTree = "<group>"; };
-		B47F91AD1B6934BF002B268A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B47F91B11B6935CF002B268A /* sdf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sdf.swift; sourceTree = "<group>"; };
 		B47F91B31B696445002B268A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B47F91BB1B698404002B268A /* MKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKStoreKit.h; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B47F91B41B696445002B268A /* StoreKit.framework in Frameworks */,
-				B47F91AE1B6934BF002B268A /* GameKit.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -559,7 +556,6 @@
 			isa = PBXGroup;
 			children = (
 				B47F91B31B696445002B268A /* StoreKit.framework */,
-				B47F91AD1B6934BF002B268A /* GameKit.framework */,
 				BC5399D31A44DCC90063F482 /* AndroidKit.framework */,
 				BC5399D41A44DCC90063F482 /* CoreJava.framework */,
 				BC5399D51A44DCC90063F482 /* GLActivityKit.framework */,
