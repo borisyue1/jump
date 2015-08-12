@@ -4,7 +4,7 @@
   use_frameworks!
 
 
-target 'Bouncey Blob' do
+target 'Bouncey Blob iOS' do
 pod 'Mixpanel'
 end
 
