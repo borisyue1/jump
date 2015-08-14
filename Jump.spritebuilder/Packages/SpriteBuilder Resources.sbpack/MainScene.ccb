@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>40</integer>
+	<integer>42</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -72,7 +72,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.65499997138977051</real>
+							<real>0.64999997615814209</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -190,7 +190,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>1.1000000238418579</real>
+							<real>-0.16049318015575409</real>
 							<real>0.075351446866989136</real>
 							<integer>1</integer>
 							<integer>2</integer>
@@ -311,7 +311,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-0.15999999642372131</real>
+							<real>1.1100000143051147</real>
 							<real>0.2199999988079071</real>
 							<integer>1</integer>
 							<integer>2</integer>
@@ -2025,7 +2025,7 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>1</real>
+									<real>0.83333331346511841</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
@@ -2077,7 +2077,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.81999999284744263</real>
+							<real>1.1000000238418579</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -2326,7 +2326,7 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
-						<integer>22</integer>
+						<integer>40</integer>
 						<key>animatedProperties</key>
 						<dict>
 							<key>0</key>
@@ -2362,7 +2362,7 @@
 											<key>name</key>
 											<string>position</string>
 											<key>time</key>
-											<real>1</real>
+											<real>0.73333334922790527</real>
 											<key>type</key>
 											<integer>3</integer>
 											<key>value</key>
@@ -2405,7 +2405,7 @@
 											<key>name</key>
 											<string>rotation</string>
 											<key>time</key>
-											<real>1</real>
+											<real>0.73333334922790527</real>
 											<key>type</key>
 											<integer>2</integer>
 											<key>value</key>
@@ -2444,8 +2444,8 @@
 							<dict>
 								<key>baseValue</key>
 								<array>
-									<real>0.5</real>
-									<real>0.30409282445907593</real>
+									<real>0.49636650085449219</real>
+									<real>0.31999999284744263</real>
 								</array>
 								<key>name</key>
 								<string>position</string>
@@ -2453,8 +2453,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.5</real>
-									<real>0.31999999284744263</real>
+									<real>-0.10000000149011612</real>
+									<real>0.40000000596046448</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -2481,7 +2481,7 @@
 								<key>type</key>
 								<string>Degrees</string>
 								<key>value</key>
-								<real>1080</real>
+								<real>0.0</real>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -2492,6 +2492,8 @@
 								<string>Hero.ccb</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -2726,7 +2728,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>2</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

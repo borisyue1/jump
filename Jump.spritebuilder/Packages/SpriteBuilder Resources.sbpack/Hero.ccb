@@ -16,7 +16,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>docDimensionsType</key>
 	<integer>1</integer>
 	<key>fileType</key>
@@ -57,25 +57,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster.png</string>
-								<string>Use regular file</string>
-							</array>
-						</dict>
-						<dict>
-							<key>easing</key>
-							<dict>
-								<key>type</key>
-								<integer>0</integer>
-							</dict>
-							<key>name</key>
-							<string>spriteFrame</string>
-							<key>time</key>
-							<real>1</real>
-							<key>type</key>
-							<integer>7</integer>
-							<key>value</key>
-							<array>
-								<string>makeschoolpics/monster.png</string>
+								<string>monster1/monster.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -106,7 +88,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster.png</string>
+								<string>monster1/monster.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -124,7 +106,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monsterpoint5.png</string>
+								<string>monster1/monsterpoint5.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -142,7 +124,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster1.png</string>
+								<string>monster1/monster1.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -160,7 +142,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster1point5.png</string>
+								<string>monster2/monster1point5.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -178,7 +160,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster2.png</string>
+								<string>monster2/monster2.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -196,7 +178,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster2point5.png</string>
+								<string>monster2/monster2point5.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -214,7 +196,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster3.png</string>
+								<string>monster3/monster3.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -232,7 +214,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster3point5.png</string>
+								<string>monster3/monster3point5.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -250,7 +232,7 @@
 							<integer>7</integer>
 							<key>value</key>
 							<array>
-								<string>makeschoolpics/monster4.png</string>
+								<string>monster3/monster4.png</string>
 								<string>Use regular file</string>
 							</array>
 						</dict>
@@ -544,7 +526,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>monster3/monster4.png</string>
+					<string>monster1/monster.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -580,6 +562,8 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>
@@ -673,7 +657,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.26666668057441711</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -709,7 +693,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.30000001192092896</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

@@ -119,22 +119,22 @@ class Gameplay: CCNode {
         backgrounds.append(sky2)
         gemNum.string = "\(gemTrack)"
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlines") {
-            Gameplay.lineScale = 1.1//0.9
+            Gameplay.lineScale = 1.1//0.9, 1.1
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerlightningpowerup") {
-            Gameplay.lightningSpeed = 245//175
+            Gameplay.lightningSpeed = 245//175,245
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longerpotionpowerup") {
-            Gameplay.purpleTime = 1050//700
+            Gameplay.purpleTime = 1050//700, 1050
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.longershieldpowerup") {
-            Gameplay.shieldHit = 2//1
+            Gameplay.shieldHit = 2//1,2
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.morepowerups") {
-            Gameplay.startSpawn = 0.32//0.22
+            Gameplay.startSpawn = 0.32//0.22,0.32
         }
         if MKStoreKit.sharedKit().isProductPurchased("com.yueboris.bounceyblob.moregems") {
-            Gameplay.spawnPower = 0.1//0.05
+            Gameplay.spawnPower = 0.1//0.05,0.1
         }
         if Gameplay.lineScale == 0 {
             Gameplay.lineScale = 0.9
