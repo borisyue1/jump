@@ -128,6 +128,7 @@ typedef NS_ENUM(NSUInteger, CCEffectTexCoordMapping)
 @property (nonatomic, strong) NSMutableDictionary* shaderUniforms;
 @property (nonatomic, strong) NSDictionary* uniformTranslationTable;
 @property (nonatomic, assign) BOOL needsClear;
+- (void)verts_setter:(CCSpriteVertexes*)svp;
 
 @end
 

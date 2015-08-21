@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>394</integer>
+	<integer>402</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -143,100 +143,7 @@
 						<key>type</key>
 						<string>EffectControl</string>
 						<key>value</key>
-						<array>
-							<dict>
-								<key>UUID</key>
-								<integer>231</integer>
-								<key>baseClass</key>
-								<string>CCEffectContrast</string>
-								<key>className</key>
-								<string>CCBPEffectContrast</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>contrast</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.38407382369041443</real>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>234</integer>
-								<key>baseClass</key>
-								<string>CCEffectBrightness</string>
-								<key>className</key>
-								<string>CCBPEffectBrightness</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>brightness</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.0</real>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>239</integer>
-								<key>baseClass</key>
-								<string>CCEffectBloom</string>
-								<key>className</key>
-								<string>CCBPEffectBloom</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>blurRadius</string>
-										<key>type</key>
-										<string>Integer</string>
-										<key>value</key>
-										<integer>5</integer>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>intensity</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.45543110370635986</real>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>luminanceThreshold</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.0</real>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>303</integer>
-								<key>baseClass</key>
-								<string>CCEffectHue</string>
-								<key>className</key>
-								<string>CCBPEffectHue</string>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>hue</string>
-										<key>type</key>
-										<string>Float</string>
-										<key>value</key>
-										<real>0.0</real>
-									</dict>
-								</array>
-							</dict>
-						</array>
+						<array/>
 					</dict>
 				</array>
 				<key>selected</key>

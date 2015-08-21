@@ -222,7 +222,10 @@ static NSString* vertBase =
 {
     return [super init];
 }
-
+- (void)verts_setter:(CCSpriteVertexes*)svp
+{
+    _verts = *svp;
+}
 @end
 
 
