@@ -121,7 +121,7 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>0.83333331346511841</real>
+									<real>1</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
@@ -190,7 +190,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-0.16049318015575409</real>
+							<real>1.1000000238418579</real>
 							<real>0.075351446866989136</real>
 							<integer>1</integer>
 							<integer>2</integer>
@@ -242,7 +242,7 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>0.83333331346511841</real>
+									<real>1</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
@@ -311,7 +311,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>1.1100000143051147</real>
+							<real>-0.15999999642372131</real>
 							<real>0.2199999988079071</real>
 							<integer>1</integer>
 							<integer>2</integer>
@@ -2077,7 +2077,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>1.1000000238418579</real>
+							<real>0.81999999284744263</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -2453,8 +2453,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>-0.10000000149011612</real>
-									<real>0.40000000596046448</real>
+									<real>0.5</real>
+									<real>0.31999999284744263</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -2481,7 +2481,7 @@
 								<key>type</key>
 								<string>Degrees</string>
 								<key>value</key>
-								<real>0.0</real>
+								<real>1080</real>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -2492,8 +2492,6 @@
 								<string>Hero.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -2728,7 +2726,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>2</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
